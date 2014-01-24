@@ -1,0 +1,16 @@
+Class:         RPCDigiL1Link
+
+Header:        DataFormats/RPCDigi/interface/RPCDigiL1Link.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:10 2013	mkvomit.py
+
+AccessMethods: RPCDigiL1Link
+                              bool  empty()
+                              bool  empty(unsigned int layer)
+                      unsigned int  rawdetId(unsigned int layer)
+                               int  strip(unsigned int layer)
+                               int  bx(unsigned int layer)
+                      unsigned int  nlayer()
+
+DataMembers:   RPCDigiL1Link

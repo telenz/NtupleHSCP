@@ -1,0 +1,2 @@
+        bool  bxEmpty(int step)
+         int  bxSize(int step1, int step2)

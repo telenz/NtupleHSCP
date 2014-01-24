@@ -1,0 +1,2 @@
+      size_t  count()
+      size_t  count(std::string roleRegexp)

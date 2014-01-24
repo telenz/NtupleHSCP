@@ -1,0 +1,15 @@
+Class:         reco::TauImpactParameterInfo
+
+Header:        DataFormats/BTauReco/interface/TauImpactParameterInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:07 2013	mkvomit.py
+
+AccessMethods: reco::TauImpactParameterInfo
+     reco::TauImpactParameterInfo*  clone()
+                             float  discriminator(double x0, double x1, double x2, bool x3, bool x4)
+                             float  discriminator()
+  reco::TauImpactParameterTrackData*  getTrackData(reco::TrackRef x0)
+  const reco::IsolatedTauTagInfoRef  getIsolatedTauTag()
+
+DataMembers:   reco::TauImpactParameterInfo

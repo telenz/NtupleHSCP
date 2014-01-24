@@ -1,0 +1,20 @@
+Class:         L1GtfeWord
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1GtfeWord.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: L1GtfeWord
+                const cms_uint16_t  boardId()
+                const cms_uint16_t  recordLength1()
+                const cms_uint16_t  recordLength()
+                const cms_uint16_t  bxNr()
+                const cms_uint32_t  setupVersion()
+                         const int  bstFlag()
+                const cms_uint16_t  activeBoards()
+                const cms_uint16_t  altNrBxBoard()
+                const cms_uint32_t  totalTriggerNr()
+                const unsigned int  getSize()
+
+DataMembers:   L1GtfeWord

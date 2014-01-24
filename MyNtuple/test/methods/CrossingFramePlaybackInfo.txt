@@ -1,0 +1,2 @@
+         int  getStartFileNr(unsigned int s, int bcr)
+         int  getNrEvents(unsigned int s, int bcr)

@@ -1,0 +1,5 @@
+         int  totalEvents()
+         int  numberOfBins()
+         int  eventsPerBin()
+       float  showerLibraryVersion()
+       float  physListVersion()

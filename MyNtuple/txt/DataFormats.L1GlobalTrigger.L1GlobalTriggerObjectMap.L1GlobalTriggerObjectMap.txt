@@ -1,0 +1,18 @@
+Class:         L1GlobalTriggerObjectMap
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1GlobalTriggerObjectMap.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: L1GlobalTriggerObjectMap
+                 const std::string  algoName()
+                               int  algoBitNumber()
+                              bool  algoGtlResult()
+  const std::vector<std::vector<std::vector<int> > >  combinationVector()
+  const std::vector<L1GtLogicParser::OperandToken>  operandTokenVector()
+               CombinationsInCond*  getCombinationsInCond(std::string condNameVal)
+               CombinationsInCond*  getCombinationsInCond(int condNumberVal)
+                        const bool  getConditionResult(std::string condNameVal)
+
+DataMembers:   L1GlobalTriggerObjectMap

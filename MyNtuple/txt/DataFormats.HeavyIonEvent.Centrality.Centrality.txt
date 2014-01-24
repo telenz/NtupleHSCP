@@ -1,0 +1,41 @@
+Class:         reco::Centrality
+
+Header:        DataFormats/HeavyIonEvent/interface/Centrality.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:40 2013	mkvomit.py
+
+AccessMethods: reco::Centrality
+                            double  raw()
+                       std::string  label()
+                            double  EtHFhitSum()
+                            double  EtHFhitSumPlus()
+                            double  EtHFhitSumMinus()
+                            double  EtHFtowerSum()
+                            double  EtHFtowerSumPlus()
+                            double  EtHFtowerSumMinus()
+                            double  EtHFtruncated()
+                            double  EtHFtruncatedPlus()
+                            double  EtHFtruncatedMinus()
+                            double  EtEESum()
+                            double  EtEESumPlus()
+                            double  EtEESumMinus()
+                            double  EtEEtruncated()
+                            double  EtEEtruncatedPlus()
+                            double  EtEEtruncatedMinus()
+                            double  EtEBSum()
+                            double  EtEBtruncated()
+                            double  EtEcalSum()
+                            double  EtEcaltruncated()
+                            double  multiplicityPixel()
+                            double  Ntracks()
+                            double  NtracksPtCut()
+                            double  NtracksEtaCut()
+                            double  NtracksEtaPtCut()
+                            double  NpixelTracks()
+                            double  zdcSum()
+                            double  zdcSumPlus()
+                            double  zdcSumMinus()
+                            double  EtMidRapiditySum()
+
+DataMembers:   reco::Centrality

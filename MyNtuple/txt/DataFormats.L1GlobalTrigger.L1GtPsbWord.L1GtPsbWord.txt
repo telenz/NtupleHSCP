@@ -1,0 +1,18 @@
+Class:         L1GtPsbWord
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1GtPsbWord.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: L1GtPsbWord
+                const cms_uint16_t  boardId()
+                         const int  bxInEvent()
+                const cms_uint16_t  bxNr()
+                const cms_uint32_t  eventNr()
+                const cms_uint16_t  aData(int iA)
+                const cms_uint16_t  bData(int iB)
+                const cms_uint16_t  localBxNr()
+                const unsigned int  getSize()
+
+DataMembers:   L1GtPsbWord

@@ -1,0 +1,2 @@
+        bool  isLooper()
+unsigned int  seed().nHits()

@@ -1,0 +1,64 @@
+Class:         csc::L1Track
+
+Header:        DataFormats/L1CSCTrackFinder/interface/L1Track.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:51 2013	mkvomit.py
+
+AccessMethods: csc::L1Track
+                      unsigned int  rank()
+                      unsigned int  localPhi()
+                      unsigned int  me1ID()
+                      unsigned int  me2ID()
+                      unsigned int  me3ID()
+                      unsigned int  me4ID()
+                      unsigned int  mb1ID()
+                      unsigned int  endcap()
+                      unsigned int  sector()
+                      unsigned int  station()
+                      unsigned int  subsector()
+                      unsigned int  cscid()
+                               int  BX()
+                      unsigned int  encodeRank(unsigned int pt, unsigned int quality)
+                      unsigned int  ptLUTAddress()
+                      unsigned int  front_rear()
+                      unsigned int  outputLink()
+                              bool  winner()
+                      unsigned int  deltaPhi12()
+                      unsigned int  deltaPhi23()
+                      unsigned int  addressEta()
+                      unsigned int  mode()
+                              bool  sign()
+                              bool  synch_err()
+                              bool  bx0()
+                              bool  bc0()
+                      unsigned int  me1Tbin()
+                      unsigned int  me2Tbin()
+                      unsigned int  me3Tbin()
+                      unsigned int  me4Tbin()
+                      unsigned int  mb1Tbin()
+                      unsigned int  modeExtended()
+
+AccessMethods: L1MuRegionalCand
+                              bool  empty()
+                             float  phiValue()
+                             float  etaValue()
+                             float  ptValue()
+                               int  chargeValue()
+                              bool  chargeValid()
+                              bool  isFineHalo()
+                      unsigned int  quality()
+                      unsigned int  type_idx()
+                               int  bx()
+                      unsigned int  phi_packed()
+                      unsigned int  pt_packed()
+                      unsigned int  quality_packed()
+                      unsigned int  eta_packed()
+                      unsigned int  finehalo_packed()
+                      unsigned int  charge_packed()
+                      unsigned int  charge_valid_packed()
+                      unsigned int  getDataWord()
+
+DataMembers:   csc::L1Track
+
+DataMembers:   L1MuRegionalCand

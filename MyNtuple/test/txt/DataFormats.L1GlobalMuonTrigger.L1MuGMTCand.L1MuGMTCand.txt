@@ -1,0 +1,34 @@
+Class:         L1MuGMTCand
+
+Header:        DataFormats/L1GlobalMuonTrigger/interface/L1MuGMTCand.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:09 2013	mkvomit.py
+
+AccessMethods: L1MuGMTCand
+                              bool  empty()
+                      unsigned int  getDataWord()
+                       std::string  name()
+                      unsigned int  phiIndex()
+                      unsigned int  ptIndex()
+                      unsigned int  quality()
+                              bool  useInSingleMuonTrigger()
+                              bool  useInDiMuonTrigger()
+                              bool  isMatchedCand()
+                              bool  isHaloCand()
+                      unsigned int  etaIndex()
+                      unsigned int  sysign()
+                              bool  isol()
+                              bool  mip()
+                               int  bx()
+                             float  phiValue()
+                             float  etaValue()
+                             float  ptValue()
+                               int  charge()
+                              bool  charge_valid()
+                              bool  isSyncWord()
+                      unsigned int  linearizedPt(float lsbValue, unsigned int maxScale)
+                      unsigned int  etaRegionIndex()
+                      unsigned int  phiRegionIndex()
+
+DataMembers:   L1MuGMTCand

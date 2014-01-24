@@ -1,0 +1,29 @@
+Class:         l1extra::L1ParticleMap
+
+Header:        DataFormats/L1Trigger/interface/L1ParticleMap.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:11 2013	mkvomit.py
+
+AccessMethods: l1extra::L1ParticleMap
+  l1extra::L1ParticleMap::L1TriggerType  triggerType()
+                 const std::string  triggerName()
+                              bool  triggerDecision()
+  const std::vector<l1extra::L1ParticleMap::L1ObjectType>  objectTypes()
+                               int  numOfObjects()
+  const l1extra::L1EmParticleVectorRef  emParticles()
+  const l1extra::L1JetParticleVectorRef  jetParticles()
+  const l1extra::L1MuonParticleVectorRef  muonParticles()
+  const l1extra::L1EtMissParticleRefProd  etMissParticle()
+  const std::vector<std::vector<unsigned int> >  indexCombos()
+              reco::LeafCandidate*  candidateInCombo(int aIndexInCombo, std::vector<unsigned int> aCombo)
+            l1extra::L1EmParticle*  emParticleInCombo(int aIndexInCombo, std::vector<unsigned int> aCombo)
+           l1extra::L1JetParticle*  jetParticleInCombo(int aIndexInCombo, std::vector<unsigned int> aCombo)
+          l1extra::L1MuonParticle*  muonParticleInCombo(int aIndexInCombo, std::vector<unsigned int> aCombo)
+        l1extra::L1EtMissParticle*  etMissParticleInCombo(int aIndexInCombo, std::vector<unsigned int> aCombo)
+  std::vector<const reco::LeafCandidate*>  candidateCombo(std::vector<unsigned int> aCombo)
+                 const std::string  triggerName(l1extra::L1ParticleMap::L1TriggerType type)
+  l1extra::L1ParticleMap::L1TriggerType  triggerType(std::string name)
+                              bool  objectTypeIsGlobal(l1extra::L1ParticleMap::L1ObjectType type)
+
+DataMembers:   l1extra::L1ParticleMap

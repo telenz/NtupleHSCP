@@ -1,0 +1,18 @@
+Class:         reco::NuclearInteraction
+
+Header:        DataFormats/VertexReco/interface/NuclearInteraction.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:05 2013	mkvomit.py
+
+AccessMethods: reco::NuclearInteraction
+  const edm::RefToBase<reco::Track>  primaryTrack()
+                               int  secondaryTracksSize()
+                               int  seedsSize()
+  const edm::RefVector<std::vector<TrajectorySeed>,TrajectorySeed,edm::refhelper::FindUsingAdvance<std::vector<TrajectorySeed>,TrajectorySeed> >  seeds()
+  edm::RefVectorIterator<std::vector<TrajectorySeed>,TrajectorySeed,edm::refhelper::FindUsingAdvance<std::vector<TrajectorySeed>,TrajectorySeed> >  seeds_begin()
+  edm::RefVectorIterator<std::vector<TrajectorySeed>,TrajectorySeed,edm::refhelper::FindUsingAdvance<std::vector<TrajectorySeed>,TrajectorySeed> >  seeds_end()
+                const reco::Vertex  vertex()
+                            double  likelihood()
+
+DataMembers:   reco::NuclearInteraction

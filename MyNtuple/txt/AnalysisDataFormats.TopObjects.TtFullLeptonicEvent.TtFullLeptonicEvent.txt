@@ -1,0 +1,77 @@
+Class:         TtFullLeptonicEvent
+
+Header:        AnalysisDataFormats/TopObjects/interface/TtFullLeptonicEvent.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:38 2013	mkvomit.py
+
+AccessMethods: TtFullLeptonicEvent
+                  reco::Candidate*  top(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  top(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  b(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  b(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  wPlus(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  wPlus(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  leptonBar(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  leptonBar(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  neutrino(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  neutrino(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  topBar(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  topBar(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  bBar(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  bBar(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  wMinus(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  wMinus(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  lepton(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  lepton(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  neutrinoBar(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  neutrinoBar(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                reco::GenParticle*  genTop()
+                reco::GenParticle*  genB()
+                reco::GenParticle*  genWPlus()
+                reco::GenParticle*  genLeptonBar()
+                reco::GenParticle*  genNeutrino()
+                reco::GenParticle*  genTopBar()
+                reco::GenParticle*  genBBar()
+                reco::GenParticle*  genWMinus()
+                reco::GenParticle*  genLepton()
+                reco::GenParticle*  genNeutrinoBar()
+                            double  solWeight(unsigned int cmb=0)
+                              bool  isWrongCharge()
+
+AccessMethods: TtEvent
+  std::pair<WDecay::LeptonType,WDecay::LeptonType>  lepDecays()
+    const reco::CompositeCandidate  eventHypo(TtEvent::HypoClassKey key, unsigned int cmb=0)
+    const edm::RefProd<TtGenEvent>  genEvent()
+                              bool  isHypoClassAvailable(std::string key)
+                              bool  isHypoClassAvailable(TtEvent::HypoClassKey key)
+                              bool  isHypoAvailable(std::string key, unsigned int cmb=0)
+                              bool  isHypoAvailable(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                              bool  isHypoValid(std::string key, unsigned int cmb=0)
+                              bool  isHypoValid(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                      unsigned int  numberOfAvailableHypoClasses()
+                      unsigned int  numberOfAvailableHypos(std::string key)
+                      unsigned int  numberOfAvailableHypos(TtEvent::HypoClassKey key)
+                               int  numberOfConsideredJets(std::string key)
+                               int  numberOfConsideredJets(TtEvent::HypoClassKey key)
+                  std::vector<int>  jetLeptonCombination(std::string key, unsigned int cmb=0)
+                  std::vector<int>  jetLeptonCombination(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                            double  genMatchSumPt(unsigned int cmb=0)
+                            double  genMatchSumDR(unsigned int cmb=0)
+                       std::string  mvaMethod()
+                            double  mvaDisc(unsigned int cmb=0)
+                            double  fitChi2(unsigned int cmb=0)
+                            double  hitFitChi2(unsigned int cmb=0)
+                            double  fitProb(unsigned int cmb=0)
+                            double  hitFitProb(unsigned int cmb=0)
+                            double  hitFitMT(unsigned int cmb=0)
+                            double  hitFitSigMT(unsigned int cmb=0)
+                               int  correspondingHypo(std::string key1, unsigned int hyp1, std::string key2)
+                               int  correspondingHypo(TtEvent::HypoClassKey key1, unsigned int hyp1, TtEvent::HypoClassKey key2)
+                  reco::Candidate*  topPair(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  topPair(TtEvent::HypoClassKey key, unsigned int cmb=0)
+          math::XYZTLorentzVector*  topPair()
+
+DataMembers:   TtFullLeptonicEvent
+
+DataMembers:   TtEvent

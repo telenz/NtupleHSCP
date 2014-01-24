@@ -1,0 +1,4 @@
+unsigned int  index()
+        bool  wasrun()
+        bool  accept()
+        bool  error()

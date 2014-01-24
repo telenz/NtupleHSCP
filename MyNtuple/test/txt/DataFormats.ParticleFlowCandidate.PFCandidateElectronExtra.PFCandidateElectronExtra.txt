@@ -1,0 +1,19 @@
+Class:         reco::PFCandidateElectronExtra
+
+Header:        DataFormats/ParticleFlowCandidate/interface/PFCandidateElectronExtra.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::PFCandidateElectronExtra
+                 reco::GsfTrackRef  gsfTrackRef()
+                    reco::TrackRef  kfTrackRef()
+                              bool  electronStatus(reco::PFCandidateElectronExtra::StatusFlag x0)
+                               int  electronStatus()
+                              bool  mvaStatus(reco::PFCandidateElectronExtra::MvaVariable flag)
+          const std::vector<float>  mvaVariables()
+                             float  mvaVariable(reco::PFCandidateElectronExtra::MvaVariable var)
+                             float  hadEnergy()
+                             float  sigmaEtaEta()
+
+DataMembers:   reco::PFCandidateElectronExtra

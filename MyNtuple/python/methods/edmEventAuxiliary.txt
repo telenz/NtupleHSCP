@@ -1,0 +1,4 @@
+        bool  isRealData()
+         int  bunchCrossing()
+         int  orbitNumber()
+         int  storeNumber()

@@ -1,0 +1,19 @@
+Class:         L1GctHFBitCounts
+
+Header:        DataFormats/L1GlobalCaloTrigger/interface/L1GctHFBitCounts.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:09 2013	mkvomit.py
+
+AccessMethods: L1GctHFBitCounts
+                  L1GctHFBitCounts  fromConcHFBitCounts(uint16_t capBlock, uint16_t capIndex, int16_t bx, uint32_t data)
+                  L1GctHFBitCounts  fromGctEmulator(int16_t bx, uint16_t bitCountPosEtaRing1, uint16_t bitCountNegEtaRing1, uint16_t bitCountPosEtaRing2, uint16_t bitCountNegEtaRing2)
+                      unsigned int  nCounts()
+                          uint16_t  capBlock()
+                          uint16_t  capIndex()
+                           int16_t  bx()
+                              bool  empty()
+                          uint16_t  raw()
+                          uint16_t  bitCount(unsigned int i)
+
+DataMembers:   L1GctHFBitCounts

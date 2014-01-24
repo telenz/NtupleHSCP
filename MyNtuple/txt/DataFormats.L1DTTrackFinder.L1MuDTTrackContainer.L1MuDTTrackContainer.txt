@@ -1,0 +1,15 @@
+Class:         L1MuDTTrackContainer
+
+Header:        DataFormats/L1DTTrackFinder/interface/L1MuDTTrackContainer.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: L1MuDTTrackContainer
+     std::vector<L1MuDTTrackCand>*  getContainer()
+                              bool  bxEmpty(int step)
+                               int  bxSize(int step1, int step2)
+                  L1MuDTTrackCand*  dtTrackCand1(int wheel, int sect, int bx)
+                  L1MuDTTrackCand*  dtTrackCand2(int wheel, int sect, int bx)
+
+DataMembers:   L1MuDTTrackContainer

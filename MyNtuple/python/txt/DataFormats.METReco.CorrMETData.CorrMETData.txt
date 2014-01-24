@@ -1,0 +1,14 @@
+Class:         CorrMETData
+
+Header:        DataFormats/METReco/interface/CorrMETData.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:02 2013	mkvomit.py
+
+AccessMethods: CorrMETData
+
+DataMembers:   CorrMETData
+                            double  mex
+                            double  mey
+                            double  sumet
+                            double  significance

@@ -1,0 +1,16 @@
+Class:         HFShowerPhoton
+
+Header:        SimDataFormats/CaloHit/interface/HFShowerPhoton.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: HFShowerPhoton
+             const math::XYZPointF  position()
+                             float  x()
+                             float  y()
+                             float  z()
+                             float  lambda()
+                             float  t()
+
+DataMembers:   HFShowerPhoton

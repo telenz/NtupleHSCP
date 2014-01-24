@@ -1,0 +1,27 @@
+Class:         L1GtTriggerMenuLite
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1GtTriggerMenuLite.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:09 2013	mkvomit.py
+
+AccessMethods: L1GtTriggerMenuLite
+                              bool  isProductEqual(L1GtTriggerMenuLite x0)
+                 const std::string  gtTriggerMenuInterface()
+                 const std::string  gtTriggerMenuName()
+                 const std::string  gtTriggerMenuImplementation()
+                 const std::string  gtScaleDbKey()
+  const std::map<unsigned int,std::string>  gtAlgorithmMap()
+  const std::map<unsigned int,std::string>  gtAlgorithmAliasMap()
+  const std::map<unsigned int,std::string>  gtTechnicalTriggerMap()
+   const std::vector<unsigned int>  gtTriggerMaskAlgoTrig()
+   const std::vector<unsigned int>  gtTriggerMaskTechTrig()
+  const std::vector<std::vector<int> >  gtPrescaleFactorsAlgoTrig()
+  const std::vector<std::vector<int> >  gtPrescaleFactorsTechTrig()
+                      std::string*  gtAlgorithmAlias(unsigned int bitNumber, int errorCode)
+                      std::string*  gtAlgorithmName(unsigned int bitNumber, int errorCode)
+                      std::string*  gtTechTrigName(unsigned int bitNumber, int errorCode)
+                const unsigned int  gtBitNumber(std::string trigName, int errorCode)
+                        const bool  gtTriggerResult(std::string trigName, std::vector<bool> decWord, int errorCode)
+
+DataMembers:   L1GtTriggerMenuLite

@@ -1,0 +1,6 @@
+       float  significance(size_t n, int ip)
+         int  trackIndex(size_t n, int ip)
+       float  discriminator(size_t nth, int ipType)
+         int  selectedTracks(int ipType)
+        bool  hasTracks()
+      size_t  taggingVariables().size()

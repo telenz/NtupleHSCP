@@ -1,0 +1,11 @@
+        bool  updatedSta
+       float  trkKink
+       float  glbKink
+       float  trkRelChi2
+       float  staRelChi2
+       float  chi2LocalPosition
+       float  chi2LocalMomentum
+       float  localDistance
+       float  globalDeltaEtaPhi
+        bool  tightMatch
+       float  glbTrackProbability

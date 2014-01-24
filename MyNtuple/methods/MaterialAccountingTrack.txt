@@ -1,0 +1,6 @@
+      double  summary().length()
+      double  summary().radiationLengths()
+      double  summary().energyLoss()
+      double  m_total.length()
+      double  m_total.radiationLengths()
+      double  m_total.energyLoss()

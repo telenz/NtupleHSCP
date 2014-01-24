@@ -1,0 +1,17 @@
+        bool  empty()
+unsigned int  count(unsigned int i)
+unsigned int  count00()
+unsigned int  count01()
+unsigned int  count02()
+unsigned int  count03()
+unsigned int  count04()
+unsigned int  count05()
+unsigned int  count06()
+unsigned int  count07()
+unsigned int  count08()
+unsigned int  count09()
+unsigned int  count10()
+unsigned int  count11()
+     int16_t  bx()
+unsigned int  MAX_TOTAL_COUNTS
+unsigned int  MAX_TRUE_COUNTS

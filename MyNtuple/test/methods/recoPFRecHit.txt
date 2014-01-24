@@ -1,0 +1,8 @@
+unsigned int  detId()
+      double  energy()
+      double  rescale()
+      double  time()
+      double  energyUp()
+      double  pt2()
+        bool  isNeighbour4(unsigned int id)
+        bool  isNeighbour8(unsigned int id)

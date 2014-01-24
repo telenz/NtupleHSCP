@@ -1,0 +1,17 @@
+Class:         PTrackerSimHit
+
+Header:        SimDataFormats/ValidationFormats/interface/PValidationFormats.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: PTrackerSimHit
+                               int  getnRawGenPart()
+                               int  getnG4Vtx()
+  std::vector<PTrackerSimHit::Vtx>  getG4Vtx()
+                               int  getnG4Trk()
+  std::vector<PTrackerSimHit::Trk>  getG4Trk()
+                               int  getnHits()
+  std::vector<PTrackerSimHit::Hit>  getHits()
+
+DataMembers:   PTrackerSimHit

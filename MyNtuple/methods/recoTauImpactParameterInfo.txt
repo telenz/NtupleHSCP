@@ -1,0 +1,6 @@
+       float  discriminator(double x0, double x1, double x2, bool x3, bool x4)
+       float  discriminator()
+       float  getIsolatedTauTag()->discriminator()
+       float  getIsolatedTauTag()->discriminator(float m_cone, float sig_cone, float iso_con, float pt_min_lt, float pt_min_tk, int nTracksIsoRing=0)
+       float  getIsolatedTauTag()->discriminator(float m_cone, float sig_cone, float iso_con, float pt_min_lt, float pt_min_tk, int nTracksIsoRing, float dz_lt)
+        bool  getIsolatedTauTag()->hasTracks()

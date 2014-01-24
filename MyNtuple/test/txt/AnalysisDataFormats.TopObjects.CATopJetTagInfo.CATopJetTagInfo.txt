@@ -1,0 +1,27 @@
+Class:         reco::CATopJetTagInfo
+
+Header:        AnalysisDataFormats/TopObjects/interface/CATopJetTagInfo.h
+
+BaseClasses:   reco::JetTagInfo
+               reco::BaseTagInfo
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:11 2013	mkvomit.py
+
+AccessMethods: reco::CATopJetTagInfo
+            reco::CATopJetTagInfo*  clone()
+    const reco::CATopJetProperties  properties()
+
+AccessMethods: reco::JetTagInfo
+         edm::RefToBase<reco::Jet>  jet()
+
+AccessMethods: reco::BaseTagInfo
+              reco::TrackRefVector  tracks()
+                              bool  hasTracks()
+         reco::TaggingVariableList  taggingVariables()
+
+DataMembers:   reco::CATopJetTagInfo
+
+DataMembers:   reco::JetTagInfo
+
+DataMembers:   reco::BaseTagInfo

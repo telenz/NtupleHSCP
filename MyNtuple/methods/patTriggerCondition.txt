@@ -1,0 +1,5 @@
+        bool  wasAccept()
+         int  category()
+         int  type()
+        bool  hasTriggerObjectType(int triggerObjectType)
+        bool  hasObjectKey(unsigned int objectKey)

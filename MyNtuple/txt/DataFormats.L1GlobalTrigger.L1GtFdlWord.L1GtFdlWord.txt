@@ -1,0 +1,27 @@
+Class:         L1GtFdlWord
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1GtFdlWord.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: L1GtFdlWord
+                const cms_uint16_t  boardId()
+                         const int  bxInEvent()
+                const cms_uint16_t  bxNr()
+                const cms_uint32_t  eventNr()
+        const TechnicalTriggerWord  gtTechnicalTriggerWord()
+                const DecisionWord  gtDecisionWord()
+        const DecisionWordExtended  gtDecisionWordExtended()
+                const cms_uint16_t  physicsDeclared()
+                const cms_uint16_t  gtPrescaleFactorIndexTech()
+                const cms_uint16_t  gtPrescaleFactorIndexAlgo()
+                const cms_uint16_t  noAlgo()
+                const cms_uint16_t  finalOR()
+                        const bool  globalDecision()
+                const cms_uint32_t  orbitNr()
+                const cms_uint16_t  lumiSegmentNr()
+                const cms_uint16_t  localBxNr()
+                const unsigned int  getSize()
+
+DataMembers:   L1GtFdlWord

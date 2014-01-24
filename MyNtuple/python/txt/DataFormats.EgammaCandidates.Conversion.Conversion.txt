@@ -1,0 +1,49 @@
+Class:         reco::Conversion
+
+Header:        DataFormats/EgammaCandidates/interface/Conversion.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:03 2013	mkvomit.py
+
+AccessMethods: reco::Conversion
+                 reco::Conversion*  clone()
+        reco::CaloClusterPtrVector  caloCluster()
+  std::vector<edm::RefToBase<reco::Track> >  tracks()
+                const reco::Vertex  conversionVertex()
+                              bool  isConverted()
+                      unsigned int  nTracks()
+                            double  MVAout()
+          const std::vector<float>  oneLegMVA()
+                            double  pairInvariantMass()
+                            double  pairCotThetaSeparation()
+                  math::XYZVectorF  pairMomentum()
+          math::XYZTLorentzVectorF  refittedPair4Momentum()
+                  math::XYZVectorF  refittedPairMomentum()
+                            double  EoverP()
+                            double  EoverPrefittedTracks()
+                            double  distOfMinimumApproach()
+                            double  dPhiTracksAtVtx()
+                            double  dPhiTracksAtEcal()
+                            double  dEtaTracksAtEcal()
+                            double  dxy(math::XYZPoint myBeamSpot=ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>, ROOT::Math::DefaultCoordinateSystemTag>())
+                            double  dz(math::XYZPoint myBeamSpot=ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>, ROOT::Math::DefaultCoordinateSystemTag>())
+                            double  lxy(math::XYZPoint myBeamSpot=ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>, ROOT::Math::DefaultCoordinateSystemTag>())
+                            double  lz(math::XYZPoint myBeamSpot=ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>, ROOT::Math::DefaultCoordinateSystemTag>())
+                            double  zOfPrimaryVertexFromTracks(math::XYZPoint myBeamSpot=ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>, ROOT::Math::DefaultCoordinateSystemTag>())
+  const std::vector<ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<float>,ROOT::Math::DefaultCoordinateSystemTag> >  ecalImpactPosition()
+  const std::vector<edm::Ptr<reco::CaloCluster> >  bcMatchingWithTracks()
+               std::vector<double>  tracksSigned_d0()
+  const std::vector<ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<float>,ROOT::Math::DefaultCoordinateSystemTag> >  tracksInnerPosition()
+  const std::vector<ROOT::Math::DisplacementVector3D<ROOT::Math::Cartesian3D<float>,ROOT::Math::DefaultCoordinateSystemTag> >  tracksPout()
+  const std::vector<ROOT::Math::DisplacementVector3D<ROOT::Math::Cartesian3D<float>,ROOT::Math::DefaultCoordinateSystemTag> >  tracksPin()
+  const std::vector<unsigned char>  nHitsBeforeVtx()
+  const std::vector<Measurement1DFloat>  dlClosestHitToVtx()
+                           uint8_t  nSharedHits()
+  reco::Conversion::ConversionAlgorithm  algo()
+                       std::string  algoName()
+                       std::string  algoName(reco::Conversion::ConversionAlgorithm a)
+  reco::Conversion::ConversionAlgorithm  algoByName(std::string name)
+                              bool  quality(reco::Conversion::ConversionQuality q)
+
+DataMembers:   reco::Conversion
+                    std::string[0]  algoNames

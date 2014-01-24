@@ -1,0 +1,14 @@
+Class:         reco::FFTJetPileupSummary
+
+Header:        DataFormats/JetReco/interface/FFTJetPileupSummary.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:03 2013	mkvomit.py
+
+AccessMethods: reco::FFTJetPileupSummary
+                             float  uncalibratedQuantile()
+                             float  pileupRho()
+                             float  pileupRhoUncertainty()
+                               int  uncertaintyCode()
+
+DataMembers:   reco::FFTJetPileupSummary

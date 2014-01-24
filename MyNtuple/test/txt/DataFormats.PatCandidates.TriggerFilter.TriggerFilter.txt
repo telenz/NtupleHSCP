@@ -1,0 +1,25 @@
+Class:         pat::TriggerFilter
+
+Header:        DataFormats/PatCandidates/interface/TriggerFilter.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:11 2013	mkvomit.py
+
+AccessMethods: pat::TriggerFilter
+                              bool  setStatus(int status)
+                       std::string  label()
+                       std::string  type()
+         std::vector<unsigned int>  objectKeys()
+                  std::vector<int>  triggerObjectTypes()
+                  std::vector<int>  objectIds()
+                               int  status()
+                              bool  saveTags()
+                              bool  isL3()
+                              bool  isFiring()
+                              bool  hasObjectKey(unsigned int objectKey)
+                              bool  hasTriggerObjectType(trigger::TriggerObjectType triggerObjectType)
+                              bool  hasTriggerObjectType(int triggerObjectType)
+                              bool  hasObjectId(trigger::TriggerObjectType triggerObjectType)
+                              bool  hasObjectId(int triggerObjectType)
+
+DataMembers:   pat::TriggerFilter

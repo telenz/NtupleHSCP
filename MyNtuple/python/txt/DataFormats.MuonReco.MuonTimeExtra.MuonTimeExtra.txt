@@ -1,0 +1,20 @@
+Class:         reco::MuonTimeExtra
+
+Header:        DataFormats/MuonReco/interface/MuonTimeExtra.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:05 2013	mkvomit.py
+
+AccessMethods: reco::MuonTimeExtra
+                               int  nDof()
+                             float  inverseBeta()
+                             float  inverseBetaErr()
+                             float  freeInverseBeta()
+                             float  freeInverseBetaErr()
+                             float  timeAtIpInOut()
+                             float  timeAtIpInOutErr()
+                             float  timeAtIpOutIn()
+                             float  timeAtIpOutInErr()
+    reco::MuonTimeExtra::Direction  direction()
+
+DataMembers:   reco::MuonTimeExtra

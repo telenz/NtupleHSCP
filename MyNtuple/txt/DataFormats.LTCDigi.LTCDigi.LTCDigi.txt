@@ -1,0 +1,31 @@
+Class:         LTCDigi
+
+Header:        DataFormats/LTCDigi/interface/LTCDigi.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: LTCDigi
+                      cms_uint32_t  GetEventNumberFromBuffer(unsigned char* databuffer)
+                      cms_uint32_t  GetRunNumberFromBuffer(unsigned char* databuffer)
+                       std::string  utcTime(cms_uint64_t t)
+                       std::string  locTime(cms_uint64_t t)
+                      unsigned int  eventNumber()
+                      unsigned int  eventID()
+                      unsigned int  runNumber()
+                      unsigned int  bunchNumber()
+                      cms_uint32_t  orbitNumber()
+                               int  version()
+                               int  sourceID()
+                               int  daqPartition()
+                      cms_uint32_t  triggerInputStatus()
+                      cms_uint32_t  triggerInhibitNumber()
+                      cms_uint64_t  bstGpsTime()
+                      unsigned int  bxMask()
+                      unsigned int  vmeTrigger()
+                      unsigned int  ramTrigger()
+                     unsigned char  externTriggerMask()
+                     unsigned char  cyclicTriggerMask()
+                              bool  HasTriggered(int i)
+
+DataMembers:   LTCDigi

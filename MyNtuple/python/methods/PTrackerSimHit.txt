@@ -1,0 +1,4 @@
+         int  getnRawGenPart()
+         int  getnG4Vtx()
+         int  getnG4Trk()
+         int  getnHits()

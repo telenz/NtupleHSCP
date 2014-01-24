@@ -1,0 +1,11 @@
+Class:         CrossingFramePlaybackInfoExtended
+
+Header:        SimDataFormats/CrossingFrame/interface/CrossingFramePlaybackInfoExtended.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:03 2013	mkvomit.py
+
+AccessMethods: CrossingFramePlaybackInfoExtended
+         std::vector<edm::EventID>  getStartEventId(unsigned int s, int bcr)
+
+DataMembers:   CrossingFramePlaybackInfoExtended

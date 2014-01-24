@@ -1,0 +1,6 @@
+         int  getnRawGenPart()
+         int  getnG4Vtx()
+         int  getnG4Trk()
+         int  getnCSCHits()
+         int  getnDTHits()
+         int  getnRPCHits()

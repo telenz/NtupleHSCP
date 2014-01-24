@@ -1,0 +1,24 @@
+Class:         DcsStatus
+
+Header:        DataFormats/Scalers/interface/DcsStatus.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: DcsStatus
+                       std::string  name()
+                              bool  empty()
+                      unsigned int  trigType()
+                      unsigned int  eventID()
+                      unsigned int  sourceID()
+                      unsigned int  bunchNumber()
+                               int  version()
+                          timespec  collectionTime()
+                      unsigned int  ready()
+                              bool  ready(int partitionNumber)
+                             float  magnetCurrent()
+                             float  magnetTemperature()
+
+DataMembers:   DcsStatus
+                            int[0]  partitionList
+                          char*[0]  partitionName

@@ -1,0 +1,2 @@
+unsigned short int  bstMasterStatus
+unsigned int  turnCountNumber

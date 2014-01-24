@@ -1,0 +1,69 @@
+Class:         TtGenEvent
+
+Header:        AnalysisDataFormats/TopObjects/interface/TtGenEvent.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:51 2013	mkvomit.py
+
+AccessMethods: TtGenEvent
+                              bool  isTtBar()
+                              bool  fromGluonFusion()
+                              bool  fromQuarkAnnihilation()
+                              bool  isFullHadronic(bool excludeTauLeptons=false)
+                              bool  isSemiLeptonic(bool excludeTauLeptons=false)
+                              bool  isFullLeptonic(bool excludeTauLeptons=false)
+                WDecay::LeptonType  semiLeptonicChannel()
+                              bool  isSemiLeptonic(WDecay::LeptonType typeA)
+                              bool  isSemiLeptonic(WDecay::LeptonType typeA, WDecay::LeptonType typeB)
+  std::pair<WDecay::LeptonType,WDecay::LeptonType>  fullLeptonicChannel()
+                              bool  isFullLeptonic(WDecay::LeptonType typeA, WDecay::LeptonType typeB)
+                reco::GenParticle*  singleLepton(bool excludeTauLeptons=false)
+                reco::GenParticle*  singleNeutrino(bool excludeTauLeptons=false)
+                reco::GenParticle*  leptonicDecayW(bool excludeTauLeptons=false)
+                reco::GenParticle*  leptonicDecayB(bool excludeTauLeptons=false)
+                reco::GenParticle*  leptonicDecayTop(bool excludeTauLeptons=false)
+                reco::GenParticle*  hadronicDecayW(bool excludeTauLeptons=false)
+                reco::GenParticle*  hadronicDecayB(bool excludeTauLeptons=false)
+                reco::GenParticle*  hadronicDecayTop(bool excludeTauLeptons=false)
+                reco::GenParticle*  hadronicDecayQuark(bool invertFlavor=false)
+                reco::GenParticle*  hadronicDecayQuarkBar()
+  std::vector<const reco::GenParticle*>  leptonicDecayTopRadiation(bool excludeTauLeptons=false)
+  std::vector<const reco::GenParticle*>  hadronicDecayTopRadiation(bool excludeTauLeptons=false)
+                reco::GenParticle*  lepton(bool excludeTauLeptons=false)
+                reco::GenParticle*  leptonBar(bool excludeTauLeptons=false)
+                reco::GenParticle*  neutrino(bool excludeTauLeptons=false)
+                reco::GenParticle*  neutrinoBar(bool excludeTauLeptons=false)
+          math::XYZTLorentzVector*  topPair()
+
+AccessMethods: TopGenEvent
+  const reco::GenParticleCollection  particles()
+  const reco::GenParticleCollection  initialPartons()
+  std::vector<const reco::GenParticle*>  radiatedGluons(int pdgId)
+  std::vector<const reco::GenParticle*>  lightQuarks(bool includingBQuarks=false)
+                               int  numberOfLeptons(bool fromWBoson=true)
+                               int  numberOfLeptons(WDecay::LeptonType type, bool fromWBoson=true)
+                               int  numberOfBQuarks(bool fromTopQuark=true)
+  std::vector<const reco::GenParticle*>  topSisters()
+                reco::GenParticle*  daughterQuarkOfTop(bool invertCharge=false)
+                reco::GenParticle*  daughterQuarkOfTopBar()
+                reco::GenParticle*  daughterQuarkOfWPlus(bool invertQuarkCharge=false, bool invertBosonCharge=false)
+                reco::GenParticle*  daughterQuarkOfWMinus()
+                reco::GenParticle*  daughterQuarkBarOfWPlus()
+                reco::GenParticle*  daughterQuarkBarOfWMinus()
+                reco::GenParticle*  candidate(int id, unsigned int parentId=0)
+                reco::GenParticle*  eMinus()
+                reco::GenParticle*  ePlus()
+                reco::GenParticle*  muMinus()
+                reco::GenParticle*  muPlus()
+                reco::GenParticle*  tauMinus()
+                reco::GenParticle*  tauPlus()
+                reco::GenParticle*  wMinus()
+                reco::GenParticle*  wPlus()
+                reco::GenParticle*  b()
+                reco::GenParticle*  bBar()
+                reco::GenParticle*  top()
+                reco::GenParticle*  topBar()
+
+DataMembers:   TtGenEvent
+
+DataMembers:   TopGenEvent

@@ -1,0 +1,16 @@
+Class:         reco::TaggingVariableList
+
+Header:        DataFormats/BTauReco/interface/TaggingVariable.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::TaggingVariableList
+                            size_t  size()
+                              bool  checkTag(reco::btau::TaggingVariableName tag)
+                reco::TaggingValue  get(reco::btau::TaggingVariableName tag)
+                reco::TaggingValue  get(reco::btau::TaggingVariableName tag, reco::TaggingValue defaultValue)
+                std::vector<float>  getList(reco::btau::TaggingVariableName tag, bool throwOnEmptyList=true)
+  std::pair<__gnu_cxx::__normal_iterator<const std::pair<reco::btau::TaggingVariableName,float>*,std::vector<std::pair<reco::btau::TaggingVariableName,float> > >,__gnu_cxx::__normal_iterator<const std::pair<reco::btau::TaggingVariableName,float>*,std::vector<std::pair<reco::btau::TaggingVariableName,float> > > >  getRange(reco::btau::TaggingVariableName tag)
+
+DataMembers:   reco::TaggingVariableList

@@ -1,0 +1,21 @@
+Class:         PMuonSimHit
+
+Header:        SimDataFormats/ValidationFormats/interface/PValidationFormats.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: PMuonSimHit
+                               int  getnRawGenPart()
+                               int  getnG4Vtx()
+                               int  getnG4Trk()
+     std::vector<PMuonSimHit::Vtx>  getG4Vtx()
+     std::vector<PMuonSimHit::Trk>  getG4Trk()
+                               int  getnCSCHits()
+     std::vector<PMuonSimHit::CSC>  getCSCHits()
+                               int  getnDTHits()
+      std::vector<PMuonSimHit::DT>  getDTHits()
+                               int  getnRPCHits()
+     std::vector<PMuonSimHit::RPC>  getRPCHits()
+
+DataMembers:   PMuonSimHit

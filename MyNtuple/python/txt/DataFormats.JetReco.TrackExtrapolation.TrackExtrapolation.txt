@@ -1,0 +1,13 @@
+Class:         reco::TrackExtrapolation
+
+Header:        DataFormats/JetReco/interface/TrackExtrapolation.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:07 2013	mkvomit.py
+
+AccessMethods: reco::TrackExtrapolation
+              const reco::TrackRef  track()
+  const std::vector<ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>,ROOT::Math::DefaultCoordinateSystemTag> >  positions()
+  const std::vector<ROOT::Math::DisplacementVector3D<ROOT::Math::Cartesian3D<double>,ROOT::Math::DefaultCoordinateSystemTag> >  momenta()
+
+DataMembers:   reco::TrackExtrapolation

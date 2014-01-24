@@ -1,0 +1,16 @@
+Class:         L1GctEtHad
+
+Header:        DataFormats/L1GlobalCaloTrigger/interface/L1GctEtHad.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: L1GctEtHad
+                       std::string  name()
+                              bool  empty()
+                          uint16_t  raw()
+                      unsigned int  et()
+                              bool  overFlow()
+                           int16_t  bx()
+
+DataMembers:   L1GctEtHad

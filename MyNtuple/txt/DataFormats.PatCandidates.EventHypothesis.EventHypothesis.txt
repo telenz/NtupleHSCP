@@ -1,0 +1,22 @@
+Class:         pat::EventHypothesis
+
+Header:        DataFormats/PatCandidates/interface/EventHypothesis.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:39 2013	mkvomit.py
+
+AccessMethods: pat::EventHypothesis
+  const pat::eventhypothesis::CandRefType  get(std::string role, int index=0)
+  const pat::eventhypothesis::CandRefType  get(pat::eventhypothesis::ParticleFilter filter, int index=0)
+  std::vector<edm::Ptr<reco::Candidate> >  all(std::string roleRegexp)
+  std::vector<edm::Ptr<reco::Candidate> >  all(pat::eventhypothesis::ParticleFilter filter)
+                            size_t  count()
+                            size_t  count(std::string roleRegexp)
+                            size_t  count(pat::eventhypothesis::ParticleFilter role)
+  pat::eventhypothesis::Looper<reco::Candidate>  loop()
+  pat::eventhypothesis::Looper<reco::Candidate>  loop(std::string roleRegexp)
+  pat::eventhypothesis::Looper<reco::Candidate>  loop(pat::eventhypothesis::ParticleFilter filter)
+  pat::eventhypothesis::Looper<reco::Candidate>  loop(pat::eventhypothesis::ParticleFilter* filter)
+  pat::eventhypothesis::Looper<reco::Candidate>  loop(pat::eventhypothesis::ParticleFilterPtr filter)
+
+DataMembers:   pat::EventHypothesis

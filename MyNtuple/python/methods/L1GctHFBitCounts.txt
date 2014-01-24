@@ -1,0 +1,6 @@
+unsigned int  nCounts()
+     int16_t  bx()
+        bool  empty()
+unsigned int  fromGctEmulator(int16_t bx, uint16_t bitCountPosEtaRing1, uint16_t bitCountNegEtaRing1, uint16_t bitCountPosEtaRing2, uint16_t bitCountNegEtaRing2).nCounts()
+     int16_t  fromGctEmulator(int16_t bx, uint16_t bitCountPosEtaRing1, uint16_t bitCountNegEtaRing1, uint16_t bitCountPosEtaRing2, uint16_t bitCountNegEtaRing2).bx()
+        bool  fromGctEmulator(int16_t bx, uint16_t bitCountPosEtaRing1, uint16_t bitCountNegEtaRing1, uint16_t bitCountPosEtaRing2, uint16_t bitCountNegEtaRing2).empty()

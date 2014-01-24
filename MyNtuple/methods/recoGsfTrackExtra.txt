@@ -1,0 +1,3 @@
+      double  outerStateLocalPzSign()
+      double  innerStateLocalPzSign()
+unsigned int  tangentsSize()

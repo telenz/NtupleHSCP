@@ -1,0 +1,6 @@
+unsigned int  nSums()
+     int16_t  bx()
+        bool  empty()
+unsigned int  fromGctEmulator(int16_t bx, uint16_t etSumPosEtaRing1, uint16_t etSumNegEtaRing1, uint16_t etSumPosEtaRing2, uint16_t etSumNegEtaRing2).nSums()
+     int16_t  fromGctEmulator(int16_t bx, uint16_t etSumPosEtaRing1, uint16_t etSumNegEtaRing1, uint16_t etSumPosEtaRing2, uint16_t etSumNegEtaRing2).bx()
+        bool  fromGctEmulator(int16_t bx, uint16_t etSumPosEtaRing1, uint16_t etSumNegEtaRing1, uint16_t etSumPosEtaRing2, uint16_t etSumNegEtaRing2).empty()

@@ -1,0 +1,15 @@
+Class:         L1MuDTChambPhContainer
+
+Header:        DataFormats/L1DTTrackFinder/interface/L1MuDTChambPhContainer.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:09 2013	mkvomit.py
+
+AccessMethods: L1MuDTChambPhContainer
+   std::vector<L1MuDTChambPhDigi>*  getContainer()
+                              bool  bxEmpty(int step)
+                               int  bxSize(int step1, int step2)
+                L1MuDTChambPhDigi*  chPhiSegm1(int wheel, int stat, int sect, int bx)
+                L1MuDTChambPhDigi*  chPhiSegm2(int wheel, int stat, int sect, int bx)
+
+DataMembers:   L1MuDTChambPhContainer

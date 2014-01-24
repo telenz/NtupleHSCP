@@ -1,0 +1,14 @@
+Class:         pat::Conversion
+
+Header:        DataFormats/PatCandidates/interface/Conversion.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:39 2013	mkvomit.py
+
+AccessMethods: pat::Conversion
+                      const double  vtxProb()
+                      const double  lxy()
+                         const int  nHitsMax()
+                         const int  index()
+
+DataMembers:   pat::Conversion

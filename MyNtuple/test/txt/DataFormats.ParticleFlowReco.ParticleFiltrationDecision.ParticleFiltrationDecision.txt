@@ -1,0 +1,13 @@
+Class:         pftools::ParticleFiltrationDecision
+
+Header:        DataFormats/ParticleFlowReco/interface/ParticleFiltrationDecision.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:11 2013	mkvomit.py
+
+AccessMethods: pftools::ParticleFiltrationDecision
+
+DataMembers:   pftools::ParticleFiltrationDecision
+                              char  vetosPassed_
+                       std::string  filtrationProvenance_
+  pftools::ParticleFiltrationDecision::TestbeamParticle  type_

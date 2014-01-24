@@ -1,0 +1,15 @@
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
+!*.cc
+!*.h
+!*.py
+!*.C
+!*.sh
+!Makefile
+!filelist.txt
+!include
+!lib
+!src
+!tmp

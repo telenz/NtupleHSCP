@@ -1,0 +1,6 @@
+     double*  data()
+      double  etaMin()
+      double  etaMax()
+      double  phiBin0Edge()
+unsigned int  nEtaBins()
+unsigned int  nPhiBins()

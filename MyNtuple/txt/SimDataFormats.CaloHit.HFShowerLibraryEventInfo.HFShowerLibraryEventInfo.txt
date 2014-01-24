@@ -1,0 +1,16 @@
+Class:         HFShowerLibraryEventInfo
+
+Header:        SimDataFormats/CaloHit/interface/HFShowerLibraryEventInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: HFShowerLibraryEventInfo
+                               int  totalEvents()
+                               int  numberOfBins()
+                               int  eventsPerBin()
+                             float  showerLibraryVersion()
+                             float  physListVersion()
+               std::vector<double>  energyBins()
+
+DataMembers:   HFShowerLibraryEventInfo

@@ -1,0 +1,3 @@
+        bool  cutBasedDecision()
+      double  likelihood()
+      double  neuralNetOutput()

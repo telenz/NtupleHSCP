@@ -1,0 +1,13 @@
+Class:         L1GtTechnicalTriggerRecord
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1GtTechnicalTriggerRecord.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:16 2013	mkvomit.py
+
+AccessMethods: L1GtTechnicalTriggerRecord
+             L1GtTechnicalTrigger*  getTechnicalTrigger(std::string ttName, int bxInEventVal)
+             L1GtTechnicalTrigger*  getTechnicalTrigger(unsigned int ttBitNumber, int bxInEventVal)
+  const std::vector<L1GtTechnicalTrigger>  gtTechnicalTrigger()
+
+DataMembers:   L1GtTechnicalTriggerRecord

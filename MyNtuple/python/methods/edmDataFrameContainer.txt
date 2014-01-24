@@ -1,0 +1,6 @@
+         int  subdetId()
+unsigned int  stride()
+        bool  empty()
+unsigned int  size()
+unsigned short*  frame(size_t cell)
+unsigned int  id(size_t cell)

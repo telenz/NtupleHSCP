@@ -1,0 +1,132 @@
+Class:         reco::CaloJet
+
+Header:        DataFormats/JetReco/interface/CaloJet.h
+
+BaseClasses:   reco::Jet
+               reco::CompositePtrCandidate
+               reco::LeafCandidate
+               reco::Candidate
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:40 2013	mkvomit.py
+
+AccessMethods: reco::CaloJet
+                             float  maxEInEmTowers()
+                             float  maxEInHadTowers()
+                             float  energyFractionHadronic()
+                             float  emEnergyFraction()
+                             float  hadEnergyInHB()
+                             float  hadEnergyInHO()
+                             float  hadEnergyInHE()
+                             float  hadEnergyInHF()
+                             float  emEnergyInEB()
+                             float  emEnergyInEE()
+                             float  emEnergyInHF()
+                             float  towersArea()
+                               int  n90()
+                               int  n60()
+           math::XYZTLorentzVector  physicsP4(math::XYZPoint vertex)
+           math::XYZTLorentzVector  detectorP4()
+                      CaloTowerPtr  getCaloConstituent(unsigned int fIndex)
+  std::vector<edm::Ptr<CaloTower> >  getCaloConstituents()
+     const reco::CaloJet::Specific  getSpecific()
+                    reco::CaloJet*  clone()
+                       std::string  print()
+       std::vector<CaloTowerDetId>  getTowerIndices()
+
+AccessMethods: reco::Jet
+          reco::Jet::EtaPhiMoments  etaPhiStatistics()
+                             float  etaetaMoment()
+                             float  phiphiMoment()
+                             float  etaphiMoment()
+                             float  etInAnnulus(float fRmin, float fRmax)
+                               int  nCarrying(float fFraction)
+                             float  maxDistance()
+                               int  nConstituents()
+                             float  physicsEta(float fZVertex, float fDetectorEta)
+                             float  detectorEta(float fZVertex, float fPhysicsEta)
+  std::vector<edm::Ptr<reco::Candidate> >  getJetConstituents()
+  std::vector<const reco::Candidate*>  getJetConstituentsQuick()
+                             float  constituentPtDistribution()
+                             float  constituentEtaPhiSpread()
+                             float  jetArea()
+                             float  pileup()
+                               int  nPasses()
+                              bool  isJet()
+
+AccessMethods: reco::CompositePtrCandidate
+   reco::candidate::const_iterator  begin()
+   reco::candidate::const_iterator  end()
+         reco::candidate::iterator  begin()
+         reco::candidate::iterator  end()
+                            size_t  numberOfDaughters()
+                            size_t  numberOfMothers()
+                  reco::Candidate*  daughter(size_t x0)
+                reco::CandidatePtr  daughterPtr(size_t i)
+  const std::vector<edm::Ptr<reco::Candidate> >  daughterPtrVector()
+                  reco::Candidate*  mother(size_t i=0)
+                            size_t  numberOfSourceCandidatePtrs()
+                reco::CandidatePtr  sourceCandidatePtr(size_t i)
+
+AccessMethods: reco::LeafCandidate
+                               int  charge()
+                               int  threeCharge()
+     const math::XYZTLorentzVector  p4()
+  const math::PtEtaPhiMLorentzVector  polarP4()
+                   math::XYZVector  momentum()
+                   math::XYZVector  boostToCM()
+                            double  p()
+                            double  energy()
+                            double  et()
+                            double  mass()
+                            double  massSqr()
+                            double  mt()
+                            double  mtSqr()
+                            double  px()
+                            double  py()
+                            double  pz()
+                            double  pt()
+                            double  phi()
+                            double  theta()
+                            double  eta()
+                            double  rapidity()
+                            double  y()
+              const math::XYZPoint  vertex()
+                            double  vx()
+                            double  vy()
+                            double  vz()
+                               int  pdgId()
+                               int  status()
+                              bool  longLived()
+                              bool  massConstraint()
+                            double  vertexChi2()
+                            double  vertexNdof()
+                            double  vertexNormalizedChi2()
+                            double  vertexCovariance(int i, int j)
+  ROOT::Math::SMatrix<double,3,3,ROOT::Math::MatRepSym<double,3> >  vertexCovariance()
+                              bool  hasMasterClone()
+      const reco::CandidateBaseRef  masterClone()
+                              bool  hasMasterClonePtr()
+          const reco::CandidatePtr  masterClonePtr()
+                              bool  isElectron()
+                              bool  isMuon()
+                              bool  isStandAloneMuon()
+                              bool  isGlobalMuon()
+                              bool  isTrackerMuon()
+                              bool  isCaloMuon()
+                              bool  isPhoton()
+                              bool  isConvertedPhoton()
+
+AccessMethods: reco::Candidate
+
+DataMembers:   reco::CaloJet
+
+DataMembers:   reco::Jet
+
+DataMembers:   reco::CompositePtrCandidate
+
+DataMembers:   reco::LeafCandidate
+                      unsigned int  longLivedTag
+                      unsigned int  massConstraintTag
+
+DataMembers:   reco::Candidate

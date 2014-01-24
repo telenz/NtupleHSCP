@@ -1,0 +1,34 @@
+Class:         reco::ClusterShape
+
+Header:        DataFormats/EgammaReco/interface/ClusterShape.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:41 2013	mkvomit.py
+
+AccessMethods: reco::ClusterShape
+                            double  eMax()
+                            double  e2nd()
+                            double  e2x2()
+                            double  e3x2()
+                            double  e3x3()
+                            double  e4x4()
+                            double  e5x5()
+                            double  e2x5Right()
+                            double  e2x5Left()
+                            double  e2x5Top()
+                            double  e2x5Bottom()
+                            double  e3x2Ratio()
+                            double  covEtaEta()
+                            double  covEtaPhi()
+                            double  covPhiPhi()
+                            double  lat()
+                            double  etaLat()
+                            double  phiLat()
+                            double  zernike20()
+                            double  zernike42()
+               std::vector<double>  energyBasketFractionEta()
+               std::vector<double>  energyBasketFractionPhi()
+                             DetId  eMaxId()
+                             DetId  e2ndId()
+
+DataMembers:   reco::ClusterShape

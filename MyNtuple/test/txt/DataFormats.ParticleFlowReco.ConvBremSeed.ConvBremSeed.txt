@@ -1,0 +1,20 @@
+Class:         reco::ConvBremSeed
+
+Header:        DataFormats/ParticleFlowReco/interface/ConvBremSeed.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::ConvBremSeed
+            reco::GsfPFRecTrackRef  GsfPFTrack()
+               reco::ConvBremSeed*  clone()
+
+AccessMethods: TrajectorySeed
+  std::pair<edm::OwnVector<TrackingRecHit,edm::ClonePolicy<TrackingRecHit> >::const_iterator,edm::OwnVector<TrackingRecHit,edm::ClonePolicy<TrackingRecHit> >::const_iterator>  recHits()
+                      unsigned int  nHits()
+              PropagationDirection  direction()
+       const PTrajectoryStateOnDet  startingState()
+
+DataMembers:   reco::ConvBremSeed
+
+DataMembers:   TrajectorySeed

@@ -1,0 +1,6 @@
+        bool  getConditionResult(std::string algoNameVal, std::string condNameVal)
+        bool  getConditionResult(int algoBitNumberVal, std::string condNameVal)
+         int  getObjectMap(std::string algoNameVal)->algoBitNumber()
+        bool  getObjectMap(std::string algoNameVal)->algoGtlResult()
+         int  getObjectMap(int algoBitNumberVal)->algoBitNumber()
+        bool  getObjectMap(int algoBitNumberVal)->algoGtlResult()

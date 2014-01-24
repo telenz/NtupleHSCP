@@ -1,0 +1,14 @@
+Class:         reco::PFBlock
+
+Header:        DataFormats/ParticleFlowReco/interface/PFBlock.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::PFBlock
+                              bool  matrix2vector(unsigned int i, unsigned int j, unsigned int index)
+  const edm::OwnVector<reco::PFBlockElement,edm::ClonePolicy<reco::PFBlockElement> >  elements()
+  const std::map<unsigned int,reco::PFBlock::Link>  linkData()
+  std::map<unsigned int,reco::PFBlock::Link>  linkData()
+
+DataMembers:   reco::PFBlock

@@ -1,0 +1,7 @@
+      double  energy()
+      double  z()
+      double  phi()
+      double  x()
+      double  y()
+      double  rho()
+      double  eta()

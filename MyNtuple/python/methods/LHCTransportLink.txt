@@ -1,0 +1,2 @@
+         int  beforeHector()
+         int  afterHector()

@@ -1,0 +1,42 @@
+Class:         SiStripEventSummary
+
+Header:        DataFormats/SiStripCommon/interface/SiStripEventSummary.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:38 2013	mkvomit.py
+
+AccessMethods: SiStripEventSummary
+                              bool  valid()
+                          uint16_t  triggerFed()
+                              bool  isSet()
+            const sistrip::RunType  runType()
+                    const uint32_t  event()
+                    const uint32_t  bx()
+     const sistrip::FedReadoutMode  fedReadoutMode()
+     const sistrip::ApvReadoutMode  apvReadoutMode()
+                    const uint16_t  apveAddress()
+                    const uint32_t  nApvsInSync()
+                    const uint32_t  nApvsOutOfSync()
+                    const uint32_t  nApvsErrors()
+                              bool  nullParams()
+   const std::vector<unsigned int>  params()
+                    const uint32_t  binNumber()
+                    const uint32_t  pllCoarse()
+                    const uint32_t  pllFine()
+                    const uint32_t  latency()
+                    const uint32_t  calChan()
+                    const uint32_t  calSel()
+                    const uint32_t  isha()
+                    const uint32_t  vfs()
+                    const uint32_t  ttcrx()
+                    const uint32_t  vpsp()
+                    const uint32_t  vpspCcuChan()
+                    const uint32_t  lldGain()
+                    const uint32_t  lldBias()
+                    const uint32_t  deviceId()
+                    const uint32_t  processId()
+                    const uint32_t  processIp()
+                    const uint32_t  dcuId()
+                    const uint32_t  layerScanned()
+
+DataMembers:   SiStripEventSummary

@@ -1,0 +1,21 @@
+Class:         L3MuonTrajectorySeed
+
+Header:        DataFormats/MuonSeed/interface/L3MuonTrajectorySeed.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:20 2013	mkvomit.py
+
+AccessMethods: L3MuonTrajectorySeed
+        l1extra::L1MuonParticleRef  l1Particle()
+                    reco::TrackRef  l2Track()
+
+AccessMethods: TrajectorySeed
+  std::pair<edm::OwnVector<TrackingRecHit,edm::ClonePolicy<TrackingRecHit> >::const_iterator,edm::OwnVector<TrackingRecHit,edm::ClonePolicy<TrackingRecHit> >::const_iterator>  recHits()
+                      unsigned int  nHits()
+              PropagationDirection  direction()
+       const PTrajectoryStateOnDet  startingState()
+                   TrajectorySeed*  clone()
+
+DataMembers:   L3MuonTrajectorySeed
+
+DataMembers:   TrajectorySeed

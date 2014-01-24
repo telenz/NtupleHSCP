@@ -1,0 +1,22 @@
+Class:         edm::DataFrameContainer
+
+Header:        DataFormats/Common/interface/DataFrameContainer.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:51 2013	mkvomit.py
+
+AccessMethods: edm::DataFrameContainer
+                    edm::DataFrame  back()
+  std::pair<__gnu_cxx::__normal_iterator<unsigned int*,std::vector<unsigned int> >,__gnu_cxx::__normal_iterator<unsigned short*,std::vector<unsigned short> > >  pair(size_t i)
+  std::pair<__gnu_cxx::__normal_iterator<const unsigned int*,std::vector<unsigned int> >,__gnu_cxx::__normal_iterator<const unsigned short*,std::vector<unsigned short> > >  pair(size_t i)
+  boost::transform_iterator<edm::DataFrameContainer::IterHelp,boost::counting_iterator<int,boost::use_default,boost::use_default>,boost::use_default,boost::use_default>  find(unsigned int i)
+  boost::transform_iterator<edm::DataFrameContainer::IterHelp,boost::counting_iterator<int,boost::use_default,boost::use_default>,boost::use_default,boost::use_default>  begin()
+  boost::transform_iterator<edm::DataFrameContainer::IterHelp,boost::counting_iterator<int,boost::use_default,boost::use_default>,boost::use_default,boost::use_default>  end()
+                               int  subdetId()
+                      unsigned int  stride()
+                              bool  empty()
+                      unsigned int  size()
+                   unsigned short*  frame(size_t cell)
+                      unsigned int  id(size_t cell)
+
+DataMembers:   edm::DataFrameContainer

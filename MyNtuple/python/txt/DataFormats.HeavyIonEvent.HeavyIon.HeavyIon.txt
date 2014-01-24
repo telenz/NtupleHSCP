@@ -1,0 +1,17 @@
+Class:         pat::HeavyIon
+
+Header:        DataFormats/HeavyIonEvent/interface/HeavyIon.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:54 2013	mkvomit.py
+
+AccessMethods: pat::HeavyIon
+  const reco::CentralityCollection  getCentralityCollection()
+                              bool  isMC()
+                            double  generatedB()
+                               int  generatedNpart()
+                               int  generatedNcoll()
+                               int  generatedNhard()
+                            double  generatedEvtPlane()
+
+DataMembers:   pat::HeavyIon

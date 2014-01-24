@@ -1,0 +1,22 @@
+Class:         L1TcsWord
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1TcsWord.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:09 2013	mkvomit.py
+
+AccessMethods: L1TcsWord
+                const cms_uint16_t  boardId()
+                const cms_uint16_t  bxNr()
+                const cms_uint16_t  daqNr()
+                const cms_uint16_t  triggerType()
+                const cms_uint16_t  status()
+                const cms_uint16_t  luminositySegmentNr()
+                const cms_uint32_t  partRunNr()
+                const cms_uint32_t  assignedPartitions()
+                const cms_uint32_t  partTrigNr()
+                const cms_uint32_t  eventNr()
+                const cms_uint64_t  orbitNr()
+                const unsigned int  getSize()
+
+DataMembers:   L1TcsWord

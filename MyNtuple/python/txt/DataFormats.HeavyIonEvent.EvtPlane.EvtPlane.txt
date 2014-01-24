@@ -1,0 +1,14 @@
+Class:         reco::EvtPlane
+
+Header:        DataFormats/HeavyIonEvent/interface/EvtPlane.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:03 2013	mkvomit.py
+
+AccessMethods: reco::EvtPlane
+                            double  angle()
+                            double  sumSin()
+                            double  sumCos()
+                       std::string  label()
+
+DataMembers:   reco::EvtPlane

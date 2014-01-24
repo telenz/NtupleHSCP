@@ -1,0 +1,18 @@
+Class:         PEcalTBInfo
+
+Header:        SimDataFormats/EcalTestBeam/interface/PEcalTBInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: PEcalTBInfo
+                               int  nCrystal()
+                            double  etaBeam()
+                            double  phiBeam()
+                            double  dXbeam()
+                            double  dYbeam()
+                            double  evXbeam()
+                            double  evYbeam()
+                            double  phaseShift()
+
+DataMembers:   PEcalTBInfo

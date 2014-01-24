@@ -1,0 +1,4 @@
+unsigned int  size()
+unsigned int  prescale(std::string trigger)
+unsigned int  prescale(unsigned int set, std::string trigger)
+unsigned int  set()

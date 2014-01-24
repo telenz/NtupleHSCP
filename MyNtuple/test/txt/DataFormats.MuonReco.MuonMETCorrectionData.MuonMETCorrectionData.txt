@@ -1,0 +1,16 @@
+Class:         reco::MuonMETCorrectionData
+
+Header:        DataFormats/MuonReco/interface/MuonMETCorrectionData.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::MuonMETCorrectionData
+  reco::MuonMETCorrectionData::Type  type()
+                             float  corrX()
+                             float  corrY()
+                             float  x()
+                             float  y()
+                             float  pt()
+
+DataMembers:   reco::MuonMETCorrectionData

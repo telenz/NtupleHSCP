@@ -1,0 +1,16 @@
+Class:         AnomalousECALVariables
+
+Header:        DataFormats/METReco/interface/AnomalousECALVariables.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:35 2013	mkvomit.py
+
+AccessMethods: AnomalousECALVariables
+                              bool  isDeadEcalCluster(double maxBoundaryEnergy=10, std::vector<int> limitDeadCellToChannelStatusEB=std::vector<int, std::allocator<int> >(), std::vector<int> limitDeadCellToChannelStatusEE=std::vector<int, std::allocator<int> >())
+                              bool  isGapEcalCluster(double maxGapEnergyEB=10, double maxGapEnergyEE=10)
+
+DataMembers:   AnomalousECALVariables
+  std::vector<BoundaryInformation>  v_enNeighboursGap_EB
+  std::vector<BoundaryInformation>  v_enNeighboursGap_EE
+  std::vector<BoundaryInformation>  v_boundaryInfoDeadCells_EB
+  std::vector<BoundaryInformation>  v_boundaryInfoDeadCells_EE

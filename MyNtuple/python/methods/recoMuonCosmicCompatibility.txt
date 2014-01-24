@@ -1,0 +1,6 @@
+       float  cosmicCompatibility
+       float  timeCompatibility
+       float  backToBackCompatibility
+       float  overlapCompatibility
+       float  ipCompatibility
+       float  vertexCompatibility

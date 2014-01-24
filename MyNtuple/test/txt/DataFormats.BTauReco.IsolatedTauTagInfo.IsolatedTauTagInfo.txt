@@ -1,0 +1,39 @@
+Class:         reco::IsolatedTauTagInfo
+
+Header:        DataFormats/BTauReco/interface/IsolatedTauTagInfo.h
+
+BaseClasses:   reco::JTATagInfo
+               reco::BaseTagInfo
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::IsolatedTauTagInfo
+        const reco::TrackRefVector  allTracks()
+        const reco::TrackRefVector  selectedTracks()
+         reco::IsolatedTauTagInfo*  clone()
+                             float  discriminator()
+                             float  discriminator(float m_cone, float sig_cone, float iso_con, float pt_min_lt, float pt_min_tk, int nTracksIsoRing=0)
+                             float  discriminator(math::XYZVector myVector, float m_cone, float sig_cone, float iso_con, float pt_min_lt, float pt_min_tk, int nTracksIsoRing)
+                             float  discriminator(float m_cone, float sig_cone, float iso_con, float pt_min_lt, float pt_min_tk, int nTracksIsoRing, float dz_lt)
+                             float  discriminator(math::XYZVector myVector, float m_cone, float sig_cone, float iso_con, float pt_min_lt, float pt_min_tk, int nTracksIsoRing, float dz_lt)
+        const reco::TrackRefVector  tracksInCone(math::XYZVector myVector, float size, float pt_min)
+        const reco::TrackRefVector  tracksInCone(math::XYZVector myVector, float size, float pt_min, float z_pv, float dz_lt)
+              const reco::TrackRef  leadingSignalTrack()
+              const reco::TrackRef  leadingSignalTrack(float rm_cone, float pt_min)
+              const reco::TrackRef  leadingSignalTrack(math::XYZVector myVector, float rm_cone, float pt_min)
+
+AccessMethods: reco::JTATagInfo
+         edm::RefToBase<reco::Jet>  jet()
+              reco::TrackRefVector  tracks()
+  const reco::JetTracksAssociationRef  jtaRef()
+                              bool  hasTracks()
+
+AccessMethods: reco::BaseTagInfo
+         reco::TaggingVariableList  taggingVariables()
+
+DataMembers:   reco::IsolatedTauTagInfo
+
+DataMembers:   reco::JTATagInfo
+
+DataMembers:   reco::BaseTagInfo

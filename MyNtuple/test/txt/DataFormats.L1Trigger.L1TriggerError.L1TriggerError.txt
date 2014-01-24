@@ -1,0 +1,13 @@
+Class:         L1TriggerError
+
+Header:        DataFormats/L1Trigger/interface/L1TriggerError.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:09 2013	mkvomit.py
+
+AccessMethods: L1TriggerError
+                      unsigned int  code()
+                      unsigned int  prodID()
+                      unsigned int  prodErr()
+
+DataMembers:   L1TriggerError

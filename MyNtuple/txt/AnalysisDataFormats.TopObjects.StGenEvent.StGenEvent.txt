@@ -1,0 +1,47 @@
+Class:         StGenEvent
+
+Header:        AnalysisDataFormats/TopObjects/interface/StGenEvent.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:38 2013	mkvomit.py
+
+AccessMethods: StGenEvent
+                reco::GenParticle*  singleLepton()
+                reco::GenParticle*  singleNeutrino()
+                reco::GenParticle*  singleW()
+                reco::GenParticle*  singleTop()
+                reco::GenParticle*  decayB()
+                reco::GenParticle*  associatedB()
+
+AccessMethods: TopGenEvent
+  const reco::GenParticleCollection  particles()
+  const reco::GenParticleCollection  initialPartons()
+  std::vector<const reco::GenParticle*>  radiatedGluons(int pdgId)
+  std::vector<const reco::GenParticle*>  lightQuarks(bool includingBQuarks=false)
+                               int  numberOfLeptons(bool fromWBoson=true)
+                               int  numberOfLeptons(WDecay::LeptonType type, bool fromWBoson=true)
+                               int  numberOfBQuarks(bool fromTopQuark=true)
+  std::vector<const reco::GenParticle*>  topSisters()
+                reco::GenParticle*  daughterQuarkOfTop(bool invertCharge=false)
+                reco::GenParticle*  daughterQuarkOfTopBar()
+                reco::GenParticle*  daughterQuarkOfWPlus(bool invertQuarkCharge=false, bool invertBosonCharge=false)
+                reco::GenParticle*  daughterQuarkOfWMinus()
+                reco::GenParticle*  daughterQuarkBarOfWPlus()
+                reco::GenParticle*  daughterQuarkBarOfWMinus()
+                reco::GenParticle*  candidate(int id, unsigned int parentId=0)
+                reco::GenParticle*  eMinus()
+                reco::GenParticle*  ePlus()
+                reco::GenParticle*  muMinus()
+                reco::GenParticle*  muPlus()
+                reco::GenParticle*  tauMinus()
+                reco::GenParticle*  tauPlus()
+                reco::GenParticle*  wMinus()
+                reco::GenParticle*  wPlus()
+                reco::GenParticle*  b()
+                reco::GenParticle*  bBar()
+                reco::GenParticle*  top()
+                reco::GenParticle*  topBar()
+
+DataMembers:   StGenEvent
+
+DataMembers:   TopGenEvent

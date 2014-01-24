@@ -1,0 +1,17 @@
+Class:         reco::DiscretizedEnergyFlow
+
+Header:        DataFormats/JetReco/interface/DiscretizedEnergyFlow.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::DiscretizedEnergyFlow
+                           double*  data()
+                             char*  title()
+                            double  etaMin()
+                            double  etaMax()
+                            double  phiBin0Edge()
+                      unsigned int  nEtaBins()
+                      unsigned int  nPhiBins()
+
+DataMembers:   reco::DiscretizedEnergyFlow

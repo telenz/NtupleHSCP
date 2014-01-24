@@ -1,0 +1,17 @@
+Class:         reco::PFTrajectoryPoint
+
+Header:        DataFormats/ParticleFlowReco/interface/PFTrajectoryPoint.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::PFTrajectoryPoint
+                               int  detId()
+                               int  layer()
+                              bool  isValid()
+                              bool  isTrackerLayer()
+              const math::XYZPoint  position()
+  const ROOT::Math::PositionVector3D<ROOT::Math::CylindricalEta3D<double>,ROOT::Math::DefaultCoordinateSystemTag>  positionREP()
+     const math::XYZTLorentzVector  momentum()
+
+DataMembers:   reco::PFTrajectoryPoint

@@ -1,0 +1,22 @@
+Class:         L1GctInternEmCand
+
+Header:        DataFormats/L1GlobalCaloTrigger/interface/L1GctInternEmCand.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:12 2013	mkvomit.py
+
+AccessMethods: L1GctInternEmCand
+                 L1CaloRegionDetId  regionId()
+                       std::string  name()
+                              bool  empty()
+                          uint16_t  raw()
+                      unsigned int  rank()
+                      unsigned int  etaIndex()
+                      unsigned int  etaSign()
+                      unsigned int  phiIndex()
+                              bool  isolated()
+                      unsigned int  capBlock()
+                      unsigned int  capIndex()
+                           int16_t  bx()
+
+DataMembers:   L1GctInternEmCand

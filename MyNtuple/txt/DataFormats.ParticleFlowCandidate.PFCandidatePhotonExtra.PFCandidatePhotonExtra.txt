@@ -1,0 +1,20 @@
+Class:         reco::PFCandidatePhotonExtra
+
+Header:        DataFormats/ParticleFlowCandidate/interface/PFCandidatePhotonExtra.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::PFCandidatePhotonExtra
+             reco::SuperClusterRef  superClusterRef()
+  const std::vector<reco::TrackRef>  singleLegConvTrackRef()
+          const std::vector<float>  singleLegConvMva()
+         reco::ConversionRefVector  conversionRef()
+                             float  Mustache_Et()
+                               int  ExcludedClust()
+                             float  MVAGlobalCorrE()
+                             float  MVAGlobalCorrEError()
+          const std::vector<float>  LCorrClusEnergy()
+                             float  PFPhotonRes()
+
+DataMembers:   reco::PFCandidatePhotonExtra

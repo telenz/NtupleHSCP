@@ -1,0 +1,25 @@
+Class:         reco::PFRecTrack
+
+Header:        DataFormats/ParticleFlowReco/interface/PFRecTrack.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:06 2013	mkvomit.py
+
+AccessMethods: reco::PFRecTrack
+                      unsigned int  algoType()
+                               int  trackId()
+              const reco::TrackRef  trackRef()
+                       const float  STIP()
+
+AccessMethods: reco::PFTrack
+                            double  charge()
+                      unsigned int  nTrajectoryPoints()
+                      unsigned int  nTrajectoryMeasurements()
+  const std::vector<reco::PFTrajectoryPoint>  trajectoryPoints()
+     const reco::PFTrajectoryPoint  trajectoryPoint(unsigned int index)
+     const reco::PFTrajectoryPoint  extrapolatedPoint(unsigned int layerid)
+                               int  color()
+
+DataMembers:   reco::PFRecTrack
+
+DataMembers:   reco::PFTrack

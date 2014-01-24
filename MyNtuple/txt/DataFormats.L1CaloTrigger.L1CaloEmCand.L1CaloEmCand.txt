@@ -1,0 +1,20 @@
+Class:         L1CaloEmCand
+
+Header:        DataFormats/L1CaloTrigger/interface/L1CaloEmCand.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: L1CaloEmCand
+                          uint16_t  raw()
+                      unsigned int  rank()
+                      unsigned int  rctCard()
+                      unsigned int  rctRegion()
+                      unsigned int  rctCrate()
+                              bool  isolated()
+                      unsigned int  index()
+                           int16_t  bx()
+                 L1CaloRegionDetId  regionId()
+                              bool  empty()
+
+DataMembers:   L1CaloEmCand

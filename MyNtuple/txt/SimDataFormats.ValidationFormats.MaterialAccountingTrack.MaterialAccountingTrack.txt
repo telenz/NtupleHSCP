@@ -1,0 +1,18 @@
+Class:         MaterialAccountingTrack
+
+Header:        SimDataFormats/ValidationFormats/interface/MaterialAccountingTrack.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: MaterialAccountingTrack
+      const MaterialAccountingStep  summary()
+  const std::vector<MaterialAccountingDetector>  detectors()
+  const std::vector<MaterialAccountingStep>  steps()
+
+DataMembers:   MaterialAccountingTrack
+            MaterialAccountingStep  m_total
+                G4VPhysicalVolume*  m_current_volume
+        MaterialAccountingDetector  m_detector
+  std::vector<MaterialAccountingStep>  m_steps
+  std::vector<MaterialAccountingDetector>  m_detectors

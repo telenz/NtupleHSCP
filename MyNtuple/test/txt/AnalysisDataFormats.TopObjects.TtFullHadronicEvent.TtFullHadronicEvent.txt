@@ -1,0 +1,75 @@
+Class:         TtFullHadronicEvent
+
+Header:        AnalysisDataFormats/TopObjects/interface/TtFullHadronicEvent.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:10 2013	mkvomit.py
+
+AccessMethods: TtFullHadronicEvent
+                  reco::Candidate*  top(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  top(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  b(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  b(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  lightQ(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  lightQ(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  lightP(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  lightP(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  wPlus(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  wPlus(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  topBar(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  topBar(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  bBar(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  bBar(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  lightQBar(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  lightQBar(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  lightPBar(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  lightPBar(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  wMinus(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  wMinus(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                reco::GenParticle*  top()
+                reco::GenParticle*  b()
+                reco::GenParticle*  lightQ()
+                reco::GenParticle*  lightP()
+                reco::GenParticle*  wPlus()
+                reco::GenParticle*  topBar()
+                reco::GenParticle*  bBar()
+                reco::GenParticle*  lightQBar()
+                reco::GenParticle*  lightPBar()
+                reco::GenParticle*  wMinus()
+
+AccessMethods: TtEvent
+  std::pair<WDecay::LeptonType,WDecay::LeptonType>  lepDecays()
+    const reco::CompositeCandidate  eventHypo(TtEvent::HypoClassKey key, unsigned int cmb=0)
+    const edm::RefProd<TtGenEvent>  genEvent()
+                              bool  isHypoClassAvailable(std::string key)
+                              bool  isHypoClassAvailable(TtEvent::HypoClassKey key)
+                              bool  isHypoAvailable(std::string key, unsigned int cmb=0)
+                              bool  isHypoAvailable(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                              bool  isHypoValid(std::string key, unsigned int cmb=0)
+                              bool  isHypoValid(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                      unsigned int  numberOfAvailableHypoClasses()
+                      unsigned int  numberOfAvailableHypos(std::string key)
+                      unsigned int  numberOfAvailableHypos(TtEvent::HypoClassKey key)
+                               int  numberOfConsideredJets(std::string key)
+                               int  numberOfConsideredJets(TtEvent::HypoClassKey key)
+                  std::vector<int>  jetLeptonCombination(std::string key, unsigned int cmb=0)
+                  std::vector<int>  jetLeptonCombination(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                            double  genMatchSumPt(unsigned int cmb=0)
+                            double  genMatchSumDR(unsigned int cmb=0)
+                       std::string  mvaMethod()
+                            double  mvaDisc(unsigned int cmb=0)
+                            double  fitChi2(unsigned int cmb=0)
+                            double  hitFitChi2(unsigned int cmb=0)
+                            double  fitProb(unsigned int cmb=0)
+                            double  hitFitProb(unsigned int cmb=0)
+                            double  hitFitMT(unsigned int cmb=0)
+                            double  hitFitSigMT(unsigned int cmb=0)
+                               int  correspondingHypo(std::string key1, unsigned int hyp1, std::string key2)
+                               int  correspondingHypo(TtEvent::HypoClassKey key1, unsigned int hyp1, TtEvent::HypoClassKey key2)
+                  reco::Candidate*  topPair(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  topPair(TtEvent::HypoClassKey key, unsigned int cmb=0)
+          math::XYZTLorentzVector*  topPair()
+
+DataMembers:   TtFullHadronicEvent
+
+DataMembers:   TtEvent

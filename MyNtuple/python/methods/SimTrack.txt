@@ -1,0 +1,7 @@
+         int  vertIndex()
+        bool  noVertex()
+         int  genpartIndex()
+        bool  noGenpart()
+         int  type()
+       float  charge()
+unsigned int  trackId()

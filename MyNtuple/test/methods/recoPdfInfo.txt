@@ -1,0 +1,5 @@
+       float  x1
+       float  x2
+       float  scalePDF
+       float  pdf1
+       float  pdf2

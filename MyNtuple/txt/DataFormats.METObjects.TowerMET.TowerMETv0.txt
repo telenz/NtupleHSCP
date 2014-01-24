@@ -1,0 +1,21 @@
+Class:         TowerMETv0
+
+Header:        DataFormats/METObjects/interface/TowerMET.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:38 2013	mkvomit.py
+
+AccessMethods: TowerMETv0
+
+AccessMethods: BaseMETv0
+                            double  MET()
+                            double  MEx()
+                            double  MEy()
+                            double  MEz()
+                            double  SumET()
+                            double  phi()
+      std::vector<CommonMETv0Data>  getAllCorr()
+
+DataMembers:   TowerMETv0
+
+DataMembers:   BaseMETv0

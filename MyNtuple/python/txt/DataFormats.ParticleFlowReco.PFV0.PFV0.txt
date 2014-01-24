@@ -1,0 +1,13 @@
+Class:         reco::PFV0
+
+Header:        DataFormats/ParticleFlowReco/interface/PFV0.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:06 2013	mkvomit.py
+
+AccessMethods: reco::PFV0
+  const reco::VertexCompositeCandidateRef  originalV0()
+  std::vector<reco::PFRecTrackRef>  pfTracks()
+       std::vector<reco::TrackRef>  Tracks()
+
+DataMembers:   reco::PFV0

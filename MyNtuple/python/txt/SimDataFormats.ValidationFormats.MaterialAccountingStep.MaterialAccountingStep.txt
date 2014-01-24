@@ -1,0 +1,16 @@
+Class:         MaterialAccountingStep
+
+Header:        SimDataFormats/ValidationFormats/interface/MaterialAccountingStep.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:32 2013	mkvomit.py
+
+AccessMethods: MaterialAccountingStep
+                            double  length()
+                            double  radiationLengths()
+                            double  energyLoss()
+                 const GlobalPoint  in()
+                 const GlobalPoint  out()
+  std::pair<MaterialAccountingStep,MaterialAccountingStep>  split(double fraction)
+
+DataMembers:   MaterialAccountingStep

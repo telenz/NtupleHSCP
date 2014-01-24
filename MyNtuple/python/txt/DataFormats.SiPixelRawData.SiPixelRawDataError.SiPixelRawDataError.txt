@@ -1,0 +1,15 @@
+Class:         SiPixelRawDataError
+
+Header:        DataFormats/SiPixelRawData/interface/SiPixelRawDataError.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:38 2013	mkvomit.py
+
+AccessMethods: SiPixelRawDataError
+                      cms_uint32_t  getWord32()
+                      cms_uint64_t  getWord64()
+                               int  getType()
+                               int  getFedId()
+                       std::string  getMessage()
+
+DataMembers:   SiPixelRawDataError

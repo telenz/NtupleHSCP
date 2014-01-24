@@ -1,0 +1,21 @@
+Class:         edm::HLTGlobalStatus
+
+Header:        DataFormats/Common/interface/HLTGlobalStatus.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:52 2013	mkvomit.py
+
+AccessMethods: edm::HLTGlobalStatus
+                      unsigned int  size()
+                              bool  wasrun()
+                              bool  accept()
+                              bool  error()
+          const edm::HLTPathStatus  at(unsigned int i)
+                edm::HLTPathStatus  at(unsigned int i)
+                              bool  wasrun(unsigned int i)
+                              bool  accept(unsigned int i)
+                              bool  error(unsigned int i)
+                edm::hlt::HLTState  state(unsigned int i)
+                      unsigned int  index(unsigned int i)
+
+DataMembers:   edm::HLTGlobalStatus

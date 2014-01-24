@@ -1,0 +1,16 @@
+Class:         reco::MuonCosmicCompatibility
+
+Header:        DataFormats/MuonReco/interface/MuonCosmicCompatibility.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:41 2013	mkvomit.py
+
+AccessMethods: reco::MuonCosmicCompatibility
+
+DataMembers:   reco::MuonCosmicCompatibility
+                             float  cosmicCompatibility
+                             float  timeCompatibility
+                             float  backToBackCompatibility
+                             float  overlapCompatibility
+                             float  ipCompatibility
+                             float  vertexCompatibility

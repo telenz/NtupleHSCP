@@ -1,0 +1,4 @@
+      double  mex
+      double  mey
+      double  sumet
+      double  significance

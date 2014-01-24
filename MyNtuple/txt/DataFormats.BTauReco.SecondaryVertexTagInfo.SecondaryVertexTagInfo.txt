@@ -1,0 +1,40 @@
+Class:         reco::SecondaryVertexTagInfo
+
+Header:        DataFormats/BTauReco/interface/SecondaryVertexTagInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::SecondaryVertexTagInfo
+     reco::SecondaryVertexTagInfo*  clone()
+     const reco::TrackIPTagInfoRef  trackIPTagInfoRef()
+         edm::RefToBase<reco::Jet>  jet()
+              reco::TrackRefVector  tracks()
+  const reco::JetTracksAssociationRef  jtaRef()
+                const reco::Vertex  secondaryVertex(unsigned int index)
+                      unsigned int  nSelectedTracks()
+                      unsigned int  nVertexTracks()
+                      unsigned int  nVertexTracks(unsigned int index)
+                      unsigned int  nVertices()
+                      unsigned int  nVertexCandidates()
+              reco::TrackRefVector  selectedTracks()
+              reco::TrackRefVector  vertexTracks()
+              reco::TrackRefVector  vertexTracks(unsigned int index)
+                    reco::TrackRef  track(unsigned int index)
+                      unsigned int  findTrack(reco::TrackRef track)
+  const reco::SecondaryVertexTagInfo::TrackData  trackData(unsigned int index)
+  const reco::SecondaryVertexTagInfo::TrackData  trackData(reco::TrackRef track)
+  const reco::TrackIPTagInfo::TrackIPData  trackIPData(unsigned int index)
+  const reco::TrackIPTagInfo::TrackIPData  trackIPData(reco::TrackRef track)
+                             float  trackWeight(unsigned int svIndex, unsigned int trackindex)
+                             float  trackWeight(unsigned int svIndex, reco::TrackRef track)
+                     Measurement1D  flightDistance(unsigned int index, bool in2d=false)
+                const GlobalVector  flightDirection(unsigned int index)
+         reco::TaggingVariableList  taggingVariables()
+
+AccessMethods: reco::BaseTagInfo
+                              bool  hasTracks()
+
+DataMembers:   reco::SecondaryVertexTagInfo
+
+DataMembers:   reco::BaseTagInfo

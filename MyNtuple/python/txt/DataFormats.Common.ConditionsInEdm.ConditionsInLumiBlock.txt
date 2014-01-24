@@ -1,0 +1,13 @@
+Class:         edm::ConditionsInLumiBlock
+
+Header:        DataFormats/Common/interface/ConditionsInEdm.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:51 2013	mkvomit.py
+
+AccessMethods: edm::ConditionsInLumiBlock
+                              bool  isProductEqual(edm::ConditionsInLumiBlock newThing)
+
+DataMembers:   edm::ConditionsInLumiBlock
+                      unsigned int  totalIntensityBeam1
+                      unsigned int  totalIntensityBeam2

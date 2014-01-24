@@ -1,0 +1,4 @@
+         int  detId()
+         int  layer()
+        bool  isValid()
+        bool  isTrackerLayer()

@@ -1,0 +1,100 @@
+Class:         trigger::TriggerEventWithRefs
+
+Header:        DataFormats/HLTReco/interface/TriggerEventWithRefs.h
+
+BaseClasses:   trigger::TriggerRefsCollections
+               edm::DoNotRecordParents
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:15 2013	mkvomit.py
+
+AccessMethods: trigger::TriggerEventWithRefs
+                 const std::string  usedProcessName()
+                trigger::size_type  size()
+               const edm::InputTag  filterTag(trigger::size_type filterIndex)
+                trigger::size_type  filterIndex(edm::InputTag filterTag)
+  std::pair<unsigned short,unsigned short>  photonSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  electronSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  muonSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  jetSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  compositeSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  basemetSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  calometSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  pixtrackSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  l1emSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  l1muonSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  l1jetSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  l1etmissSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  l1hfringsSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  pfjetSlice(trigger::size_type filter)
+  std::pair<unsigned short,unsigned short>  pftauSlice(trigger::size_type filter)
+
+AccessMethods: trigger::TriggerRefsCollections
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRphoton refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRelectron refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRmuon refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRjet refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRcomposite refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRbasemet refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRcalomet refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRpixtrack refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRl1em refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRl1muon refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRl1jet refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRl1etmiss refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRl1hfrings refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRpfjet refs)
+                trigger::size_type  addObjects(trigger::Vids ids, trigger::VRpftau refs)
+                trigger::size_type  photonSize()
+               const trigger::Vids  photonIds()
+           const trigger::VRphoton  photonRefs()
+                trigger::size_type  electronSize()
+               const trigger::Vids  electronIds()
+         const trigger::VRelectron  electronRefs()
+                trigger::size_type  muonSize()
+               const trigger::Vids  muonIds()
+             const trigger::VRmuon  muonRefs()
+                trigger::size_type  jetSize()
+               const trigger::Vids  jetIds()
+              const trigger::VRjet  jetRefs()
+                trigger::size_type  compositeSize()
+               const trigger::Vids  compositeIds()
+        const trigger::VRcomposite  compositeRefs()
+                trigger::size_type  basemetSize()
+               const trigger::Vids  basemetIds()
+          const trigger::VRbasemet  basemetRefs()
+                trigger::size_type  calometSize()
+               const trigger::Vids  calometIds()
+          const trigger::VRcalomet  calometRefs()
+                trigger::size_type  pixtrackSize()
+               const trigger::Vids  pixtrackIds()
+         const trigger::VRpixtrack  pixtrackRefs()
+                trigger::size_type  l1emSize()
+               const trigger::Vids  l1emIds()
+             const trigger::VRl1em  l1emRefs()
+                trigger::size_type  l1muonSize()
+               const trigger::Vids  l1muonIds()
+           const trigger::VRl1muon  l1muonRefs()
+                trigger::size_type  l1jetSize()
+               const trigger::Vids  l1jetIds()
+            const trigger::VRl1jet  l1jetRefs()
+                trigger::size_type  l1etmissSize()
+               const trigger::Vids  l1etmissIds()
+         const trigger::VRl1etmiss  l1etmissRefs()
+                trigger::size_type  l1hfringsSize()
+               const trigger::Vids  l1hfringsIds()
+        const trigger::VRl1hfrings  l1hfringsRefs()
+                trigger::size_type  pfjetSize()
+               const trigger::Vids  pfjetIds()
+            const trigger::VRpfjet  pfjetRefs()
+                trigger::size_type  pftauSize()
+               const trigger::Vids  pftauIds()
+            const trigger::VRpftau  pftauRefs()
+
+AccessMethods: edm::DoNotRecordParents
+
+DataMembers:   trigger::TriggerEventWithRefs
+
+DataMembers:   trigger::TriggerRefsCollections
+
+DataMembers:   edm::DoNotRecordParents

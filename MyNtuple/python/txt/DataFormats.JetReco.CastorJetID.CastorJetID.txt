@@ -1,0 +1,18 @@
+Class:         reco::CastorJetID
+
+Header:        DataFormats/JetReco/interface/CastorJetID.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:02 2013	mkvomit.py
+
+AccessMethods: reco::CastorJetID
+
+DataMembers:   reco::CastorJetID
+                            double  emEnergy
+                            double  hadEnergy
+                            double  fem
+                            double  width
+                            double  depth
+                            double  fhot
+                            double  sigmaz
+                               int  nTowers

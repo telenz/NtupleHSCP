@@ -1,0 +1,31 @@
+Class:         reco::TrackCountingTagInfo
+
+Header:        DataFormats/BTauReco/interface/TrackCountingTagInfo.h
+
+BaseClasses:   reco::JTATagInfo
+               reco::BaseTagInfo
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::TrackCountingTagInfo
+                             float  significance(size_t n, int ip)
+                               int  trackIndex(size_t n, int ip)
+                             float  discriminator(size_t nth, int ipType)
+                               int  selectedTracks(int ipType)
+       reco::TrackCountingTagInfo*  clone()
+
+AccessMethods: reco::JTATagInfo
+         edm::RefToBase<reco::Jet>  jet()
+              reco::TrackRefVector  tracks()
+  const reco::JetTracksAssociationRef  jtaRef()
+                              bool  hasTracks()
+
+AccessMethods: reco::BaseTagInfo
+         reco::TaggingVariableList  taggingVariables()
+
+DataMembers:   reco::TrackCountingTagInfo
+
+DataMembers:   reco::JTATagInfo
+
+DataMembers:   reco::BaseTagInfo

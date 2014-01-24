@@ -1,0 +1,26 @@
+Class:         reco::HFEMClusterShape
+
+Header:        DataFormats/EgammaReco/interface/HFEMClusterShape.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:04 2013	mkvomit.py
+
+AccessMethods: reco::HFEMClusterShape
+                            double  eLong1x1()
+                            double  eShort1x1()
+                            double  eLong3x3()
+                            double  eShort3x3()
+                            double  eLong5x5()
+                            double  eShort5x5()
+                            double  e1x1()
+                            double  e3x3()
+                            double  e5x5()
+                            double  eSeL()
+                            double  eCOREe9()
+                            double  e9e25()
+                            double  eCore()
+                            double  CellEta()
+                            double  CellPhi()
+                             DetId  seed()
+
+DataMembers:   reco::HFEMClusterShape

@@ -1,0 +1,42 @@
+Class:         RecoTracktoTP
+
+Header:        AnalysisDataFormats/TrackInfo/interface/RecoTracktoTP.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:38 2013	mkvomit.py
+
+AccessMethods: RecoTracktoTP
+                       reco::Track  RT()
+                  TrackingParticle  TP()
+                      reco::Vertex  RV()
+                    math::XYZPoint  BeamSpot()
+                              bool  matched()
+                              bool  hasRV()
+                              bool  hasPCA()
+                              bool  allmatched()
+                            double  r_dxy()
+                            double  r_dsz()
+                            double  r_d0()
+                            double  r_dz()
+                            double  r_d02()
+                            double  r_dz2()
+                      GlobalVector  s_p()
+                       GlobalPoint  s_pca()
+                       GlobalPoint  s_v()
+                            double  s_qoverp()
+                            double  s_theta()
+                            double  s_lambda()
+                            double  s_phi()
+                            double  s_eta()
+                            double  s_dxy()
+                            double  s_dsz()
+                            double  s_d0()
+                            double  s_dz()
+                             float  GetShared()
+                  TrackingParticle  TPMother(unsigned short i)
+                  TrackingParticle  TPMother()
+                               int  numTPSourceTracks()
+                               int  numTPMothers()
+                              bool  hasTPMother()
+
+DataMembers:   RecoTracktoTP

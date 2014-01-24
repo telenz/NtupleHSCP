@@ -1,0 +1,3 @@
+        bool  algorithmExists(int algorithmBitNumber)
+        bool  algorithmResult(int algorithmBitNumber)
+unsigned int  getNumberOfConditions(int algorithmBitNumber)

@@ -1,0 +1,12 @@
+Class:         MaterialAccountingDetector
+
+Header:        SimDataFormats/ValidationFormats/interface/MaterialAccountingDetector.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:09 2013	mkvomit.py
+
+AccessMethods: MaterialAccountingDetector
+                 const GlobalPoint  position()
+      const MaterialAccountingStep  material()
+
+DataMembers:   MaterialAccountingDetector

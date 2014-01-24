@@ -1,0 +1,35 @@
+Class:         HOCalibVariables
+
+Header:        DataFormats/HcalCalibObjects/interface/HOCalibVariables.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: HOCalibVariables
+
+DataMembers:   HOCalibVariables
+                               int  trig1
+                               int  trig2
+                               int  nmuon
+                             float  trkdr
+                             float  trkdz
+                             float  trkvx
+                             float  trkvy
+                             float  trkvz
+                             float  trkmm
+                             float  trkth
+                             float  trkph
+                             float  ndof
+                             float  chisq
+                             float  therr
+                             float  pherr
+                               int  isect
+                             float  hodx
+                             float  hody
+                             float  hoang
+                             float  htime
+                          float[9]  hosig
+                         float[18]  hocorsig
+                             float  hocro
+                          float[9]  hbhesig
+                          float[3]  caloen

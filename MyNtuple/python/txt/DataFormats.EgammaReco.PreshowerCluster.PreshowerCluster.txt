@@ -1,0 +1,35 @@
+Class:         reco::PreshowerCluster
+
+Header:        DataFormats/EgammaReco/interface/PreshowerCluster.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:06 2013	mkvomit.py
+
+AccessMethods: reco::PreshowerCluster
+                               int  nhits()
+                               int  plane()
+                            double  et()
+              reco::CaloClusterPtr  basicCluster()
+
+AccessMethods: reco::CaloCluster
+                            double  energy()
+              const math::XYZPoint  position()
+                            double  x()
+                            double  y()
+                            double  z()
+                            double  eta()
+                            double  phi()
+                            size_t  size()
+         reco::CaloCluster::AlgoId  algo()
+         reco::CaloCluster::AlgoId  algoID()
+                          uint32_t  flags()
+                              bool  isInClean()
+                              bool  isInUnclean()
+                const reco::CaloID  caloID()
+  const std::vector<std::pair<DetId,float> >  hitsAndFractions()
+                       std::string  printHitAndFraction(unsigned int i)
+                             DetId  seed()
+
+DataMembers:   reco::PreshowerCluster
+
+DataMembers:   reco::CaloCluster

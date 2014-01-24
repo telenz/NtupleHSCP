@@ -1,0 +1,3 @@
+      double  material().length()
+      double  material().radiationLengths()
+      double  material().energyLoss()

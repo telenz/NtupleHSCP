@@ -1,0 +1,33 @@
+Class:         reco::TauMassTagInfo
+
+Header:        DataFormats/BTauReco/interface/TauMassTagInfo.h
+
+BaseClasses:   reco::JTATagInfo
+               reco::BaseTagInfo
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::TauMassTagInfo
+             reco::TauMassTagInfo*  clone()
+                             float  discriminator()
+                             float  discriminator(double matching_cone, double leading_trk_pt, double signal_cone, double cluster_track_cone, double m_cut)
+  const reco::IsolatedTauTagInfoRef  getIsolatedTauTag()
+  edm::AssociationMap<edm::OneToValue<std::vector<reco::CaloCluster>,float,unsigned short> >  clusterTrackCollection()
+                            double  getInvariantMassTrk(double matching_cone, double leading_trk_pt, double signal_cone)
+                            double  getInvariantMass(double matching_cone, double leading_trk_pt, double signal_cone, double cluster_track_cone)
+
+AccessMethods: reco::JTATagInfo
+         edm::RefToBase<reco::Jet>  jet()
+              reco::TrackRefVector  tracks()
+  const reco::JetTracksAssociationRef  jtaRef()
+                              bool  hasTracks()
+
+AccessMethods: reco::BaseTagInfo
+         reco::TaggingVariableList  taggingVariables()
+
+DataMembers:   reco::TauMassTagInfo
+
+DataMembers:   reco::JTATagInfo
+
+DataMembers:   reco::BaseTagInfo

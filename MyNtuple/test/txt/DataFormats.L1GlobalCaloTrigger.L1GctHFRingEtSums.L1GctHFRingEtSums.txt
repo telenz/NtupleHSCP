@@ -1,0 +1,19 @@
+Class:         L1GctHFRingEtSums
+
+Header:        DataFormats/L1GlobalCaloTrigger/interface/L1GctHFRingEtSums.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:09 2013	mkvomit.py
+
+AccessMethods: L1GctHFRingEtSums
+                 L1GctHFRingEtSums  fromConcRingSums(uint16_t capBlock, uint16_t capIndex, int16_t bx, uint32_t data)
+                 L1GctHFRingEtSums  fromGctEmulator(int16_t bx, uint16_t etSumPosEtaRing1, uint16_t etSumNegEtaRing1, uint16_t etSumPosEtaRing2, uint16_t etSumNegEtaRing2)
+                      unsigned int  nSums()
+                          uint16_t  capBlock()
+                          uint16_t  capIndex()
+                           int16_t  bx()
+                              bool  empty()
+                          uint16_t  raw()
+                          uint16_t  etSum(unsigned int i)
+
+DataMembers:   L1GctHFRingEtSums

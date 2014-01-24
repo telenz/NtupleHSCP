@@ -1,0 +1,5 @@
+       float  discriminator()
+      double  pIsol(float rMax, float rMin)
+       float  discriminator(float rMax, float rMin, float pIsolCut)
+        bool  hasTracks()
+      size_t  taggingVariables().size()

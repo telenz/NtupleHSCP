@@ -1,0 +1,18 @@
+Class:         HcalLaserDigi
+
+Header:        DataFormats/HcalDigi/interface/HcalLaserDigi.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:08 2013	mkvomit.py
+
+AccessMethods: HcalLaserDigi
+                          uint16_t  qadc(int i)
+                            size_t  tdcHits()
+                               int  hitChannel(size_t ihit)
+                               int  hitRaw(size_t ihit)
+                            double  hitNS(size_t ihit)
+                               int  attenuator1()
+                               int  attenuator2()
+                               int  selector()
+
+DataMembers:   HcalLaserDigi

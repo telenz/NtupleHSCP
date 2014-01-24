@@ -1,0 +1,35 @@
+Class:         reco::JetID
+
+Header:        DataFormats/JetReco/interface/JetID.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::JetID
+
+DataMembers:   reco::JetID
+                             float  fHPD
+                             float  fRBX
+                         short int  n90Hits
+                             float  fSubDetector1
+                             float  fSubDetector2
+                             float  fSubDetector3
+                             float  fSubDetector4
+                             float  restrictedEMF
+                         short int  nHCALTowers
+                         short int  nECALTowers
+                             float  approximatefHPD
+                             float  approximatefRBX
+                         short int  hitsInN90
+                         short int  numberOfHits2RPC
+                         short int  numberOfHits3RPC
+                         short int  numberOfHitsRPC
+                             float  fEB
+                             float  fEE
+                             float  fHB
+                             float  fHE
+                             float  fHO
+                             float  fLong
+                             float  fShort
+                             float  fLS
+                             float  fHFOOT

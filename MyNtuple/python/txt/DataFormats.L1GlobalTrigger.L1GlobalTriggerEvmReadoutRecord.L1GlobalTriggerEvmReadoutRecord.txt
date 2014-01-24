@@ -1,0 +1,20 @@
+Class:         L1GlobalTriggerEvmReadoutRecord
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1GlobalTriggerEvmReadoutRecord.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:13 2013	mkvomit.py
+
+AccessMethods: L1GlobalTriggerEvmReadoutRecord
+                        const bool  decision(int bxInEvent)
+                const DecisionWord  decisionWord(int bxInEvent)
+                        const bool  decision()
+                const DecisionWord  decisionWord()
+               const L1GtfeExtWord  gtfeWord()
+                   const L1TcsWord  tcsWord()
+    const std::vector<L1GtFdlWord>  gtFdlVector()
+          std::vector<L1GtFdlWord>  gtFdlVector()
+                 const L1GtFdlWord  gtFdlWord(int bxInEvent)
+                 const L1GtFdlWord  gtFdlWord()
+
+DataMembers:   L1GlobalTriggerEvmReadoutRecord

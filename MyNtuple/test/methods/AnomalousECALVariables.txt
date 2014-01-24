@@ -1,0 +1,2 @@
+        bool  isDeadEcalCluster(double maxBoundaryEnergy=10, std::vector<int> limitDeadCellToChannelStatusEB=std::vector<int, std::allocator<int> >(), std::vector<int> limitDeadCellToChannelStatusEE=std::vector<int, std::allocator<int> >())
+        bool  isGapEcalCluster(double maxGapEnergyEB=10, double maxGapEnergyEE=10)

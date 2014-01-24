@@ -1,0 +1,20 @@
+Class:         reco::JTATagInfo
+
+Header:        DataFormats/BTauReco/interface/JTATagInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:04 2013	mkvomit.py
+
+AccessMethods: reco::JTATagInfo
+                 reco::JTATagInfo*  clone()
+         edm::RefToBase<reco::Jet>  jet()
+              reco::TrackRefVector  tracks()
+  const reco::JetTracksAssociationRef  jtaRef()
+                              bool  hasTracks()
+
+AccessMethods: reco::BaseTagInfo
+         reco::TaggingVariableList  taggingVariables()
+
+DataMembers:   reco::JTATagInfo
+
+DataMembers:   reco::BaseTagInfo

@@ -1,0 +1,22 @@
+Class:         PHcalValidInfoNxN
+
+Header:        SimDataFormats/ValidationFormats/interface/PValidationFormats.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: PHcalValidInfoNxN
+                std::vector<float>  idnxn()
+                std::vector<float>  enxn()
+                std::vector<float>  tnxn()
+                               int  nnxn()
+                             float  ecalnxnr()
+                             float  hcalnxnr()
+                             float  honxnr()
+                             float  etotnxnr()
+                             float  ecalnxn()
+                             float  hcalnxn()
+                             float  honxn()
+                             float  etotnxn()
+
+DataMembers:   PHcalValidInfoNxN

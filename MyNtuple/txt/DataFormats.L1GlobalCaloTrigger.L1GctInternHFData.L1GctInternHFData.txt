@@ -1,0 +1,24 @@
+Class:         L1GctInternHFData
+
+Header:        DataFormats/L1GlobalCaloTrigger/interface/L1GctInternHFData.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: L1GctInternHFData
+                 L1GctInternHFData  fromConcRingSums(uint16_t capBlock, uint16_t capIndex, int16_t bx, uint32_t data)
+                 L1GctInternHFData  fromConcBitCounts(uint16_t capBlock, uint16_t capIndex, int16_t bx, uint32_t data)
+                 L1GctInternHFData  fromWheelRingSums(uint16_t capBlock, uint16_t capIndex, int16_t bx, uint32_t data)
+                 L1GctInternHFData  fromWheelBitCounts(uint16_t capBlock, uint16_t capIndex, int16_t bx, uint32_t data)
+  L1GctInternHFData::L1GctInternHFDataType  type()
+                          uint16_t  capBlock()
+                          uint16_t  capIndex()
+                           int16_t  bx()
+                              bool  empty()
+                              bool  isRingSums()
+                          uint32_t  raw()
+                          uint16_t  value(unsigned int i)
+                          uint16_t  et(unsigned int i)
+                          uint16_t  count(unsigned int i)
+
+DataMembers:   L1GctInternHFData

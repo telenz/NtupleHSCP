@@ -1,0 +1,23 @@
+Class:         reco::GsfTrackExtra
+
+Header:        DataFormats/GsfTrackReco/interface/GsfTrackExtra.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:04 2013	mkvomit.py
+
+AccessMethods: reco::GsfTrackExtra
+                            double  outerStateLocalPzSign()
+               std::vector<double>  outerStateWeights()
+  std::vector<ROOT::Math::SVector<double,5> >  outerStateLocalParameters()
+  std::vector<ROOT::Math::SMatrix<double,5,5,ROOT::Math::MatRepSym<double,5> > >  outerStateCovariances()
+                            double  innerStateLocalPzSign()
+               std::vector<double>  innerStateWeights()
+  std::vector<ROOT::Math::SVector<double,5> >  innerStateLocalParameters()
+  std::vector<ROOT::Math::SMatrix<double,5,5,ROOT::Math::MatRepSym<double,5> > >  innerStateCovariances()
+                      unsigned int  tangentsSize()
+  const std::vector<reco::GsfTangent>  tangents()
+              const math::XYZPoint  tangentPosition(unsigned int index)
+             const math::XYZVector  tangentMomentum(unsigned int index)
+                     Measurement1D  tangentDeltaP(unsigned int index)
+
+DataMembers:   reco::GsfTrackExtra

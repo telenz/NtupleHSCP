@@ -1,0 +1,17 @@
+Class:         reco::FlavorHistoryEvent
+
+Header:        DataFormats/HepMCCandidate/interface/FlavorHistoryEvent.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:03 2013	mkvomit.py
+
+AccessMethods: reco::FlavorHistoryEvent
+                              bool  isCached()
+                      unsigned int  nb()
+                      unsigned int  nc()
+                            double  deltaR()
+                      unsigned int  highestFlavor()
+     reco::FlavorHistory::FLAVOR_T  flavorSource()
+                       std::size_t  size()
+
+DataMembers:   reco::FlavorHistoryEvent

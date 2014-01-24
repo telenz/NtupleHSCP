@@ -1,0 +1,34 @@
+Class:         reco::TrackProbabilityTagInfo
+
+Header:        DataFormats/BTauReco/interface/TrackProbabilityTagInfo.h
+
+BaseClasses:   reco::JTATagInfo
+               reco::BaseTagInfo
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::TrackProbabilityTagInfo
+                               int  factorial(int n)
+                             float  probability(size_t n, int ip)
+                             float  jetProbability(int ip, float minTrackProb)
+                             float  discriminator(int ipType, float minProb)
+                               int  selectedTracks(int ipType)
+                               int  trackIndex(size_t n, int ip)
+                 const reco::Track  track(size_t n, int ipType)
+    reco::TrackProbabilityTagInfo*  clone()
+
+AccessMethods: reco::JTATagInfo
+         edm::RefToBase<reco::Jet>  jet()
+              reco::TrackRefVector  tracks()
+  const reco::JetTracksAssociationRef  jtaRef()
+                              bool  hasTracks()
+
+AccessMethods: reco::BaseTagInfo
+         reco::TaggingVariableList  taggingVariables()
+
+DataMembers:   reco::TrackProbabilityTagInfo
+
+DataMembers:   reco::JTATagInfo
+
+DataMembers:   reco::BaseTagInfo

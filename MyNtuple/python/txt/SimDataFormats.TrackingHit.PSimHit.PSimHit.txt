@@ -1,0 +1,26 @@
+Class:         PSimHit
+
+Header:        SimDataFormats/TrackingHit/interface/PSimHit.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:33 2013	mkvomit.py
+
+AccessMethods: PSimHit
+                      Local3DPoint  entryPoint()
+                      Local3DPoint  exitPoint()
+                      Local3DPoint  localPosition()
+                       LocalVector  momentumAtEntry()
+                       LocalVector  localDirection()
+                Geom::Theta<float>  thetaAtEntry()
+                  Geom::Phi<float>  phiAtEntry()
+                             float  pabs()
+                             float  timeOfFlight()
+                             float  tof()
+                             float  energyLoss()
+                               int  particleType()
+                      unsigned int  detUnitId()
+                      unsigned int  trackId()
+                    EncodedEventId  eventId()
+                    unsigned short  processType()
+
+DataMembers:   PSimHit

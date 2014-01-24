@@ -1,0 +1,21 @@
+Class:         reco::FFTJetProducerSummary
+
+Header:        DataFormats/JetReco/interface/FFTJetProducerSummary.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::FFTJetProducerSummary
+          const std::vector<float>  thresholds()
+   const std::vector<unsigned int>  levelOccupancy()
+     const math::XYZTLorentzVector  unclustered()
+  const std::vector<edm::Ptr<reco::Candidate> >  unclusteredConstituents()
+                             float  unusedEt()
+                             float  minScale()
+                             float  maxScale()
+                             float  scaleUsed()
+                      unsigned int  preclustersFound()
+                      unsigned int  iterationsPerformed()
+                              bool  iterationsConverged()
+
+DataMembers:   reco::FFTJetProducerSummary

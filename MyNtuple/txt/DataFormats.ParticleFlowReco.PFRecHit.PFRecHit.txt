@@ -1,0 +1,28 @@
+Class:         reco::PFRecHit
+
+Header:        DataFormats/ParticleFlowReco/interface/PFRecHit.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::PFRecHit
+                      unsigned int  detId()
+                    PFLayer::Layer  layer()
+                            double  energy()
+                            double  rescale()
+                            double  time()
+                            double  energyUp()
+                            double  pt2()
+              const math::XYZPoint  position()
+  const ROOT::Math::PositionVector3D<ROOT::Math::CylindricalEta3D<double>,ROOT::Math::DefaultCoordinateSystemTag>  positionREP()
+             const math::XYZVector  getAxisXYZ()
+  const std::vector<ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>,ROOT::Math::DefaultCoordinateSystemTag> >  getCornersXYZ()
+  const std::vector<ROOT::Math::PositionVector3D<ROOT::Math::CylindricalEta3D<double>,ROOT::Math::DefaultCoordinateSystemTag> >  getCornersREP()
+   const std::vector<unsigned int>  neighbours4()
+   const std::vector<unsigned int>  neighbours8()
+   const std::vector<unsigned int>  neighboursIds4()
+   const std::vector<unsigned int>  neighboursIds8()
+                              bool  isNeighbour4(unsigned int id)
+                              bool  isNeighbour8(unsigned int id)
+
+DataMembers:   reco::PFRecHit

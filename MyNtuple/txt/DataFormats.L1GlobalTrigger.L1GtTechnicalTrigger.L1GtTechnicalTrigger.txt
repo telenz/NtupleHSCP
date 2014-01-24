@@ -1,0 +1,14 @@
+Class:         L1GtTechnicalTrigger
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1GtTechnicalTrigger.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: L1GtTechnicalTrigger
+                 const std::string  gtTechnicalTriggerName()
+                const unsigned int  gtTechnicalTriggerBitNumber()
+                         const int  bxInEvent()
+                        const bool  gtTechnicalTriggerResult()
+
+DataMembers:   L1GtTechnicalTrigger

@@ -1,0 +1,80 @@
+Class:         pftools::Calibratable
+
+Header:        DataFormats/ParticleFlowReco/interface/Calibratable.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:40 2013	mkvomit.py
+
+AccessMethods: pftools::Calibratable
+      pftools::CalibratableElement  computeMean(std::vector<pftools::CalibratableElement> diets)
+         pftools::CandidateWrapper  computeMean(std::vector<pftools::CandidateWrapper> wrappers)
+
+DataMembers:   pftools::Calibratable
+                            double  sim_energyEvent_
+                            double  sim_eta_
+                            double  sim_phi_
+                            double  sim_energyEcal_
+                            double  sim_energyHcal_
+                            double  sim_etaEcal_
+                            double  sim_etaHcal_
+                            double  sim_phiEcal_
+                            double  sim_phiHcal_
+                               int  sim_numEvent_
+                              bool  sim_isMC_
+                              bool  tb_isTB_
+                            double  tb_eta_
+                            double  tb_phi_
+                               int  tb_run_
+                               int  tb_pdg_
+                            double  tb_tof_
+                            double  tb_ck3_
+                            double  tb_ck2_
+                              char  tb_vetosPassed_
+                            double  tb_energyEvent_
+                            double  tb_energyEcal_
+                            double  tb_energyHcal_
+  std::vector<pftools::CalibratableElement>  tb_ecal_
+  std::vector<pftools::CalibratableElement>  tb_hcal_
+                               int  tb_numEcal_
+                               int  tb_numHcal_
+      pftools::CalibratableElement  tb_meanEcal_
+      pftools::CalibratableElement  tb_meanHcal_
+                            double  recotrk_numHits_
+                            double  recotrk_quality_
+                            double  recotrk_charge_
+                            double  recotrk_etaEcal_
+                            double  recotrk_phiEcal_
+                            double  recotrk_deltaRWithSim_
+  ROOT::Math::LorentzVector<ROOT::Math::PxPyPzE4D<double> >  recotrk_momentum_
+               pftools::CaloWindow  calowindow_ecal_
+               pftools::CaloWindow  calowindow_hcal_
+                            double  cluster_energyEvent_
+                            double  cluster_energyEcal_
+                            double  cluster_energyHcal_
+  std::vector<pftools::CalibratableElement>  cluster_ecal_
+  std::vector<pftools::CalibratableElement>  cluster_hcal_
+                               int  cluster_numEcal_
+                               int  cluster_numHcal_
+      pftools::CalibratableElement  cluster_meanEcal_
+      pftools::CalibratableElement  cluster_meanHcal_
+                            double  rechits_energyEvent_
+                            double  rechits_energyEcal_
+                            double  rechits_energyHcal_
+  std::vector<pftools::CalibratableElement>  rechits_ecal_
+  std::vector<pftools::CalibratableElement>  rechits_hcal_
+                               int  rechits_numEcal_
+                               int  rechits_numHcal_
+      pftools::CalibratableElement  rechits_meanEcal_
+      pftools::CalibratableElement  rechits_meanHcal_
+  std::vector<pftools::CandidateWrapper>  cands_
+         pftools::CandidateWrapper  cands_mean_
+                               int  cands_num_
+                            double  cand_energyEvent_
+                            double  cand_energyEcal_
+                            double  cand_energyHcal_
+                            double  cand_eta_
+                            double  cand_phi_
+                            double  cand_energyNeutralEM_
+                            double  cand_energyNeutralHad_
+                               int  cand_type_
+  std::vector<pftools::CalibrationResultWrapper>  calibrations_

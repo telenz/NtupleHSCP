@@ -1,0 +1,20 @@
+Class:         reco::CaloTauDiscriminatorAgainstElectron
+
+Header:        DataFormats/TauReco/interface/CaloTauDiscriminatorAgainstElectron.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::CaloTauDiscriminatorAgainstElectron
+
+AccessMethods: edm::AssociationVector<edm::RefProd<std::vector<reco::CaloTau> >,std::vector<int>,edm::Ref<std::vector<reco::CaloTau>,reco::CaloTau,edm::refhelper::FindUsingAdvance<std::vector<reco::CaloTau>,reco::CaloTau> >,unsigned int,edm::helper::AssociationIdenticalKeyReference>
+                      unsigned int  size()
+                              bool  empty()
+  const edm::RefProd<std::vector<reco::CaloTau> >  keyProduct()
+                  reco::CaloTauRef  key(unsigned int i)
+                         const int  value(unsigned int i)
+                             short  Class_Version()
+
+DataMembers:   reco::CaloTauDiscriminatorAgainstElectron
+
+DataMembers:   edm::AssociationVector<edm::RefProd<std::vector<reco::CaloTau> >,std::vector<int>,edm::Ref<std::vector<reco::CaloTau>,reco::CaloTau,edm::refhelper::FindUsingAdvance<std::vector<reco::CaloTau>,reco::CaloTau> >,unsigned int,edm::helper::AssociationIdenticalKeyReference>

@@ -1,0 +1,7 @@
+       float  unusedEt()
+       float  minScale()
+       float  maxScale()
+       float  scaleUsed()
+unsigned int  preclustersFound()
+unsigned int  iterationsPerformed()
+        bool  iterationsConverged()

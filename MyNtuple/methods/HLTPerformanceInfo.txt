@@ -1,0 +1,8 @@
+      size_t  numberOfPaths()
+      size_t  numberOfModules()
+      double  totalTime()
+      double  totalCPUTime()
+      double  longestModuleTime()
+      double  longestModuleCPUTime()
+      double  totalPathTime(size_t path)
+      double  totalPathCPUTime(size_t path)

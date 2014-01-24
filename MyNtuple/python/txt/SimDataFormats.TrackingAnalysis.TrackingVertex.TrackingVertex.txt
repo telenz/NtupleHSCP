@@ -1,0 +1,27 @@
+Class:         TrackingVertex
+
+Header:        SimDataFormats/TrackingAnalysis/interface/TrackingVertex.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:51 2013	mkvomit.py
+
+AccessMethods: TrackingVertex
+  edm::RefVectorIterator<edm::HepMCProduct,HepMC::GenVertex,edm::refhelper::FindTrait<edm::HepMCProduct,HepMC::GenVertex>::Find>  genVertices_begin()
+  edm::RefVectorIterator<edm::HepMCProduct,HepMC::GenVertex,edm::refhelper::FindTrait<edm::HepMCProduct,HepMC::GenVertex>::Find>  genVertices_end()
+  edm::RefVectorIterator<std::vector<TrackingParticle>,TrackingParticle,edm::refhelper::FindUsingAdvance<std::vector<TrackingParticle>,TrackingParticle> >  daughterTracks_begin()
+  edm::RefVectorIterator<std::vector<TrackingParticle>,TrackingParticle,edm::refhelper::FindUsingAdvance<std::vector<TrackingParticle>,TrackingParticle> >  daughterTracks_end()
+  edm::RefVectorIterator<std::vector<TrackingParticle>,TrackingParticle,edm::refhelper::FindUsingAdvance<std::vector<TrackingParticle>,TrackingParticle> >  sourceTracks_begin()
+  edm::RefVectorIterator<std::vector<TrackingParticle>,TrackingParticle,edm::refhelper::FindUsingAdvance<std::vector<TrackingParticle>,TrackingParticle> >  sourceTracks_end()
+                      unsigned int  nG4Vertices()
+                      unsigned int  nGenVertices()
+                      unsigned int  nDaughterTracks()
+                      unsigned int  nSourceTracks()
+      const std::vector<SimVertex>  g4Vertices()
+  const edm::RefVector<edm::HepMCProduct,HepMC::GenVertex,edm::refhelper::FindTrait<edm::HepMCProduct,HepMC::GenVertex>::Find>  genVertices()
+   const TrackingParticleRefVector  sourceTracks()
+   const TrackingParticleRefVector  daughterTracks()
+    const math::XYZTLorentzVectorD  position()
+              const EncodedEventId  eventId()
+                        const bool  inVolume()
+
+DataMembers:   TrackingVertex

@@ -1,0 +1,12 @@
+Class:         LHCTransportLink
+
+Header:        SimDataFormats/Forward/interface/LHCTransportLink.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:20 2013	mkvomit.py
+
+AccessMethods: LHCTransportLink
+                               int  beforeHector()
+                               int  afterHector()
+
+DataMembers:   LHCTransportLink

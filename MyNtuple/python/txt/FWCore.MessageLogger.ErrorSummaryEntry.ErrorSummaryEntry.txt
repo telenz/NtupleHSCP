@@ -1,0 +1,14 @@
+Class:         edm::ErrorSummaryEntry
+
+Header:        FWCore/MessageLogger/interface/ErrorSummaryEntry.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:52 2013	mkvomit.py
+
+AccessMethods: edm::ErrorSummaryEntry
+
+DataMembers:   edm::ErrorSummaryEntry
+                       std::string  category
+                       std::string  module
+              edm::ELseverityLevel  severity
+                      unsigned int  count

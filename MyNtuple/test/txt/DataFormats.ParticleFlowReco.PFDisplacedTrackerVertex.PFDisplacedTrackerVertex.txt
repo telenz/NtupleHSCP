@@ -1,0 +1,14 @@
+Class:         reco::PFDisplacedTrackerVertex
+
+Header:        DataFormats/ParticleFlowReco/interface/PFDisplacedTrackerVertex.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::PFDisplacedTrackerVertex
+   const reco::PFRecTrackRefVector  pfRecTracks()
+                        const bool  isIncomingTrack(reco::PFRecTrackRef originalTrack)
+                        const bool  isOutgoingTrack(reco::PFRecTrackRef originalTrack)
+  const reco::PFDisplacedVertexRef  displacedVertexRef()
+
+DataMembers:   reco::PFDisplacedTrackerVertex

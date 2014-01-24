@@ -1,0 +1,6 @@
+unsigned short int  beamMode
+unsigned short int  beamMomentum
+unsigned int  lhcFillNumber
+       float  BStartCurrent
+       float  BStopCurrent
+       float  BAvgCurrent

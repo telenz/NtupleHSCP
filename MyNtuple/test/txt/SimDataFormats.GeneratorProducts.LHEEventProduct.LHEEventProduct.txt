@@ -1,0 +1,15 @@
+Class:         LHEEventProduct
+
+Header:        SimDataFormats/GeneratorProducts/interface/LHEEventProduct.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:09 2013	mkvomit.py
+
+AccessMethods: LHEEventProduct
+                const lhef::HEPEUP  hepeup()
+                     gen::PdfInfo*  pdf()
+                       std::size_t  comments_size()
+   LHEEventProduct::const_iterator  begin()
+   LHEEventProduct::const_iterator  end()
+
+DataMembers:   LHEEventProduct

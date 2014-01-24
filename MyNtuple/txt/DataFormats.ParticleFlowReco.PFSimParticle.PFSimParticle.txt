@@ -1,0 +1,28 @@
+Class:         reco::PFSimParticle
+
+Header:        DataFormats/ParticleFlowReco/interface/PFSimParticle.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::PFSimParticle
+                               int  pdgCode()
+                      unsigned int  id()
+                               int  motherId()
+            const std::vector<int>  daughterIds()
+                      unsigned int  rectrackId()
+         std::vector<unsigned int>  recHitContrib()
+               std::vector<double>  recHitContribFrac()
+
+AccessMethods: reco::PFTrack
+                            double  charge()
+                      unsigned int  nTrajectoryPoints()
+                      unsigned int  nTrajectoryMeasurements()
+  const std::vector<reco::PFTrajectoryPoint>  trajectoryPoints()
+     const reco::PFTrajectoryPoint  trajectoryPoint(unsigned int index)
+     const reco::PFTrajectoryPoint  extrapolatedPoint(unsigned int layerid)
+                               int  color()
+
+DataMembers:   reco::PFSimParticle
+
+DataMembers:   reco::PFTrack

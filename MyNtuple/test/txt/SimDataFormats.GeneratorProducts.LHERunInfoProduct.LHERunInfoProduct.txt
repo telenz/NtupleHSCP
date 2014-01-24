@@ -1,0 +1,19 @@
+Class:         LHERunInfoProduct
+
+Header:        SimDataFormats/GeneratorProducts/interface/LHERunInfoProduct.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:09 2013	mkvomit.py
+
+AccessMethods: LHERunInfoProduct
+                const lhef::HEPRUP  heprup()
+                       std::size_t  headers_size()
+                       std::size_t  comments_size()
+  LHERunInfoProduct::const_iterator  begin()
+  LHERunInfoProduct::const_iterator  init()
+  LHERunInfoProduct::const_iterator  end()
+                 const std::string  endOfFile()
+                              bool  mergeProduct(LHERunInfoProduct other)
+                              bool  isProductEqual(LHERunInfoProduct other)
+
+DataMembers:   LHERunInfoProduct

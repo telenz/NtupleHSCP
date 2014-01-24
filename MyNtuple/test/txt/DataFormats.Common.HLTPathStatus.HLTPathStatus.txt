@@ -1,0 +1,15 @@
+Class:         edm::HLTPathStatus
+
+Header:        DataFormats/Common/interface/HLTPathStatus.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:11 2013	mkvomit.py
+
+AccessMethods: edm::HLTPathStatus
+                edm::hlt::HLTState  state()
+                      unsigned int  index()
+                              bool  wasrun()
+                              bool  accept()
+                              bool  error()
+
+DataMembers:   edm::HLTPathStatus

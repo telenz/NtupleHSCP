@@ -1,0 +1,36 @@
+Class:         reco::BeamHaloSummary
+
+Header:        DataFormats/METReco/interface/BeamHaloSummary.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:40 2013	mkvomit.py
+
+AccessMethods: reco::BeamHaloSummary
+                        const bool  HcalLooseHaloId()
+                        const bool  HcalTightHaloId()
+                        const bool  EcalLooseHaloId()
+                        const bool  EcalTightHaloId()
+                        const bool  CSCLooseHaloId()
+                        const bool  CSCTightHaloId()
+                        const bool  GlobalLooseHaloId()
+                        const bool  GlobalTightHaloId()
+                        const bool  EventSmellsLikeHalo()
+                        const bool  LooseId()
+                        const bool  TightId()
+                        const bool  ExtremeTightId()
+                 std::vector<char>  GetHcalHaloReport()
+           const std::vector<char>  GetHcalHaloReport()
+                 std::vector<char>  GetEcalHaloReport()
+           const std::vector<char>  GetEcalHaloReport()
+                 std::vector<char>  GetCSCHaloReport()
+           const std::vector<char>  GetCSCHaloReport()
+                 std::vector<char>  GetGlobalHaloReport()
+           const std::vector<char>  GetGlobalHaloReport()
+                  std::vector<int>  GetHcaliPhiSuspects()
+            const std::vector<int>  GetHcaliPhiSuspects()
+                  std::vector<int>  GetEcaliPhiSuspects()
+            const std::vector<int>  GetEcaliPhiSuspects()
+                  std::vector<int>  GetGlobaliPhiSuspects()
+            const std::vector<int>  GetGlobaliPhiSuspects()
+
+DataMembers:   reco::BeamHaloSummary

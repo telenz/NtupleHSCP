@@ -1,0 +1,36 @@
+Class:         edm::TriggerResults
+
+Header:        DataFormats/Common/interface/TriggerResults.h
+
+BaseClasses:   edm::HLTGlobalStatus
+               edm::DoNotRecordParents
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:39 2013	mkvomit.py
+
+AccessMethods: edm::TriggerResults
+         const edm::ParameterSetID  parameterSetID()
+    const std::vector<std::string>  getTriggerNames()
+                 const std::string  name(unsigned int i)
+                      unsigned int  find(std::string name)
+
+AccessMethods: edm::HLTGlobalStatus
+                      unsigned int  size()
+                              bool  wasrun()
+                              bool  accept()
+                              bool  error()
+          const edm::HLTPathStatus  at(unsigned int i)
+                edm::HLTPathStatus  at(unsigned int i)
+                              bool  wasrun(unsigned int i)
+                              bool  accept(unsigned int i)
+                              bool  error(unsigned int i)
+                edm::hlt::HLTState  state(unsigned int i)
+                      unsigned int  index(unsigned int i)
+
+AccessMethods: edm::DoNotRecordParents
+
+DataMembers:   edm::TriggerResults
+
+DataMembers:   edm::HLTGlobalStatus
+
+DataMembers:   edm::DoNotRecordParents

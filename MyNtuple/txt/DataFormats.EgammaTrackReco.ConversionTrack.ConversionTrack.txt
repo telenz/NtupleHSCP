@@ -1,0 +1,17 @@
+Class:         reco::ConversionTrack
+
+Header:        DataFormats/EgammaTrackReco/interface/ConversionTrack.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:41 2013	mkvomit.py
+
+AccessMethods: reco::ConversionTrack
+                      reco::Track*  track()
+          const reco::TrackBaseRef  trackRef()
+               const TrajectoryRef  trajRef()
+                              bool  isTrackerOnly()
+                              bool  isArbitratedEcalSeeded()
+                              bool  isArbitratedMerged()
+                              bool  isArbitratedMergedEcalGeneral()
+
+DataMembers:   reco::ConversionTrack

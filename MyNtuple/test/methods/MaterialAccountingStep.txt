@@ -1,0 +1,3 @@
+      double  length()
+      double  radiationLengths()
+      double  energyLoss()

@@ -1,0 +1,13 @@
+Class:         PileupMixingContent
+
+Header:        SimDataFormats/PileupSummaryInfo/interface/PileupMixingContent.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: PileupMixingContent
+            const std::vector<int>  getMix_Ninteractions()
+          const std::vector<float>  getMix_TrueInteractions()
+            const std::vector<int>  getMix_bunchCrossing()
+
+DataMembers:   PileupMixingContent

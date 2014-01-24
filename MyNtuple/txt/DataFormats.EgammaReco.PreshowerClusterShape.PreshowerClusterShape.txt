@@ -1,0 +1,13 @@
+Class:         reco::PreshowerClusterShape
+
+Header:        DataFormats/EgammaReco/interface/PreshowerClusterShape.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::PreshowerClusterShape
+                               int  plane()
+             reco::SuperClusterRef  superCluster()
+                std::vector<float>  getStripEnergies()
+
+DataMembers:   reco::PreshowerClusterShape

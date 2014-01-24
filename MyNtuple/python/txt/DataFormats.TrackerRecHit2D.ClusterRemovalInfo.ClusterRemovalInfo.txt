@@ -1,0 +1,20 @@
+Class:         reco::ClusterRemovalInfo
+
+Header:        DataFormats/TrackerRecHit2D/interface/ClusterRemovalInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:02 2013	mkvomit.py
+
+AccessMethods: reco::ClusterRemovalInfo
+         std::vector<unsigned int>  pixelIndices()
+         std::vector<unsigned int>  stripIndices()
+   const std::vector<unsigned int>  pixelIndices()
+   const std::vector<unsigned int>  stripIndices()
+  const edm::RefProd<edmNew::DetSetVector<SiPixelCluster> >  pixelRefProd()
+  const edm::RefProd<edmNew::DetSetVector<SiStripCluster> >  stripRefProd()
+  const edm::RefProd<edmNew::DetSetVector<SiPixelCluster> >  pixelNewRefProd()
+  const edm::RefProd<edmNew::DetSetVector<SiStripCluster> >  stripNewRefProd()
+                              bool  hasPixel()
+                              bool  hasStrip()
+
+DataMembers:   reco::ClusterRemovalInfo

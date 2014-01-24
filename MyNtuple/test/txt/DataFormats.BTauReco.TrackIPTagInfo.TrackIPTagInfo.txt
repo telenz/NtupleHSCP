@@ -1,0 +1,37 @@
+Class:         reco::TrackIPTagInfo
+
+Header:        DataFormats/BTauReco/interface/TrackIPTagInfo.h
+
+BaseClasses:   reco::JTATagInfo
+               reco::BaseTagInfo
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::TrackIPTagInfo
+             reco::TrackIPTagInfo*  clone()
+                              bool  hasProbabilities()
+  const std::vector<reco::TrackIPTagInfo::TrackIPData>  impactParameterData()
+  const edm::RefVector<std::vector<reco::Track>,reco::Track,edm::refhelper::FindUsingAdvance<std::vector<reco::Track>,reco::Track> >  selectedTracks()
+          const std::vector<float>  probabilities(int ip)
+        std::vector<unsigned long>  sortedIndexesWithCut(float cut, reco::TrackIPTagInfo::SortCriteria mode=IP3DSig)
+        std::vector<unsigned long>  sortedIndexes(reco::TrackIPTagInfo::SortCriteria mode=IP3DSig)
+              reco::TrackRefVector  sortedTracks(std::vector<unsigned long> indexes)
+         reco::TaggingVariableList  taggingVariables()
+             const reco::VertexRef  primaryVertex()
+                const GlobalVector  axis()
+              const reco::TrackRef  ghostTrack()
+
+AccessMethods: reco::JTATagInfo
+         edm::RefToBase<reco::Jet>  jet()
+              reco::TrackRefVector  tracks()
+  const reco::JetTracksAssociationRef  jtaRef()
+                              bool  hasTracks()
+
+AccessMethods: reco::BaseTagInfo
+
+DataMembers:   reco::TrackIPTagInfo
+
+DataMembers:   reco::JTATagInfo
+
+DataMembers:   reco::BaseTagInfo

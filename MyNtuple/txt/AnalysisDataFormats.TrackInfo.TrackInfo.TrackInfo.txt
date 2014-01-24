@@ -1,0 +1,20 @@
+Class:         reco::TrackInfo
+
+Header:        AnalysisDataFormats/TrackInfo/interface/TrackInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::TrackInfo
+              const TrajectorySeed  seed()
+            const reco::RecHitType  type(TrackingRecHitRef x0)
+            PTrajectoryStateOnDet*  stateOnDet(reco::StateType x0, TrackingRecHitRef x1)
+                 const LocalVector  localTrackMomentum(reco::StateType x0, TrackingRecHitRef x1)
+                 const LocalVector  localTrackMomentumOnMono(reco::StateType x0, TrackingRecHitRef x1)
+                 const LocalVector  localTrackMomentumOnStereo(reco::StateType x0, TrackingRecHitRef x1)
+                  const LocalPoint  localTrackPosition(reco::StateType x0, TrackingRecHitRef x1)
+                  const LocalPoint  localTrackPositionOnMono(reco::StateType x0, TrackingRecHitRef x1)
+                  const LocalPoint  localTrackPositionOnStereo(reco::StateType x0, TrackingRecHitRef x1)
+  const std::map<edm::Ref<edm::OwnVector<TrackingRecHit,edm::ClonePolicy<TrackingRecHit> >,TrackingRecHit,edm::refhelper::FindUsingAdvance<edm::OwnVector<TrackingRecHit,edm::ClonePolicy<TrackingRecHit> >,TrackingRecHit> >,reco::TrackingRecHitInfo>  trajStateMap()
+
+DataMembers:   reco::TrackInfo

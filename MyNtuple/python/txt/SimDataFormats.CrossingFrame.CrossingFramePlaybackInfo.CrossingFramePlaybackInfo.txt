@@ -1,0 +1,13 @@
+Class:         CrossingFramePlaybackInfo
+
+Header:        SimDataFormats/CrossingFrame/interface/CrossingFramePlaybackInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:03 2013	mkvomit.py
+
+AccessMethods: CrossingFramePlaybackInfo
+                               int  getStartFileNr(unsigned int s, int bcr)
+                      edm::EventID  getStartEventId(unsigned int s, int bcr)
+                               int  getNrEvents(unsigned int s, int bcr)
+
+DataMembers:   CrossingFramePlaybackInfo

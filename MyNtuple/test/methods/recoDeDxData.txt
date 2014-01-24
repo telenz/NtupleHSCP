@@ -1,0 +1,4 @@
+       float  dEdx()
+       float  dEdxError()
+         int  numberOfSaturatedMeasurements()
+unsigned int  numberOfMeasurements()

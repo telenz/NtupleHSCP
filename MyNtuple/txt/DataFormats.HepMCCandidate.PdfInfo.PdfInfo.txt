@@ -1,0 +1,17 @@
+Class:         reco::PdfInfo
+
+Header:        DataFormats/HepMCCandidate/interface/PdfInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::PdfInfo
+
+DataMembers:   reco::PdfInfo
+                              char  id1
+                              char  id2
+                             float  x1
+                             float  x2
+                             float  scalePDF
+                             float  pdf1
+                             float  pdf2

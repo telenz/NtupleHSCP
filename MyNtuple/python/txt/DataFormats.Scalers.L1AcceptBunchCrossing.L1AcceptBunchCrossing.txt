@@ -1,0 +1,16 @@
+Class:         L1AcceptBunchCrossing
+
+Header:        DataFormats/Scalers/interface/L1AcceptBunchCrossing.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:11 2013	mkvomit.py
+
+AccessMethods: L1AcceptBunchCrossing
+                       std::string  name()
+                              bool  empty()
+                               int  l1AcceptOffset()
+                      unsigned int  orbitNumber()
+                      unsigned int  bunchCrossing()
+                      unsigned int  eventType()
+
+DataMembers:   L1AcceptBunchCrossing

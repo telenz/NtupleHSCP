@@ -1,0 +1,44 @@
+Class:         reco::PFCluster
+
+Header:        DataFormats/ParticleFlowReco/interface/PFCluster.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::PFCluster
+  const std::vector<reco::PFRecHitFraction>  recHitFractions()
+                    PFLayer::Layer  layer()
+                            double  energy()
+  const ROOT::Math::PositionVector3D<ROOT::Math::CylindricalEta3D<double>,ROOT::Math::DefaultCoordinateSystemTag>  positionREP()
+                            double  getDepthCorrection(double energy, bool isBelowPS=false, bool isHadron=false)
+                               int  color()
+                            double  charge()
+                            double  pt()
+                            double  theta()
+              const math::XYZPoint  vertex()
+                            double  vx()
+                            double  vy()
+                            double  vz()
+
+AccessMethods: reco::CaloCluster
+              const math::XYZPoint  position()
+                            double  x()
+                            double  y()
+                            double  z()
+                            double  eta()
+                            double  phi()
+                            size_t  size()
+         reco::CaloCluster::AlgoId  algo()
+         reco::CaloCluster::AlgoId  algoID()
+                          uint32_t  flags()
+                              bool  isInClean()
+                              bool  isInUnclean()
+                const reco::CaloID  caloID()
+  const std::vector<std::pair<DetId,float> >  hitsAndFractions()
+                       std::string  printHitAndFraction(unsigned int i)
+                             DetId  seed()
+
+DataMembers:   reco::PFCluster
+                      unsigned int  instanceCounter_
+
+DataMembers:   reco::CaloCluster

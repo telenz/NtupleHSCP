@@ -1,0 +1,34 @@
+Class:         reco::CastorEgamma
+
+Header:        DataFormats/CastorReco/interface/CastorEgamma.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:40 2013	mkvomit.py
+
+AccessMethods: reco::CastorEgamma
+                            double  energy()
+                            double  energycal()
+              ROOT::Math::XYZPoint  position()
+            reco::CastorClusterRef  getUsedCluster()
+                            double  emEnergy()
+                            double  hadEnergy()
+                            double  fem()
+                            double  width()
+                            double  depth()
+                            double  fhot()
+                            double  sigmaz()
+                            double  eta()
+                            double  phi()
+                            double  x()
+                            double  y()
+                            double  rho()
+
+AccessMethods: reco::CastorCluster
+        reco::CastorTowerRefVector  getUsedTowers()
+        reco::CastorTower_iterator  towersBegin()
+        reco::CastorTower_iterator  towersEnd()
+                            size_t  towersSize()
+
+DataMembers:   reco::CastorEgamma
+
+DataMembers:   reco::CastorCluster

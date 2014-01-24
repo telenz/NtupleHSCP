@@ -1,0 +1,14 @@
+Class:         reco::MuonShower
+
+Header:        DataFormats/MuonReco/interface/MuonShower.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::MuonShower
+
+DataMembers:   reco::MuonShower
+                  std::vector<int>  nStationHits
+                  std::vector<int>  nStationCorrelatedHits
+                std::vector<float>  stationShowerSizeT
+                std::vector<float>  stationShowerDeltaR

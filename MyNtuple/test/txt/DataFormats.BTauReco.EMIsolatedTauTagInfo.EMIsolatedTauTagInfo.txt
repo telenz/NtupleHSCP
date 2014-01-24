@@ -1,0 +1,24 @@
+Class:         reco::EMIsolatedTauTagInfo
+
+Header:        DataFormats/BTauReco/interface/EMIsolatedTauTagInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::EMIsolatedTauTagInfo
+       reco::EMIsolatedTauTagInfo*  clone()
+         edm::RefToBase<reco::Jet>  jet()
+    reco::EMLorentzVectorRefVector  lorentzVectorRecHits()
+  const reco::JetCrystalsAssociationRef  jcaRef()
+                             float  discriminator()
+                            double  pIsol(float rMax, float rMin)
+                             float  discriminator(float rMax, float rMin, float pIsolCut)
+
+AccessMethods: reco::BaseTagInfo
+              reco::TrackRefVector  tracks()
+                              bool  hasTracks()
+         reco::TaggingVariableList  taggingVariables()
+
+DataMembers:   reco::EMIsolatedTauTagInfo
+
+DataMembers:   reco::BaseTagInfo

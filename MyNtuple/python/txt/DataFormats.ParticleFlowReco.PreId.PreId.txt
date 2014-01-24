@@ -1,0 +1,30 @@
+Class:         reco::PreId
+
+Header:        DataFormats/ParticleFlowReco/interface/PreId.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:06 2013	mkvomit.py
+
+AccessMethods: reco::PreId
+                              bool  matching(reco::PreId::MatchingType type, unsigned int n=0)
+          const std::vector<float>  geomMatching()
+                             float  eopMatch()
+                             float  pt()
+                             float  eta()
+                             float  kfChi2()
+                             float  kfNHits()
+              const math::XYZPoint  ecalPos()
+              const math::XYZPoint  meanShower()
+                             float  chi2Ratio()
+                             float  gsfChi2()
+                              bool  ecalMatching(unsigned int n=0)
+                              bool  esMatching(unsigned int n=0)
+                              bool  trackFiltered(unsigned int n=0)
+                              bool  mvaSelected(unsigned int n=0)
+                              bool  preIded(unsigned int n=0)
+                             float  mva(unsigned int n=0)
+                             float  dpt()
+                    reco::TrackRef  trackRef()
+                reco::PFClusterRef  clusterRef()
+
+DataMembers:   reco::PreId

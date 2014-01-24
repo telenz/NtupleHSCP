@@ -1,0 +1,18 @@
+Class:         reco::PhotonCore
+
+Header:        DataFormats/EgammaCandidates/interface/PhotonCore.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:06 2013	mkvomit.py
+
+AccessMethods: reco::PhotonCore
+                 reco::PhotonCore*  clone()
+             reco::SuperClusterRef  superCluster()
+             reco::SuperClusterRef  pfSuperCluster()
+         reco::ConversionRefVector  conversions()
+         reco::ConversionRefVector  conversionsOneLeg()
+       reco::ElectronSeedRefVector  electronPixelSeeds()
+                              bool  isPFlowPhoton()
+                              bool  isStandardPhoton()
+
+DataMembers:   reco::PhotonCore

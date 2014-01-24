@@ -1,0 +1,8 @@
+         int  nCrystal()
+      double  etaBeam()
+      double  phiBeam()
+      double  dXbeam()
+      double  dYbeam()
+      double  evXbeam()
+      double  evYbeam()
+      double  phaseShift()

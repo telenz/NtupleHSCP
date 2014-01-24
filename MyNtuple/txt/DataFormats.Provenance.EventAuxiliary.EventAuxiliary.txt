@@ -1,0 +1,24 @@
+Class:         edm::EventAuxiliary
+
+Header:        DataFormats/Provenance/interface/EventAuxiliary.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:39 2013	mkvomit.py
+
+AccessMethods: edm::EventAuxiliary
+       const edm::ProcessHistoryID  processHistoryID()
+                const edm::EventID  id()
+                      edm::EventID  id()
+                 const std::string  processGUID()
+              const edm::Timestamp  time()
+      edm::LuminosityBlockNumber_t  luminosityBlock()
+      edm::LuminosityBlockNumber_t  oldLuminosityBlock()
+                edm::EventNumber_t  event()
+                  edm::RunNumber_t  run()
+                              bool  isRealData()
+  edm::EventAuxiliary::ExperimentType  experimentType()
+                               int  bunchCrossing()
+                               int  orbitNumber()
+                               int  storeNumber()
+
+DataMembers:   edm::EventAuxiliary

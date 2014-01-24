@@ -1,0 +1,8 @@
+      double  emEnergy
+      double  hadEnergy
+      double  fem
+      double  width
+      double  depth
+      double  fhot
+      double  sigmaz
+         int  nTowers

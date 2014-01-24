@@ -1,0 +1,2 @@
+        bool  isValid()
+unsigned int  nTracks()

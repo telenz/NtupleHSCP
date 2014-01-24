@@ -1,0 +1,11 @@
+        bool  empty()
+unsigned int  trigType()
+unsigned int  eventID()
+unsigned int  sourceID()
+unsigned int  bunchNumber()
+         int  version()
+unsigned int  ready()
+        bool  ready(int partitionNumber)
+       float  magnetCurrent()
+       float  magnetTemperature()
+      int[0]  partitionList

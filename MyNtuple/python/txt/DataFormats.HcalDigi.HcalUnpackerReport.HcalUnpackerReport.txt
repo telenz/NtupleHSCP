@@ -1,0 +1,30 @@
+Class:         HcalUnpackerReport
+
+Header:        DataFormats/HcalDigi/interface/HcalUnpackerReport.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:11 2013	mkvomit.py
+
+AccessMethods: HcalUnpackerReport
+            const std::vector<int>  getFedsUnpacked()
+            const std::vector<int>  getFedsError()
+                              bool  errorFree()
+                              bool  anyValidHCAL()
+                               int  unmappedDigis()
+                               int  unmappedTPDigis()
+                               int  spigotFormatErrors()
+                               int  badQualityDigis()
+                               int  totalDigis()
+                               int  totalTPDigis()
+                               int  totalHOTPDigis()
+                               int  emptyEventSpigots()
+                               int  OFWSpigots()
+                               int  busySpigots()
+                              bool  unsuppressedChannels()
+                              bool  hasFedWithCalib()
+          HcalCalibrationEventType  fedCalibType(uint16_t fed)
+                              bool  hasReportInfo(std::string name)
+                       std::string  getReportInfo(std::string name)
+          std::vector<std::string>  getReportKeys()
+
+DataMembers:   HcalUnpackerReport

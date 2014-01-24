@@ -1,0 +1,50 @@
+Class:         StEvtSolution
+
+Header:        AnalysisDataFormats/TopObjects/interface/StEvtSolution.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:38 2013	mkvomit.py
+
+AccessMethods: StEvtSolution
+                          pat::Jet  getBottom()
+                          pat::Jet  getLight()
+                         pat::Muon  getMuon()
+                     pat::Electron  getElectron()
+                          pat::MET  getNeutrino()
+                    reco::Particle  getLepW()
+                    reco::Particle  getLept()
+    const edm::RefProd<StGenEvent>  getGenEvent()
+                reco::GenParticle*  getGenBottom()
+                reco::GenParticle*  getGenLepton()
+                reco::GenParticle*  getGenNeutrino()
+                reco::GenParticle*  getGenLepW()
+                reco::GenParticle*  getGenLept()
+                          pat::Jet  getRecBottom()
+                          pat::Jet  getRecLight()
+                         pat::Muon  getRecMuon()
+                     pat::Electron  getRecElectron()
+                          pat::MET  getRecNeutrino()
+                    reco::Particle  getRecLepW()
+                    reco::Particle  getRecLept()
+                     pat::Particle  getFitBottom()
+                     pat::Particle  getFitLight()
+                     pat::Particle  getFitLepton()
+                     pat::Particle  getFitNeutrino()
+                    reco::Particle  getFitLepW()
+                    reco::Particle  getFitLept()
+                       std::string  getDecay()
+               std::vector<double>  getScanValues()
+                            double  getChi2Prob()
+                            double  getPtrueCombExist()
+                            double  getPtrueBJetSel()
+                            double  getPtrueBhadrSel()
+                            double  getPtrueJetComb()
+                            double  getSignalPur()
+                            double  getSignalLRTot()
+                            double  getSumDeltaRjp()
+                            double  getDeltaRB()
+                            double  getDeltaRL()
+                               int  getChangeBL()
+                              bool  getBestSol()
+
+DataMembers:   StEvtSolution

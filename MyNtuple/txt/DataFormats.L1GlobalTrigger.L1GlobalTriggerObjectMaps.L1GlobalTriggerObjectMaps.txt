@@ -1,0 +1,16 @@
+Class:         L1GlobalTriggerObjectMaps
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1GlobalTriggerObjectMaps.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: L1GlobalTriggerObjectMaps
+                              bool  algorithmExists(int algorithmBitNumber)
+                              bool  algorithmResult(int algorithmBitNumber)
+                      unsigned int  getNumberOfConditions(int algorithmBitNumber)
+  L1GlobalTriggerObjectMaps::ConditionsInAlgorithm  getConditionsInAlgorithm(int algorithmBitNumber)
+  L1GlobalTriggerObjectMaps::CombinationsInCondition  getCombinationsInCondition(int algorithmBitNumber, unsigned int conditionNumber)
+         const edm::ParameterSetID  namesParameterSetID()
+
+DataMembers:   L1GlobalTriggerObjectMaps

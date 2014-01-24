@@ -1,0 +1,7 @@
+unsigned int  nHits()
+         int  GsfPFTrack()->trackId()
+unsigned int  GsfPFTrack()->algoType()
+      double  GsfPFTrack()->charge()
+unsigned int  GsfPFTrack()->nTrajectoryPoints()
+unsigned int  GsfPFTrack()->nTrajectoryMeasurements()
+         int  GsfPFTrack()->color()

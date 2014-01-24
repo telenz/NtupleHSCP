@@ -1,0 +1,40 @@
+Class:         ParticleBase
+
+Header:        SimDataFormats/TrackingAnalysis/interface/ParticleBase.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: ParticleBase
+                               int  charge()
+                               int  threeCharge()
+    const math::XYZTLorentzVectorD  p4()
+  const math::PtEtaPhiMLorentzVector  polarP4()
+                  math::XYZVectorD  momentum()
+                  math::XYZVectorD  boostToCM()
+                            double  p()
+                            double  energy()
+                            double  et()
+                            double  mass()
+                            double  massSqr()
+                            double  mt()
+                            double  mtSqr()
+                            double  px()
+                            double  py()
+                            double  pz()
+                            double  pt()
+                            double  phi()
+                            double  theta()
+                            double  eta()
+                            double  rapidity()
+                            double  y()
+             const math::XYZPointD  vertex()
+                            double  vx()
+                            double  vy()
+                            double  vz()
+                               int  pdgId()
+                               int  status()
+                              bool  longLived()
+
+DataMembers:   ParticleBase
+                      unsigned int  longLivedTag

@@ -1,0 +1,12 @@
+Class:         edm::MergeableCounter
+
+Header:        DataFormats/Common/interface/MergeableCounter.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:53 2013	mkvomit.py
+
+AccessMethods: edm::MergeableCounter
+                              bool  mergeProduct(edm::MergeableCounter newThing)
+
+DataMembers:   edm::MergeableCounter
+                               int  value

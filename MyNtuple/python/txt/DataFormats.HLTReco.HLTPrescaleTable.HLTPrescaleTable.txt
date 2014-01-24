@@ -1,0 +1,17 @@
+Class:         trigger::HLTPrescaleTable
+
+Header:        DataFormats/HLTReco/interface/HLTPrescaleTable.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:15 2013	mkvomit.py
+
+AccessMethods: trigger::HLTPrescaleTable
+                      unsigned int  size()
+                      unsigned int  prescale(std::string trigger)
+                      unsigned int  prescale(unsigned int set, std::string trigger)
+                              bool  isProductEqual(trigger::HLTPrescaleTable that)
+                      unsigned int  set()
+    const std::vector<std::string>  labels()
+  const std::map<std::string,std::vector<unsigned int> >  table()
+
+DataMembers:   trigger::HLTPrescaleTable

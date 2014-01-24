@@ -1,0 +1,12 @@
+Class:         edm::ConditionsInEventBlock
+
+Header:        DataFormats/Common/interface/ConditionsInEdm.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:11 2013	mkvomit.py
+
+AccessMethods: edm::ConditionsInEventBlock
+
+DataMembers:   edm::ConditionsInEventBlock
+                unsigned short int  bstMasterStatus
+                      unsigned int  turnCountNumber

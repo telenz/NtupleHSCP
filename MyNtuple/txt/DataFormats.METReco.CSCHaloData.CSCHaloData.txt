@@ -1,0 +1,28 @@
+Class:         reco::CSCHaloData
+
+Header:        DataFormats/METReco/interface/CSCHaloData.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:40 2013	mkvomit.py
+
+AccessMethods: reco::CSCHaloData
+                               int  NumberOfHaloTriggers(reco::HaloData::Endcap z=both)
+                               int  NHaloTriggers(reco::HaloData::Endcap z=both)
+                               int  NumberOfHaloTracks(reco::HaloData::Endcap z=both)
+                               int  NHaloTracks(reco::HaloData::Endcap z=both)
+                              bool  CSCHaloHLTAccept()
+                             short  NumberOfOutOfTimeTriggers(reco::HaloData::Endcap z=both)
+                             short  NOutOfTimeTriggers(reco::HaloData::Endcap z=both)
+                             short  NumberOfOutTimeHits()
+                             short  NOutOfTimeHits()
+                             short  NTracksSmalldT()
+                             short  NTracksSmallBeta()
+                             short  NTracksSmallBetaAndSmalldT()
+                             short  NFlatHaloSegments()
+                              bool  GetSegmentsInBothEndcaps()
+  edm::RefVector<std::vector<reco::Track>,reco::Track,edm::refhelper::FindUsingAdvance<std::vector<reco::Track>,reco::Track> >  GetTracks()
+  const edm::RefVector<std::vector<reco::Track>,reco::Track,edm::refhelper::FindUsingAdvance<std::vector<reco::Track>,reco::Track> >  GetTracks()
+  const std::vector<Point3DBase<float,GlobalTag> >  GetCSCTrackImpactPositions()
+  std::vector<Point3DBase<float,GlobalTag> >  GetCSCTrackImpactPositions()
+
+DataMembers:   reco::CSCHaloData

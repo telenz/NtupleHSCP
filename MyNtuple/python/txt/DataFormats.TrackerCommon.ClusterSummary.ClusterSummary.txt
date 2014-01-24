@@ -1,0 +1,22 @@
+Class:         ClusterSummary
+
+Header:        DataFormats/TrackerCommon/interface/ClusterSummary.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:02 2013	mkvomit.py
+
+AccessMethods: ClusterSummary
+                            double  GetGenericVariable(int variableLocation, int module)
+                            double  GetGenericVariable(std::string variableName, int module)
+               std::vector<double>  GetGenericVariable(std::string variableName)
+               std::vector<double>  GetGenericVariable(int variableLocation)
+  std::vector<std::vector<double> >  GetGenericVariable()
+          std::vector<std::string>  GetUserContent()
+                               int  GetUserContentSize()
+                               int  GetVariableLocation(std::string var)
+                  std::vector<int>  GetUserModules()
+                               int  GetModuleLocation(int mod)
+                  std::vector<int>  GetUserIterator()
+          std::vector<std::string>  DecodeProvInfo(std::string ProvInfo)
+
+DataMembers:   ClusterSummary

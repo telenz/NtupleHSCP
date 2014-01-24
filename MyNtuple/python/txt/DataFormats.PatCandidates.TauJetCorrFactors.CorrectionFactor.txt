@@ -1,0 +1,12 @@
+Class:         pat::TauJetCorrFactors::CorrectionFactor
+
+Header:        DataFormats/PatCandidates/interface/TauJetCorrFactors.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:56 2013	mkvomit.py
+
+AccessMethods: pat::TauJetCorrFactors::CorrectionFactor
+
+DataMembers:   pat::TauJetCorrFactors::CorrectionFactor
+                       std::string  first
+                             float  second

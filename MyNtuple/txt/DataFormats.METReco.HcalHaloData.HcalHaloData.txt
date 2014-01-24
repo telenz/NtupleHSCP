@@ -1,0 +1,12 @@
+Class:         reco::HcalHaloData
+
+Header:        DataFormats/METReco/interface/HcalHaloData.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:41 2013	mkvomit.py
+
+AccessMethods: reco::HcalHaloData
+  const std::vector<reco::PhiWedge>  GetPhiWedges()
+       std::vector<reco::PhiWedge>  GetPhiWedges()
+
+DataMembers:   reco::HcalHaloData

@@ -1,0 +1,29 @@
+Class:         reco::SoftLeptonTagInfo
+
+Header:        DataFormats/BTauReco/interface/SoftLeptonTagInfo.h
+
+BaseClasses:   reco::JetTagInfo
+               reco::BaseTagInfo
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::SoftLeptonTagInfo
+          reco::SoftLeptonTagInfo*  clone()
+                      unsigned int  leptons()
+  const edm::RefToBase<reco::Track>  lepton(size_t i)
+  const reco::SoftLeptonProperties  properties(size_t i)
+         reco::TaggingVariableList  taggingVariables()
+
+AccessMethods: reco::JetTagInfo
+         edm::RefToBase<reco::Jet>  jet()
+
+AccessMethods: reco::BaseTagInfo
+              reco::TrackRefVector  tracks()
+                              bool  hasTracks()
+
+DataMembers:   reco::SoftLeptonTagInfo
+
+DataMembers:   reco::JetTagInfo
+
+DataMembers:   reco::BaseTagInfo

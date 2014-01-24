@@ -1,0 +1,19 @@
+Class:         reco::PFDisplacedVertexCandidate
+
+Header:        DataFormats/ParticleFlowReco/interface/PFDisplacedVertexCandidate.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:06 2013	mkvomit.py
+
+AccessMethods: reco::PFDisplacedVertexCandidate
+  std::map<float,std::pair<int,int> >  r2Map()
+                std::vector<float>  r2Vector()
+                std::vector<float>  distVector()
+                 const GlobalPoint  dcaPoint(unsigned int ie1, unsigned int ie2)
+                              bool  isValid()
+          const reco::TrackBaseRef  tref(unsigned int ie)
+  const std::vector<edm::RefToBase<reco::Track> >  elements()
+                      unsigned int  nTracks()
+  const std::map<unsigned int,reco::PFDisplacedVertexCandidate::VertexLink>  vertexLinkData()
+
+DataMembers:   reco::PFDisplacedVertexCandidate

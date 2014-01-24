@@ -1,0 +1,95 @@
+Class:         reco::WMuNuCandidate
+
+Header:        AnalysisDataFormats/EWK/interface/WMuNuCandidate.h
+
+BaseClasses:   reco::CompositeCandidate
+               reco::LeafCandidate
+               reco::Candidate
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::WMuNuCandidate
+                            double  massT()
+                            double  eT()
+                            double  acop()
+                  const reco::Muon  getMuon()
+                   const reco::MET  getNeutrino()
+
+AccessMethods: reco::CompositeCandidate
+                       std::string  name()
+    const std::vector<std::string>  roles()
+         reco::CompositeCandidate*  clone()
+   reco::candidate::const_iterator  begin()
+   reco::candidate::const_iterator  end()
+         reco::candidate::iterator  begin()
+         reco::candidate::iterator  end()
+                            size_t  numberOfDaughters()
+                  reco::Candidate*  daughter(size_t x0)
+                  reco::Candidate*  daughter(std::string s)
+                            size_t  numberOfMothers()
+                  reco::Candidate*  mother(size_t i=0)
+
+AccessMethods: reco::LeafCandidate
+                            size_t  numberOfSourceCandidatePtrs()
+                reco::CandidatePtr  sourceCandidatePtr(size_t i)
+                               int  charge()
+                               int  threeCharge()
+     const math::XYZTLorentzVector  p4()
+  const math::PtEtaPhiMLorentzVector  polarP4()
+                   math::XYZVector  momentum()
+                   math::XYZVector  boostToCM()
+                            double  p()
+                            double  energy()
+                            double  et()
+                            double  mass()
+                            double  massSqr()
+                            double  mt()
+                            double  mtSqr()
+                            double  px()
+                            double  py()
+                            double  pz()
+                            double  pt()
+                            double  phi()
+                            double  theta()
+                            double  eta()
+                            double  rapidity()
+                            double  y()
+              const math::XYZPoint  vertex()
+                            double  vx()
+                            double  vy()
+                            double  vz()
+                               int  pdgId()
+                               int  status()
+                              bool  longLived()
+                              bool  massConstraint()
+                            double  vertexChi2()
+                            double  vertexNdof()
+                            double  vertexNormalizedChi2()
+                            double  vertexCovariance(int i, int j)
+  ROOT::Math::SMatrix<double,3,3,ROOT::Math::MatRepSym<double,3> >  vertexCovariance()
+                              bool  hasMasterClone()
+      const reco::CandidateBaseRef  masterClone()
+                              bool  hasMasterClonePtr()
+          const reco::CandidatePtr  masterClonePtr()
+                              bool  isElectron()
+                              bool  isMuon()
+                              bool  isStandAloneMuon()
+                              bool  isGlobalMuon()
+                              bool  isTrackerMuon()
+                              bool  isCaloMuon()
+                              bool  isPhoton()
+                              bool  isConvertedPhoton()
+                              bool  isJet()
+
+AccessMethods: reco::Candidate
+
+DataMembers:   reco::WMuNuCandidate
+
+DataMembers:   reco::CompositeCandidate
+
+DataMembers:   reco::LeafCandidate
+                      unsigned int  longLivedTag
+                      unsigned int  massConstraintTag
+
+DataMembers:   reco::Candidate

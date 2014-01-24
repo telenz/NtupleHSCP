@@ -1,0 +1,4 @@
+<lcgdict>
+ <class name="HelperFor<reco::Track>"/>
+ <class name="reco::TrackHelper"/>
+</lcgdict>

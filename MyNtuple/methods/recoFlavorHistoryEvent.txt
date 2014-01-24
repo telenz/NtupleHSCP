@@ -1,0 +1,5 @@
+        bool  isCached()
+unsigned int  nb()
+unsigned int  nc()
+      double  deltaR()
+unsigned int  highestFlavor()

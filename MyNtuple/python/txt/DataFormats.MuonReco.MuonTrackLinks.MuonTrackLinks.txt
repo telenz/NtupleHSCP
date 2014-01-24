@@ -1,0 +1,13 @@
+Class:         reco::MuonTrackLinks
+
+Header:        DataFormats/MuonReco/interface/MuonTrackLinks.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:05 2013	mkvomit.py
+
+AccessMethods: reco::MuonTrackLinks
+                    reco::TrackRef  trackerTrack()
+                    reco::TrackRef  standAloneTrack()
+                    reco::TrackRef  globalTrack()
+
+DataMembers:   reco::MuonTrackLinks

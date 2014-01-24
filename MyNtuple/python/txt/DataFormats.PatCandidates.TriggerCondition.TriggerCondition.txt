@@ -1,0 +1,19 @@
+Class:         pat::TriggerCondition
+
+Header:        DataFormats/PatCandidates/interface/TriggerCondition.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:56 2013	mkvomit.py
+
+AccessMethods: pat::TriggerCondition
+                       std::string  name()
+                              bool  wasAccept()
+                               int  category()
+                               int  type()
+                  std::vector<int>  triggerObjectTypes()
+                              bool  hasTriggerObjectType(trigger::TriggerObjectType triggerObjectType)
+                              bool  hasTriggerObjectType(int triggerObjectType)
+         std::vector<unsigned int>  objectKeys()
+                              bool  hasObjectKey(unsigned int objectKey)
+
+DataMembers:   pat::TriggerCondition

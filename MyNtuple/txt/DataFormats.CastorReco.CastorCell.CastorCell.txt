@@ -1,0 +1,18 @@
+Class:         reco::CastorCell
+
+Header:        DataFormats/CastorReco/interface/CastorCell.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:40 2013	mkvomit.py
+
+AccessMethods: reco::CastorCell
+                            double  energy()
+              ROOT::Math::XYZPoint  position()
+                            double  z()
+                            double  phi()
+                            double  x()
+                            double  y()
+                            double  rho()
+                            double  eta()
+
+DataMembers:   reco::CastorCell

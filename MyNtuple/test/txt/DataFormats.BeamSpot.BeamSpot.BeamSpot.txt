@@ -1,0 +1,39 @@
+Class:         reco::BeamSpot
+
+Header:        DataFormats/BeamSpot/interface/BeamSpot.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:11 2013	mkvomit.py
+
+AccessMethods: reco::BeamSpot
+              const math::XYZPoint  position()
+                            double  x0()
+                            double  y0()
+                            double  z0()
+                            double  x(double z)
+                            double  y(double z)
+              const math::XYZPoint  position(double z)
+                            double  sigmaZ()
+                            double  dxdz()
+                            double  dydz()
+                            double  BeamWidthX()
+                            double  BeamWidthY()
+                            double  x0Error()
+                            double  y0Error()
+                            double  z0Error()
+                            double  sigmaZ0Error()
+                            double  dxdzError()
+                            double  dydzError()
+                            double  BeamWidthXError()
+                            double  BeamWidthYError()
+                            double  covariance(int i, int j)
+  ROOT::Math::SMatrix<double,7,7,ROOT::Math::MatRepSym<double,7> >  covariance()
+  ROOT::Math::SMatrix<double,3,3,ROOT::Math::MatRepSym<double,3> >  covariance3D()
+          reco::BeamSpot::BeamType  type()
+  ROOT::Math::SMatrix<double,3,3,ROOT::Math::MatRepSym<double,3> >  rotatedCovariance3D()
+                            double  emittanceX()
+                            double  emittanceY()
+                            double  betaStar()
+                            double  beamWidthFromBeta(double z, double e)
+
+DataMembers:   reco::BeamSpot

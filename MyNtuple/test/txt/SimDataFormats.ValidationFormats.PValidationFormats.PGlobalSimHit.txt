@@ -1,0 +1,37 @@
+Class:         PGlobalSimHit
+
+Header:        SimDataFormats/ValidationFormats/interface/PValidationFormats.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:09 2013	mkvomit.py
+
+AccessMethods: PGlobalSimHit
+                               int  getnRawGenPart()
+                               int  getnG4Vtx()
+   std::vector<PGlobalSimHit::Vtx>  getG4Vtx()
+                               int  getnG4Trk()
+   std::vector<PGlobalSimHit::Trk>  getG4Trk()
+                               int  getnECalHits()
+  std::vector<PGlobalSimHit::CalHit>  getECalHits()
+                               int  getnPreShHits()
+  std::vector<PGlobalSimHit::CalHit>  getPreShHits()
+                               int  getnHCalHits()
+  std::vector<PGlobalSimHit::CalHit>  getHCalHits()
+                               int  getnPxlFwdHits()
+  std::vector<PGlobalSimHit::FwdHit>  getPxlFwdHits()
+                               int  getnPxlBrlHits()
+  std::vector<PGlobalSimHit::BrlHit>  getPxlBrlHits()
+                               int  getnSiFwdHits()
+  std::vector<PGlobalSimHit::FwdHit>  getSiFwdHits()
+                               int  getnSiBrlHits()
+  std::vector<PGlobalSimHit::BrlHit>  getSiBrlHits()
+                               int  getnMuonDtHits()
+  std::vector<PGlobalSimHit::BrlHit>  getMuonDtHits()
+                               int  getnMuonCscHits()
+  std::vector<PGlobalSimHit::FwdHit>  getMuonCscHits()
+                               int  getnMuonRpcFwdHits()
+  std::vector<PGlobalSimHit::FwdHit>  getMuonRpcFwdHits()
+                               int  getnMuonRpcBrlHits()
+  std::vector<PGlobalSimHit::BrlHit>  getMuonRpcBrlHits()
+
+DataMembers:   PGlobalSimHit

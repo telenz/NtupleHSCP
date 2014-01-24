@@ -1,0 +1,7 @@
+      size_t  tdcHits()
+         int  hitChannel(size_t ihit)
+         int  hitRaw(size_t ihit)
+      double  hitNS(size_t ihit)
+         int  attenuator1()
+         int  attenuator2()
+         int  selector()

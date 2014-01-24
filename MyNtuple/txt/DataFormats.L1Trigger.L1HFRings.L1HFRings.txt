@@ -1,0 +1,17 @@
+Class:         l1extra::L1HFRings
+
+Header:        DataFormats/L1Trigger/interface/L1HFRings.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:39 2013	mkvomit.py
+
+AccessMethods: l1extra::L1HFRings
+                            double  hfEtSum(l1extra::L1HFRings::HFRingLabels i)
+                               int  hfBitCount(l1extra::L1HFRings::HFRingLabels i)
+        const L1GctHFRingEtSumsRef  gctHFEtSumsRef()
+         const L1GctHFBitCountsRef  gctHFBitCountsRef()
+                L1GctHFRingEtSums*  gctHFEtSums()
+                 L1GctHFBitCounts*  gctHFBitCounts()
+                               int  bx()
+
+DataMembers:   l1extra::L1HFRings

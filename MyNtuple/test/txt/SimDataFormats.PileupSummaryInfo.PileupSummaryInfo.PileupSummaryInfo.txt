@@ -1,0 +1,20 @@
+Class:         PileupSummaryInfo
+
+Header:        SimDataFormats/PileupSummaryInfo/interface/PileupSummaryInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:10 2013	mkvomit.py
+
+AccessMethods: PileupSummaryInfo
+                         const int  getPU_NumInteractions()
+          const std::vector<float>  getPU_zpositions()
+          const std::vector<float>  getPU_sumpT_lowpT()
+          const std::vector<float>  getPU_sumpT_highpT()
+            const std::vector<int>  getPU_ntrks_lowpT()
+            const std::vector<int>  getPU_ntrks_highpT()
+          const std::vector<float>  getPU_instLumi()
+   const std::vector<edm::EventID>  getPU_EventID()
+                         const int  getBunchCrossing()
+                       const float  getTrueNumInteractions()
+
+DataMembers:   PileupSummaryInfo

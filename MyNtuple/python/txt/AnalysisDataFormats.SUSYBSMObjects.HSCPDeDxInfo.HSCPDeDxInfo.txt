@@ -1,0 +1,16 @@
+Class:         susybsm::HSCPDeDxInfo
+
+Header:        AnalysisDataFormats/SUSYBSMObjects/interface/HSCPDeDxInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:15 2013	mkvomit.py
+
+AccessMethods: susybsm::HSCPDeDxInfo
+
+DataMembers:   susybsm::HSCPDeDxInfo
+                std::vector<float>  charge
+                std::vector<float>  probability
+                std::vector<float>  pathlength
+                std::vector<float>  cosine
+         std::vector<unsigned int>  detIds
+                 std::vector<bool>  shapetest

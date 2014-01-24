@@ -1,0 +1,39 @@
+Class:         reco::PFBlockElementSuperCluster
+
+Header:        DataFormats/ParticleFlowReco/interface/PFBlockElementSuperCluster.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::PFBlockElementSuperCluster
+             reco::PFBlockElement*  clone()
+             reco::SuperClusterRef  superClusterRef()
+                   reco::PhotonRef  photonRef()
+                             float  trackIso()
+                             float  ecalIso()
+                             float  hcalIso()
+                             float  hoverE()
+                              bool  fromGsfElectron()
+                              bool  fromPhoton()
+
+AccessMethods: reco::PFBlockElement
+        reco::PFBlockElement::Type  type()
+                              bool  trackType(reco::PFBlockElement::TrackType trType)
+                              bool  locked()
+                      unsigned int  index()
+                    reco::TrackRef  trackRef()
+               reco::PFRecTrackRef  trackRefPF()
+                reco::PFClusterRef  clusterRef()
+  reco::PFDisplacedTrackerVertexRef  displacedVertexRef(reco::PFBlockElement::TrackType trType)
+               reco::ConversionRef  convRef()
+                     reco::MuonRef  muonRef()
+  reco::VertexCompositeCandidateRef  V0Ref()
+                              bool  isSecondary()
+                              bool  isPrimary()
+                              bool  isLinkedToDisplacedVertex()
+                              bool  isMultilinksValide()
+      const reco::PFMultilinksType  getMultilinks()
+
+DataMembers:   reco::PFBlockElementSuperCluster
+
+DataMembers:   reco::PFBlockElement

@@ -1,0 +1,15 @@
+Class:         GenFilterInfo
+
+Header:        SimDataFormats/GeneratorProducts/interface/GenFilterInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:06 2013	mkvomit.py
+
+AccessMethods: GenFilterInfo
+                      unsigned int  numEventsTried()
+                      unsigned int  numEventsPassed()
+                            double  filterEfficiency()
+                            double  filterEfficiencyError()
+                              bool  mergeProduct(GenFilterInfo other)
+
+DataMembers:   GenFilterInfo

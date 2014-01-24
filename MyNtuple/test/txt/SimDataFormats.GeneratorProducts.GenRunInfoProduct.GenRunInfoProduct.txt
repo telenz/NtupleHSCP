@@ -1,0 +1,17 @@
+Class:         GenRunInfoProduct
+
+Header:        SimDataFormats/GeneratorProducts/interface/GenRunInfoProduct.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:08 2013	mkvomit.py
+
+AccessMethods: GenRunInfoProduct
+     const GenRunInfoProduct::XSec  internalXSec()
+     const GenRunInfoProduct::XSec  externalXSecLO()
+     const GenRunInfoProduct::XSec  externalXSecNLO()
+                            double  filterEfficiency()
+                            double  crossSection()
+                              bool  mergeProduct(GenRunInfoProduct other)
+                              bool  isProductEqual(GenRunInfoProduct other)
+
+DataMembers:   GenRunInfoProduct

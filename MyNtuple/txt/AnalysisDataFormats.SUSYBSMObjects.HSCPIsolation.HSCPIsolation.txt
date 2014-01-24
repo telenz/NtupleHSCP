@@ -1,0 +1,20 @@
+Class:         susybsm::HSCPIsolation
+
+Header:        AnalysisDataFormats/SUSYBSMObjects/interface/HSCPIsolation.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:43 2013	mkvomit.py
+
+AccessMethods: susybsm::HSCPIsolation
+                            double  Get_TK_CountHighPt()
+                            double  Get_TK_Count()
+                            double  Get_TK_SumEt()
+                            double  Get_ECAL_Energy()
+                            double  Get_HCAL_Energy()
+
+DataMembers:   susybsm::HSCPIsolation
+                            double  TK_CountHighPt
+                            double  TK_Count
+                            double  TK_SumEt
+                            double  ECAL_Energy
+                            double  HCAL_Energy

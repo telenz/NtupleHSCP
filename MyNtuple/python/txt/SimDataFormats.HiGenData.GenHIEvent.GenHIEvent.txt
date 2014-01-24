@@ -1,0 +1,25 @@
+Class:         edm::GenHIEvent
+
+Header:        SimDataFormats/HiGenData/interface/GenHIEvent.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:52 2013	mkvomit.py
+
+AccessMethods: edm::GenHIEvent
+                            double  b()
+                               int  Npart()
+                               int  Ncoll()
+                               int  Nhard()
+                            double  evtPlane()
+                            double  eccentricity()
+                               int  Ncharged()
+                               int  NchargedMR()
+                            double  MeanPt()
+                            double  MeanPtMR()
+                            double  EtMR()
+                               int  NchargedPtCut()
+                               int  NchargedPtCutMR()
+  const std::vector<reco::GenParticleRef>  getSubEvent(unsigned int sub_id)
+                               int  getNsubs()
+
+DataMembers:   edm::GenHIEvent

@@ -1,0 +1,19 @@
+Class:         reco::EcalHaloData
+
+Header:        DataFormats/METReco/interface/EcalHaloData.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:03 2013	mkvomit.py
+
+AccessMethods: reco::EcalHaloData
+                               int  NumberOfHaloSuperClusters(float roundness=1.0e+2, float angle=4.0e+0)
+  const std::vector<reco::PhiWedge>  GetPhiWedges()
+       std::vector<reco::PhiWedge>  GetPhiWedges()
+  edm::RefVector<std::vector<reco::SuperCluster>,reco::SuperCluster,edm::refhelper::FindUsingAdvance<std::vector<reco::SuperCluster>,reco::SuperCluster> >  GetSuperClusters()
+  const edm::RefVector<std::vector<reco::SuperCluster>,reco::SuperCluster,edm::refhelper::FindUsingAdvance<std::vector<reco::SuperCluster>,reco::SuperCluster> >  GetSuperClusters()
+              edm::ValueMap<float>  GetShowerShapesRoundness()
+        const edm::ValueMap<float>  GetShowerShapesRoundness()
+              edm::ValueMap<float>  GetShowerShapesAngle()
+        const edm::ValueMap<float>  GetShowerShapesAngle()
+
+DataMembers:   reco::EcalHaloData

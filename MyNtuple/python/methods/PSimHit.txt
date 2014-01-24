@@ -1,0 +1,8 @@
+       float  pabs()
+       float  timeOfFlight()
+       float  tof()
+       float  energyLoss()
+         int  particleType()
+unsigned int  detUnitId()
+unsigned int  trackId()
+unsigned short  processType()

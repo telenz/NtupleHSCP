@@ -1,0 +1,21 @@
+Class:         reco::FlavorHistory
+
+Header:        DataFormats/HepMCCandidate/interface/FlavorHistory.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::FlavorHistory
+     reco::FlavorHistory::FLAVOR_T  flavorSource()
+                              bool  hasParton()
+                              bool  hasSister()
+                              bool  hasProgenitor()
+                              bool  hasMatchedJet()
+                              bool  hasSisterJet()
+          const reco::CandidatePtr  parton()
+          const reco::CandidatePtr  sister()
+          const reco::CandidatePtr  progenitor()
+  const reco::ShallowClonePtrCandidate  matchedJet()
+  const reco::ShallowClonePtrCandidate  sisterJet()
+
+DataMembers:   reco::FlavorHistory

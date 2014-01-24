@@ -1,0 +1,20 @@
+Class:         PCaloHit
+
+Header:        SimDataFormats/CaloHit/interface/PCaloHit.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: PCaloHit
+                             char*  name()
+                             char*  getName()
+                            double  energy()
+                            double  energyEM()
+                            double  energyHad()
+                            double  time()
+                               int  geantTrackId()
+                      unsigned int  id()
+                          uint16_t  depth()
+                    EncodedEventId  eventId()
+
+DataMembers:   PCaloHit

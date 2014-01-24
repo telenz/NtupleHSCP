@@ -1,0 +1,38 @@
+Class:         reco::ElectronSeed
+
+Header:        DataFormats/EgammaReco/interface/ElectronSeed.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:03 2013	mkvomit.py
+
+AccessMethods: reco::ElectronSeed
+                 const std::string  name()
+               reco::ElectronSeed*  clone()
+                    reco::TrackRef  ctfTrack()
+  edm::RefToBase<reco::CaloCluster>  caloCluster()
+                     unsigned char  hitsMask()
+                               int  subDet2()
+                             float  dRz2()
+                             float  dPhi2()
+                             float  dRz2Pos()
+                             float  dPhi2Pos()
+                               int  subDet1()
+                             float  dRz1()
+                             float  dPhi1()
+                             float  dRz1Pos()
+                             float  dPhi1Pos()
+                             float  hoe1()
+                             float  hoe2()
+                       TrackCharge  getCharge()
+                              bool  isEcalDriven()
+                              bool  isTrackerDriven()
+
+AccessMethods: TrajectorySeed
+  std::pair<edm::OwnVector<TrackingRecHit,edm::ClonePolicy<TrackingRecHit> >::const_iterator,edm::OwnVector<TrackingRecHit,edm::ClonePolicy<TrackingRecHit> >::const_iterator>  recHits()
+                      unsigned int  nHits()
+              PropagationDirection  direction()
+       const PTrajectoryStateOnDet  startingState()
+
+DataMembers:   reco::ElectronSeed
+
+DataMembers:   TrajectorySeed

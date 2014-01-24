@@ -1,0 +1,3 @@
+         int  fedBxRecords(int fedId)
+         int  fedFormatErrors(int fedId)
+         int  fedErrorRecords(int fedId)

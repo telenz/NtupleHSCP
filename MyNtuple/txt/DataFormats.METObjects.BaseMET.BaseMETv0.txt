@@ -1,0 +1,17 @@
+Class:         BaseMETv0
+
+Header:        DataFormats/METObjects/interface/BaseMET.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:35 2013	mkvomit.py
+
+AccessMethods: BaseMETv0
+                            double  MET()
+                            double  MEx()
+                            double  MEy()
+                            double  MEz()
+                            double  SumET()
+                            double  phi()
+      std::vector<CommonMETv0Data>  getAllCorr()
+
+DataMembers:   BaseMETv0

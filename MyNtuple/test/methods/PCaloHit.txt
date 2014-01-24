@@ -1,0 +1,6 @@
+      double  energy()
+      double  energyEM()
+      double  energyHad()
+      double  time()
+         int  geantTrackId()
+unsigned int  id()

@@ -1,0 +1,46 @@
+Class:         PHcalTB06Info
+
+Header:        SimDataFormats/HcalTestBeam/interface/PHcalTB06Info.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:32 2013	mkvomit.py
+
+AccessMethods: PHcalTB06Info
+                               int  primary()
+                               int  partID()
+                             float  initE()
+                             float  eta()
+                             float  phi()
+                             float  simEtotal()
+                             float  simEcE()
+                             float  simHcE()
+   std::vector<PHcalTB06Info::Hit>  simHits()
+                PHcalTB06Info::Hit  simHit(unsigned int i)
+                      unsigned int  simHitID(unsigned int i)
+                             float  simHitEta(unsigned int i)
+                             float  simHitPhi(unsigned int i)
+                             float  simHitE(unsigned int i)
+                             float  simHitT(unsigned int i)
+                               int  evNum()
+                               int  vtxType()
+                             float  vtxPrimX()
+                             float  vtxPrimY()
+                             float  vtxPrimZ()
+                             float  vtxPrimR()
+                             float  vtxPrimU()
+                             float  vtxPrimV()
+                             float  vtxPrimW()
+                             float  vtxPrimPx()
+                             float  vtxPrimPy()
+                             float  vtxPrimPz()
+                               int  vtxSec()
+   std::vector<PHcalTB06Info::Vtx>  vtxSecondaries()
+                PHcalTB06Info::Vtx  vtxSecondary(unsigned int i)
+                               int  vtxTrackID(unsigned int i)
+                               int  vtxPartID(unsigned int i)
+                             float  vtxSecPx(unsigned int i)
+                             float  vtxSecPy(unsigned int i)
+                             float  vtxSecPz(unsigned int i)
+                             float  vtxSecEKin(unsigned int i)
+
+DataMembers:   PHcalTB06Info

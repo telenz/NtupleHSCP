@@ -1,0 +1,6 @@
+        bool  empty()
+        bool  empty(unsigned int layer)
+unsigned int  rawdetId(unsigned int layer)
+         int  strip(unsigned int layer)
+         int  bx(unsigned int layer)
+unsigned int  nlayer()

@@ -1,0 +1,19 @@
+Class:         reco::GlobalHaloData
+
+Header:        DataFormats/METReco/interface/GlobalHaloData.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:41 2013	mkvomit.py
+
+AccessMethods: reco::GlobalHaloData
+                             float  METOverSumEt()
+                             float  DeltaMEx()
+                             float  DeltaMEy()
+                             float  DeltaSumEt()
+                     reco::CaloMET  GetCorrectedCaloMET(reco::CaloMET RawMET)
+       std::vector<reco::PhiWedge>  GetMatchedHcalPhiWedges()
+  const std::vector<reco::PhiWedge>  GetMatchedHcalPhiWedges()
+       std::vector<reco::PhiWedge>  GetMatchedEcalPhiWedges()
+  const std::vector<reco::PhiWedge>  GetMatchedEcalPhiWedges()
+
+DataMembers:   reco::GlobalHaloData

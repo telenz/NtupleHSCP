@@ -1,0 +1,8 @@
+unsigned int  rank()
+unsigned int  rctCard()
+unsigned int  rctRegion()
+unsigned int  rctCrate()
+        bool  isolated()
+unsigned int  index()
+     int16_t  bx()
+        bool  empty()

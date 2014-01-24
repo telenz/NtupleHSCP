@@ -1,0 +1,22 @@
+Class:         EcalTrigPrimCompactColl
+
+Header:        DataFormats/EcalDigi/interface/EcalTrigPrimCompactColl.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:04 2013	mkvomit.py
+
+AccessMethods: EcalTrigPrimCompactColl
+                          uint16_t  raw(int ieta, int iphi)
+                          uint16_t  raw(EcalTrigTowerDetId ttId)
+                               int  compressedEt(int ieta, int iphi)
+                               int  compressedEt(EcalTrigTowerDetId ttId)
+                              bool  fineGrain(int ieta, int iphi)
+                              bool  fineGrain(EcalTrigTowerDetId ttId)
+                               int  ttFlag(int ieta, int iphi)
+                               int  ttFlag(EcalTrigTowerDetId ttId)
+                               int  sFGVB(int ieta, int iphi)
+                               int  sFGVB(EcalTrigTowerDetId ttId)
+                               int  l1aSpike(int ieta, int iphi)
+                               int  l1aSpike(EcalTrigTowerDetId ttId)
+
+DataMembers:   EcalTrigPrimCompactColl

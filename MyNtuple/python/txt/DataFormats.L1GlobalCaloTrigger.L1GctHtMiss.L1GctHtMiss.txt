@@ -1,0 +1,17 @@
+Class:         L1GctHtMiss
+
+Header:        DataFormats/L1GlobalCaloTrigger/interface/L1GctHtMiss.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:12 2013	mkvomit.py
+
+AccessMethods: L1GctHtMiss
+                       std::string  name()
+                              bool  empty()
+                          uint32_t  raw()
+                      unsigned int  et()
+                              bool  overFlow()
+                      unsigned int  phi()
+                           int16_t  bx()
+
+DataMembers:   L1GctHtMiss

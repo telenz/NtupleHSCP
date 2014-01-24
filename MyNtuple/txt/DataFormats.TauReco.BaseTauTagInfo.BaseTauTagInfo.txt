@@ -1,0 +1,11 @@
+Class:         reco::BaseTauTagInfo
+
+Header:        DataFormats/TauReco/interface/BaseTauTagInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:40 2013	mkvomit.py
+
+AccessMethods: reco::BaseTauTagInfo
+        const reco::TrackRefVector  Tracks()
+
+DataMembers:   reco::BaseTauTagInfo

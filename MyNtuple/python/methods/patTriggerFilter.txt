@@ -1,0 +1,8 @@
+        bool  setStatus(int status)
+         int  status()
+        bool  saveTags()
+        bool  isL3()
+        bool  isFiring()
+        bool  hasObjectKey(unsigned int objectKey)
+        bool  hasTriggerObjectType(int triggerObjectType)
+        bool  hasObjectId(int triggerObjectType)

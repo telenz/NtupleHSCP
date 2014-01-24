@@ -1,0 +1,15 @@
+       float  hcalCrossedEnergy
+       float  ecalCrossedEnergy
+       float  hoCrossedEnergy
+       float  ecal3by3dir
+       float  ecal5by5dir
+       float  hcal3by3dir
+       float  hcal5by5dir
+       float  ecalBeta
+       float  ecalBetaError
+       float  ecalDeDx
+       float  trkIsoDr
+       float  ecalTime
+       float  ecalTimeError
+       float  ecalInvBetaError
+         int  ecalCrysCrossed

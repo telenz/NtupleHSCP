@@ -1,0 +1,5 @@
+        bool  empty()
+         int  l1AcceptOffset()
+unsigned int  orbitNumber()
+unsigned int  bunchCrossing()
+unsigned int  eventType()

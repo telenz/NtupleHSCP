@@ -1,0 +1,28 @@
+Class:         L1MuRegionalCand
+
+Header:        DataFormats/L1GlobalMuonTrigger/interface/L1MuRegionalCand.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: L1MuRegionalCand
+                              bool  empty()
+                             float  phiValue()
+                             float  etaValue()
+                             float  ptValue()
+                               int  chargeValue()
+                              bool  chargeValid()
+                              bool  isFineHalo()
+                      unsigned int  quality()
+                      unsigned int  type_idx()
+                               int  bx()
+                      unsigned int  phi_packed()
+                      unsigned int  pt_packed()
+                      unsigned int  quality_packed()
+                      unsigned int  eta_packed()
+                      unsigned int  finehalo_packed()
+                      unsigned int  charge_packed()
+                      unsigned int  charge_valid_packed()
+                      unsigned int  getDataWord()
+
+DataMembers:   L1MuRegionalCand

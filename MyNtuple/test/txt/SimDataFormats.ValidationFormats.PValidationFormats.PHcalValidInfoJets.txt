@@ -1,0 +1,26 @@
+Class:         PHcalValidInfoJets
+
+Header:        SimDataFormats/ValidationFormats/interface/PValidationFormats.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:10 2013	mkvomit.py
+
+AccessMethods: PHcalValidInfoJets
+                std::vector<float>  jethite()
+                std::vector<float>  jethitr()
+                std::vector<float>  jethitt()
+                               int  njethit()
+                std::vector<float>  jete()
+                std::vector<float>  jeteta()
+                std::vector<float>  jetphi()
+                               int  njet()
+                             float  ecaljet()
+                             float  hcaljet()
+                             float  hojet()
+                             float  etotjet()
+                             float  detajet()
+                             float  dphijet()
+                             float  drjet()
+                             float  dijetm()
+
+DataMembers:   PHcalValidInfoJets

@@ -1,0 +1,16 @@
+Class:         reco::JetCrystalsAssociation
+
+Header:        DataFormats/BTauReco/interface/JetCrystalsAssociation.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:41 2013	mkvomit.py
+
+AccessMethods: reco::JetCrystalsAssociation
+
+AccessMethods: std::pair<edm::RefToBase<reco::Jet>,edm::RefVector<std::vector<ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> > >,ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> >,edm::refhelper::FindUsingAdvance<std::vector<ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> > >,ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> > > > >
+
+DataMembers:   reco::JetCrystalsAssociation
+
+DataMembers:   std::pair<edm::RefToBase<reco::Jet>,edm::RefVector<std::vector<ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> > >,ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> >,edm::refhelper::FindUsingAdvance<std::vector<ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> > >,ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> > > > >
+         edm::RefToBase<reco::Jet>  first
+  edm::RefVector<std::vector<ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> > >,ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> >,edm::refhelper::FindUsingAdvance<std::vector<ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> > >,ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiE4D<double> > > >  second

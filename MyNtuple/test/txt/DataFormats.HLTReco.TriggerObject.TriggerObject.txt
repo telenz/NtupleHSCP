@@ -1,0 +1,22 @@
+Class:         trigger::TriggerObject
+
+Header:        DataFormats/HLTReco/interface/TriggerObject.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: trigger::TriggerObject
+                               int  id()
+                             float  pt()
+                             float  eta()
+                             float  phi()
+                             float  mass()
+                             float  px()
+                             float  py()
+                             float  pz()
+                             float  p()
+                             float  energy()
+                             float  et()
+                    reco::Particle  particle(int q=0, math::XYZPoint vertex=ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>, ROOT::Math::DefaultCoordinateSystemTag>(((const double&)((const double*)(&0.0))), ((const double&)((const double*)(&0.0))), ((const double&)((const double*)(&0.0)))), int status=0, bool integerCharge=true)
+
+DataMembers:   trigger::TriggerObject

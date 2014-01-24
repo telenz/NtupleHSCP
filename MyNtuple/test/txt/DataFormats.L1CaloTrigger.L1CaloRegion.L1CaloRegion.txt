@@ -1,0 +1,37 @@
+Class:         L1CaloRegion
+
+Header:        DataFormats/L1CaloTrigger/interface/L1CaloRegion.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:08 2013	mkvomit.py
+
+AccessMethods: L1CaloRegion
+                      L1CaloRegion  makeHBHERegion(unsigned int et, bool overFlow, bool tauVeto, bool mip, bool quiet, unsigned int crate, unsigned int card, unsigned int rgn)
+                      L1CaloRegion  makeHFRegion(unsigned int et, bool fineGrain, unsigned int crate, unsigned int rgn)
+                      L1CaloRegion  makeRegionFromGctIndices(unsigned int et, bool overFlow, bool fineGrain, bool mip, bool quiet, unsigned int ieta, unsigned int iphi)
+                      L1CaloRegion  makeRegionFromUnpacker(uint16_t data, unsigned int ieta, unsigned int iphi, uint16_t block, uint16_t index, int16_t bx)
+                      L1CaloRegion  makeGctJetRegion(unsigned int et, bool overFlow, bool fineGrain, unsigned int ieta, unsigned int iphi, int16_t bx)
+                          uint16_t  raw()
+                      unsigned int  et()
+                      unsigned int  etFullScale()
+                              bool  overFlow()
+                              bool  tauVeto()
+                              bool  fineGrain()
+                              bool  mip()
+                              bool  quiet()
+                 L1CaloRegionDetId  id()
+                              bool  isHf()
+                              bool  isHbHe()
+                      unsigned int  rctCrate()
+                      unsigned int  rctCard()
+                      unsigned int  rctRegionIndex()
+                      unsigned int  rctEta()
+                      unsigned int  rctPhi()
+                      unsigned int  gctEta()
+                      unsigned int  gctPhi()
+                      unsigned int  capBlock()
+                      unsigned int  capIndex()
+                           int16_t  bx()
+                              bool  empty()
+
+DataMembers:   L1CaloRegion

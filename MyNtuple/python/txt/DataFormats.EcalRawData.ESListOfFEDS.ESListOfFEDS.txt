@@ -1,0 +1,11 @@
+Class:         ESListOfFEDS
+
+Header:        DataFormats/EcalRawData/interface/ESListOfFEDS.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:03 2013	mkvomit.py
+
+AccessMethods: ESListOfFEDS
+                  std::vector<int>  GetList()
+
+DataMembers:   ESListOfFEDS

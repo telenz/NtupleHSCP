@@ -1,0 +1,23 @@
+Class:         reco::MuonQuality
+
+Header:        DataFormats/MuonReco/interface/MuonQuality.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:41 2013	mkvomit.py
+
+AccessMethods: reco::MuonQuality
+
+DataMembers:   reco::MuonQuality
+                              bool  updatedSta
+                             float  trkKink
+                             float  glbKink
+                             float  trkRelChi2
+                             float  staRelChi2
+                             float  chi2LocalPosition
+                             float  chi2LocalMomentum
+                             float  localDistance
+                             float  globalDeltaEtaPhi
+                              bool  tightMatch
+                             float  glbTrackProbability
+  ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>,ROOT::Math::DefaultCoordinateSystemTag>  tkKink_position
+  ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>,ROOT::Math::DefaultCoordinateSystemTag>  glbKink_position

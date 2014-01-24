@@ -1,0 +1,38 @@
+Class:         L1GtfeExtWord
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1GtfeExtWord.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:17 2013	mkvomit.py
+
+AccessMethods: L1GtfeExtWord
+  const std::vector<unsigned short>  bst()
+                const unsigned int  bstLengthBytes()
+                const cms_uint64_t  gpsTime()
+                const cms_uint16_t  bstMasterStatus()
+                const cms_uint32_t  turnCountNumber()
+                const cms_uint32_t  lhcFillNumber()
+                const cms_uint16_t  beamMode()
+                const cms_uint16_t  particleTypeBeam1()
+                const cms_uint16_t  particleTypeBeam2()
+                const cms_uint16_t  beamMomentum()
+                const cms_uint32_t  totalIntensityBeam1()
+                const cms_uint32_t  totalIntensityBeam2()
+                const cms_uint16_t  bst(int iB)
+                const cms_uint16_t  bstSource()
+                const unsigned int  getSize()
+
+AccessMethods: L1GtfeWord
+                const cms_uint16_t  boardId()
+                const cms_uint16_t  recordLength1()
+                const cms_uint16_t  recordLength()
+                const cms_uint16_t  bxNr()
+                const cms_uint32_t  setupVersion()
+                         const int  bstFlag()
+                const cms_uint16_t  activeBoards()
+                const cms_uint16_t  altNrBxBoard()
+                const cms_uint32_t  totalTriggerNr()
+
+DataMembers:   L1GtfeExtWord
+
+DataMembers:   L1GtfeWord

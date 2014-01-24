@@ -1,0 +1,35 @@
+Class:         reco::Vertex
+
+Header:        DataFormats/VertexReco/interface/Vertex.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::Vertex
+                              bool  isValid()
+                              bool  isFake()
+                             float  trackWeight(reco::TrackBaseRef r)
+                             float  trackWeight(reco::TrackRef r)
+                            size_t  tracksSize()
+                            double  chi2()
+                            double  ndof()
+                            double  normalizedChi2()
+              const math::XYZPoint  position()
+                            double  x()
+                            double  y()
+                            double  z()
+                            double  xError()
+                            double  yError()
+                            double  zError()
+                            double  covariance(int i, int j)
+  ROOT::Math::SMatrix<double,3,3,ROOT::Math::MatRepSym<double,3> >  covariance()
+  ROOT::Math::SMatrix<double,3,3,ROOT::Math::MatRepSym<double,3> >  error()
+                              bool  hasRefittedTracks()
+                reco::TrackBaseRef  originalTrack(reco::Track refTrack)
+                       reco::Track  refittedTrack(reco::TrackBaseRef track)
+                       reco::Track  refittedTrack(reco::TrackRef track)
+    const std::vector<reco::Track>  refittedTracks()
+          math::XYZTLorentzVectorD  p4(float mass=1.395701799999999881407575230696238577365875244140625e-1, float minWeight=5.0e-1)
+                      unsigned int  nTracks(float minWeight=5.0e-1)
+
+DataMembers:   reco::Vertex

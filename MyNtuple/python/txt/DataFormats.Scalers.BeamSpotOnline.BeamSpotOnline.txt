@@ -1,0 +1,34 @@
+Class:         BeamSpotOnline
+
+Header:        DataFormats/Scalers/interface/BeamSpotOnline.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:05:56 2013	mkvomit.py
+
+AccessMethods: BeamSpotOnline
+                       std::string  name()
+                              bool  empty()
+                      unsigned int  trigType()
+                      unsigned int  eventID()
+                      unsigned int  sourceID()
+                      unsigned int  bunchNumber()
+                               int  version()
+                          timespec  collectionTime()
+                             float  x()
+                             float  y()
+                             float  z()
+                             float  dxdz()
+                             float  dydz()
+                             float  err_x()
+                             float  err_y()
+                             float  err_z()
+                             float  err_dxdz()
+                             float  err_dydz()
+                             float  width_x()
+                             float  width_y()
+                             float  sigma_z()
+                             float  err_width_x()
+                             float  err_width_y()
+                             float  err_sigma_z()
+
+DataMembers:   BeamSpotOnline

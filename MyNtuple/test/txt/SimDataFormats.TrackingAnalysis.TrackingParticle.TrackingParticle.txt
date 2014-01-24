@@ -1,0 +1,58 @@
+Class:         TrackingParticle
+
+Header:        SimDataFormats/TrackingAnalysis/interface/TrackingParticle.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:10 2013	mkvomit.py
+
+AccessMethods: TrackingParticle
+                               int  pdgId()
+                    EncodedEventId  eventId()
+  edm::RefVectorIterator<edm::HepMCProduct,HepMC::GenParticle,edm::refhelper::FindTrait<edm::HepMCProduct,HepMC::GenParticle>::Find>  genParticle_begin()
+  edm::RefVectorIterator<edm::HepMCProduct,HepMC::GenParticle,edm::refhelper::FindTrait<edm::HepMCProduct,HepMC::GenParticle>::Find>  genParticle_end()
+  const __gnu_cxx::__normal_iterator<const PSimHit*,std::vector<PSimHit> >  pSimHit_begin()
+  const __gnu_cxx::__normal_iterator<const PSimHit*,std::vector<PSimHit> >  pSimHit_end()
+  const edm::RefVector<edm::HepMCProduct,HepMC::GenParticle,edm::refhelper::FindTrait<edm::HepMCProduct,HepMC::GenParticle>::Find>  genParticle()
+       const std::vector<SimTrack>  g4Tracks()
+           const TrackingVertexRef  parentVertex()
+        const std::vector<PSimHit>  trackPSimHit()
+              std::vector<PSimHit>  trackPSimHit(DetId::Detector x0)
+  const edm::RefVector<std::vector<TrackingVertex>,TrackingVertex,edm::refhelper::FindUsingAdvance<std::vector<TrackingVertex>,TrackingVertex> >  decayVertices()
+  edm::RefVectorIterator<std::vector<TrackingVertex>,TrackingVertex,edm::refhelper::FindUsingAdvance<std::vector<TrackingVertex>,TrackingVertex> >  decayVertices_begin()
+  edm::RefVectorIterator<std::vector<TrackingVertex>,TrackingVertex,edm::refhelper::FindUsingAdvance<std::vector<TrackingVertex>,TrackingVertex> >  decayVertices_end()
+                               int  matchedHit()
+
+AccessMethods: ParticleBase
+                               int  charge()
+                               int  threeCharge()
+    const math::XYZTLorentzVectorD  p4()
+  const math::PtEtaPhiMLorentzVector  polarP4()
+                  math::XYZVectorD  momentum()
+                  math::XYZVectorD  boostToCM()
+                            double  p()
+                            double  energy()
+                            double  et()
+                            double  mass()
+                            double  massSqr()
+                            double  mt()
+                            double  mtSqr()
+                            double  px()
+                            double  py()
+                            double  pz()
+                            double  pt()
+                            double  phi()
+                            double  theta()
+                            double  eta()
+                            double  rapidity()
+                            double  y()
+             const math::XYZPointD  vertex()
+                            double  vx()
+                            double  vy()
+                            double  vz()
+                               int  status()
+                              bool  longLived()
+
+DataMembers:   TrackingParticle
+
+DataMembers:   ParticleBase
+                      unsigned int  longLivedTag

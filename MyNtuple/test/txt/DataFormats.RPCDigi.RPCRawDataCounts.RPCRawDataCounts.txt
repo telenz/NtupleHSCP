@@ -1,0 +1,14 @@
+Class:         RPCRawDataCounts
+
+Header:        DataFormats/RPCDigi/interface/RPCRawDataCounts.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:10 2013	mkvomit.py
+
+AccessMethods: RPCRawDataCounts
+                       std::string  print()
+                               int  fedBxRecords(int fedId)
+                               int  fedFormatErrors(int fedId)
+                               int  fedErrorRecords(int fedId)
+
+DataMembers:   RPCRawDataCounts

@@ -1,0 +1,25 @@
+Class:         HLTPerformanceInfo
+
+Header:        DataFormats/HLTReco/interface/HLTPerformanceInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:08 2013	mkvomit.py
+
+AccessMethods: HLTPerformanceInfo
+  const HLTPerformanceInfo::Module  getModuleOnPath(size_t m, size_t p)
+  const HLTPerformanceInfo::Module  getModule(size_t m)
+    const HLTPerformanceInfo::Path  getPath(size_t p)
+                               int  moduleIndexInPath(char* mod, char* path)
+                            size_t  numberOfPaths()
+                            size_t  numberOfModules()
+                            double  totalTime()
+                            double  totalCPUTime()
+                            double  longestModuleTime()
+                            double  longestModuleCPUTime()
+                             char*  longestModuleTimeName()
+                             char*  longestModuleCPUTimeName()
+                            double  totalPathTime(size_t path)
+                            double  totalPathCPUTime(size_t path)
+                              bool  uniqueModule(char* mod)
+
+DataMembers:   HLTPerformanceInfo

@@ -1,0 +1,77 @@
+Class:         TtSemiLeptonicEvent
+
+Header:        AnalysisDataFormats/TopObjects/interface/TtSemiLeptonicEvent.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:10 2013	mkvomit.py
+
+AccessMethods: TtSemiLeptonicEvent
+                  reco::Candidate*  hadronicDecayTop(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  hadronicDecayTop(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  hadronicDecayB(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  hadronicDecayB(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  hadronicDecayW(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  hadronicDecayW(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  hadronicDecayQuark(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  hadronicDecayQuark(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  hadronicDecayQuarkBar(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  hadronicDecayQuarkBar(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  leptonicDecayTop(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  leptonicDecayTop(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  leptonicDecayB(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  leptonicDecayB(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  leptonicDecayW(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  leptonicDecayW(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  singleNeutrino(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  singleNeutrino(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                  reco::Candidate*  singleLepton(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  singleLepton(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                reco::GenParticle*  hadronicDecayTop()
+                reco::GenParticle*  hadronicDecayB()
+                reco::GenParticle*  hadronicDecayW()
+                reco::GenParticle*  hadronicDecayQuark()
+                reco::GenParticle*  hadronicDecayQuarkBar()
+                reco::GenParticle*  leptonicDecayTop()
+                reco::GenParticle*  leptonicDecayB()
+                reco::GenParticle*  leptonicDecayW()
+                reco::GenParticle*  singleLepton()
+                reco::GenParticle*  singleNeutrino()
+                         const int  numberOfRealNeutrinoSolutions(TtEvent::HypoClassKey key)
+                         const int  numberOfRealNeutrinoSolutions(std::string key)
+
+AccessMethods: TtEvent
+  std::pair<WDecay::LeptonType,WDecay::LeptonType>  lepDecays()
+    const reco::CompositeCandidate  eventHypo(TtEvent::HypoClassKey key, unsigned int cmb=0)
+    const edm::RefProd<TtGenEvent>  genEvent()
+                              bool  isHypoClassAvailable(std::string key)
+                              bool  isHypoClassAvailable(TtEvent::HypoClassKey key)
+                              bool  isHypoAvailable(std::string key, unsigned int cmb=0)
+                              bool  isHypoAvailable(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                              bool  isHypoValid(std::string key, unsigned int cmb=0)
+                              bool  isHypoValid(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                      unsigned int  numberOfAvailableHypoClasses()
+                      unsigned int  numberOfAvailableHypos(std::string key)
+                      unsigned int  numberOfAvailableHypos(TtEvent::HypoClassKey key)
+                               int  numberOfConsideredJets(std::string key)
+                               int  numberOfConsideredJets(TtEvent::HypoClassKey key)
+                  std::vector<int>  jetLeptonCombination(std::string key, unsigned int cmb=0)
+                  std::vector<int>  jetLeptonCombination(TtEvent::HypoClassKey key, unsigned int cmb=0)
+                            double  genMatchSumPt(unsigned int cmb=0)
+                            double  genMatchSumDR(unsigned int cmb=0)
+                       std::string  mvaMethod()
+                            double  mvaDisc(unsigned int cmb=0)
+                            double  fitChi2(unsigned int cmb=0)
+                            double  hitFitChi2(unsigned int cmb=0)
+                            double  fitProb(unsigned int cmb=0)
+                            double  hitFitProb(unsigned int cmb=0)
+                            double  hitFitMT(unsigned int cmb=0)
+                            double  hitFitSigMT(unsigned int cmb=0)
+                               int  correspondingHypo(std::string key1, unsigned int hyp1, std::string key2)
+                               int  correspondingHypo(TtEvent::HypoClassKey key1, unsigned int hyp1, TtEvent::HypoClassKey key2)
+                  reco::Candidate*  topPair(std::string key, unsigned int cmb=0)
+                  reco::Candidate*  topPair(TtEvent::HypoClassKey key, unsigned int cmb=0)
+          math::XYZTLorentzVector*  topPair()
+
+DataMembers:   TtSemiLeptonicEvent
+
+DataMembers:   TtEvent

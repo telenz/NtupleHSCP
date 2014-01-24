@@ -1,0 +1,4 @@
+       float  uncalibratedQuantile()
+       float  pileupRho()
+       float  pileupRhoUncertainty()
+         int  uncertaintyCode()

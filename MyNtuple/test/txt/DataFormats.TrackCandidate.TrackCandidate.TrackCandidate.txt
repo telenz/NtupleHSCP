@@ -1,0 +1,16 @@
+Class:         TrackCandidate
+
+Header:        DataFormats/TrackCandidate/interface/TrackCandidate.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:10 2013	mkvomit.py
+
+AccessMethods: TrackCandidate
+       const PTrajectoryStateOnDet  trajectoryStateOnDet()
+  std::pair<edm::OwnVector<TrackingRecHit,edm::ClonePolicy<TrackingRecHit> >::const_iterator,edm::OwnVector<TrackingRecHit,edm::ClonePolicy<TrackingRecHit> >::const_iterator>  recHits()
+              const TrajectorySeed  seed()
+                              bool  isLooper()
+                       signed char  nLoops()
+    edm::RefToBase<TrajectorySeed>  seedRef()
+
+DataMembers:   TrackCandidate

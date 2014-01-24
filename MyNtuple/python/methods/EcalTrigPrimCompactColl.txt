@@ -1,0 +1,5 @@
+         int  compressedEt(int ieta, int iphi)
+        bool  fineGrain(int ieta, int iphi)
+         int  ttFlag(int ieta, int iphi)
+         int  sFGVB(int ieta, int iphi)
+         int  l1aSpike(int ieta, int iphi)

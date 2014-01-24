@@ -1,0 +1,29 @@
+Class:         reco::HLTTau
+
+Header:        DataFormats/TauReco/interface/HLTTau.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:04 2013	mkvomit.py
+
+AccessMethods: reco::HLTTau
+                             float  getEta()
+                             float  getPhi()
+                             float  getPt()
+                             float  getEMIsolationValue()
+                               int  getL25TrackIsolationResponse()
+                               int  getNL25TrackIsolation()
+                             float  getL25LeadTrackPtValue()
+                               int  getL3TrackIsolationResponse()
+                               int  getNL3TrackIsolation()
+                             float  getL3LeadTrackPtValue()
+                             float  getSumPtTracksL25()
+                             float  getSumPtTracksL3()
+                            double  getSeedEcalHitEt()
+               std::vector<double>  getEcalClusterShape()
+                               int  getNEcalHits()
+                            double  getHcalIsolEt()
+                            double  getSeedHcalHitEt()
+               std::vector<double>  getHcalClusterShape()
+                               int  getNHcalHits()
+
+DataMembers:   reco::HLTTau

@@ -1,0 +1,28 @@
+Class:         L1GlobalTriggerReadoutRecord
+
+Header:        DataFormats/L1GlobalTrigger/interface/L1GlobalTriggerReadoutRecord.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:36 2013	mkvomit.py
+
+AccessMethods: L1GlobalTriggerReadoutRecord
+                        const bool  decision(int bxInEventValue)
+                        const bool  decision()
+                const cms_uint16_t  finalOR(int bxInEventValue)
+                const cms_uint16_t  finalOR()
+                const DecisionWord  decisionWord(int bxInEventValue)
+                const DecisionWord  decisionWord()
+        const TechnicalTriggerWord  technicalTriggerWord(int bxInEventValue)
+        const TechnicalTriggerWord  technicalTriggerWord()
+  const edm::RefProd<L1MuGMTReadoutCollection>  muCollectionRefProd()
+                  const L1GtfeWord  gtfeWord()
+    const std::vector<L1GtFdlWord>  gtFdlVector()
+          std::vector<L1GtFdlWord>  gtFdlVector()
+                 const L1GtFdlWord  gtFdlWord(int bxInEventValue)
+                 const L1GtFdlWord  gtFdlWord()
+    const std::vector<L1GtPsbWord>  gtPsbVector()
+          std::vector<L1GtPsbWord>  gtPsbVector()
+                 const L1GtPsbWord  gtPsbWord(cms_uint16_t boardIdValue, int bxInEventValue)
+                 const L1GtPsbWord  gtPsbWord(cms_uint16_t boardIdValue)
+
+DataMembers:   L1GlobalTriggerReadoutRecord

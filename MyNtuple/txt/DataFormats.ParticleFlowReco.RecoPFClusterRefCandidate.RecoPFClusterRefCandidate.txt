@@ -1,0 +1,82 @@
+Class:         reco::RecoPFClusterRefCandidate
+
+Header:        DataFormats/ParticleFlowReco/interface/RecoPFClusterRefCandidate.h
+
+BaseClasses:   reco::LeafRefCandidateT<edm::Ref<std::vector<reco::PFCluster>,reco::PFCluster,edm::refhelper::FindUsingAdvance<std::vector<reco::PFCluster>,reco::PFCluster> > >
+               reco::Candidate
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:42 2013	mkvomit.py
+
+AccessMethods: reco::RecoPFClusterRefCandidate
+          const reco::PFClusterRef  pfCluster()
+
+AccessMethods: reco::LeafRefCandidateT<edm::Ref<std::vector<reco::PFCluster>,reco::PFCluster,edm::refhelper::FindUsingAdvance<std::vector<reco::PFCluster>,reco::PFCluster> > >
+   reco::candidate::const_iterator  begin()
+   reco::candidate::const_iterator  end()
+         reco::candidate::iterator  begin()
+         reco::candidate::iterator  end()
+                            size_t  numberOfDaughters()
+                  reco::Candidate*  daughter(size_t x0)
+                            size_t  numberOfMothers()
+                  reco::Candidate*  mother(size_t x0)
+                  reco::Candidate*  daughter(std::string s)
+                            size_t  numberOfSourceCandidatePtrs()
+         edm::Ptr<reco::Candidate>  sourceCandidatePtr(size_t i)
+                               int  charge()
+                               int  pdgId()
+  const ROOT::Math::LorentzVector<ROOT::Math::PxPyPzE4D<double> >  p4()
+  const ROOT::Math::LorentzVector<ROOT::Math::PtEtaPhiM4D<double> >  polarP4()
+  ROOT::Math::DisplacementVector3D<ROOT::Math::Cartesian3D<double>,ROOT::Math::DefaultCoordinateSystemTag>  momentum()
+  ROOT::Math::DisplacementVector3D<ROOT::Math::Cartesian3D<double>,ROOT::Math::DefaultCoordinateSystemTag>  boostToCM()
+                            double  p()
+                            double  energy()
+                            double  et()
+                            double  mass()
+                            double  massSqr()
+                            double  mt()
+                            double  mtSqr()
+                            double  px()
+                            double  py()
+                            double  pz()
+                            double  pt()
+                            double  phi()
+                            double  theta()
+                            double  eta()
+                            double  rapidity()
+                            double  y()
+  const ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>,ROOT::Math::DefaultCoordinateSystemTag>  vertex()
+                            double  vx()
+                            double  vy()
+                            double  vz()
+  reco::LeafRefCandidateT<reco::PFClusterRef>*  clone()
+                              bool  hasMasterClone()
+  const edm::RefToBase<reco::Candidate>  masterClone()
+                              bool  hasMasterClonePtr()
+   const edm::Ptr<reco::Candidate>  masterClonePtr()
+                              bool  isElectron()
+                              bool  isMuon()
+                              bool  isStandAloneMuon()
+                              bool  isGlobalMuon()
+                              bool  isTrackerMuon()
+                              bool  isCaloMuon()
+                              bool  isPhoton()
+                              bool  isConvertedPhoton()
+                              bool  isJet()
+
+AccessMethods: reco::Candidate
+                               int  threeCharge()
+                               int  status()
+                              bool  longLived()
+                              bool  massConstraint()
+                            double  vertexChi2()
+                            double  vertexNdof()
+                            double  vertexNormalizedChi2()
+                            double  vertexCovariance(int i, int j)
+  ROOT::Math::SMatrix<double,3,3,ROOT::Math::MatRepSym<double,3> >  vertexCovariance()
+
+DataMembers:   reco::RecoPFClusterRefCandidate
+
+DataMembers:   reco::LeafRefCandidateT<edm::Ref<std::vector<reco::PFCluster>,reco::PFCluster,edm::refhelper::FindUsingAdvance<std::vector<reco::PFCluster>,reco::PFCluster> > >
+
+DataMembers:   reco::Candidate

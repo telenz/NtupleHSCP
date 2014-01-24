@@ -1,0 +1,25 @@
+Class:         SimTrack
+
+Header:        SimDataFormats/Track/interface/SimTrack.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:10 2013	mkvomit.py
+
+AccessMethods: SimTrack
+                               int  vertIndex()
+                              bool  noVertex()
+                               int  genpartIndex()
+                              bool  noGenpart()
+            const math::XYZVectorD  trackerSurfacePosition()
+    const math::XYZTLorentzVectorD  trackerSurfaceMomentum()
+
+AccessMethods: CoreSimTrack
+    const math::XYZTLorentzVectorD  momentum()
+                               int  type()
+                             float  charge()
+                    EncodedEventId  eventId()
+                      unsigned int  trackId()
+
+DataMembers:   SimTrack
+
+DataMembers:   CoreSimTrack

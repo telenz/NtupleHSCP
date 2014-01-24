@@ -1,0 +1,21 @@
+Class:         reco::PFTauTagInfo
+
+Header:        DataFormats/TauReco/interface/PFTauTagInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::PFTauTagInfo
+               reco::PFTauTagInfo*  clone()
+        reco::PFCandidateRefVector  PFCands()
+  const reco::PFCandidateRefVector  PFChargedHadrCands()
+  const reco::PFCandidateRefVector  PFNeutrHadrCands()
+  const reco::PFCandidateRefVector  PFGammaCands()
+              const reco::PFJetRef  pfjetRef()
+
+AccessMethods: reco::BaseTauTagInfo
+        const reco::TrackRefVector  Tracks()
+
+DataMembers:   reco::PFTauTagInfo
+
+DataMembers:   reco::BaseTauTagInfo

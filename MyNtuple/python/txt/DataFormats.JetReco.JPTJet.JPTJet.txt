@@ -1,0 +1,137 @@
+Class:         reco::JPTJet
+
+Header:        DataFormats/JetReco/interface/JPTJet.h
+
+BaseClasses:   reco::Jet
+               reco::CompositePtrCandidate
+               reco::LeafCandidate
+               reco::Candidate
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:07:04 2013	mkvomit.py
+
+AccessMethods: reco::JPTJet
+                             float  chargedHadronEnergy()
+                             float  chargedHadronEnergyFraction()
+                             float  neutralHadronEnergy()
+                             float  neutralHadronEnergyFraction()
+                             float  chargedEmEnergy()
+                             float  chargedEmEnergyFraction()
+                             float  neutralEmEnergy()
+                             float  neutralEmEnergyFraction()
+                               int  chargedMultiplicity()
+                               int  muonMultiplicity()
+                               int  elecMultiplicity()
+        const reco::TrackRefVector  getPionsInVertexInCalo()
+        const reco::TrackRefVector  getPionsInVertexOutCalo()
+        const reco::TrackRefVector  getPionsOutVertexInCalo()
+        const reco::TrackRefVector  getMuonsInVertexInCalo()
+        const reco::TrackRefVector  getMuonsInVertexOutCalo()
+        const reco::TrackRefVector  getMuonsOutVertexInCalo()
+        const reco::TrackRefVector  getElecsInVertexInCalo()
+        const reco::TrackRefVector  getElecsInVertexOutCalo()
+        const reco::TrackRefVector  getElecsOutVertexInCalo()
+                       const float  getZSPCor()
+   const edm::RefToBase<reco::Jet>  getCaloJetRef()
+      const reco::JPTJet::Specific  getSpecific()
+                     reco::JPTJet*  clone()
+                       std::string  print()
+
+AccessMethods: reco::Jet
+          reco::Jet::EtaPhiMoments  etaPhiStatistics()
+                             float  etaetaMoment()
+                             float  phiphiMoment()
+                             float  etaphiMoment()
+                             float  etInAnnulus(float fRmin, float fRmax)
+                               int  nCarrying(float fFraction)
+                             float  maxDistance()
+                               int  nConstituents()
+                             float  physicsEta(float fZVertex, float fDetectorEta)
+                             float  detectorEta(float fZVertex, float fPhysicsEta)
+           math::XYZTLorentzVector  physicsP4(math::XYZPoint newVertex, reco::Candidate inParticle, math::XYZPoint oldVertex=ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>, ROOT::Math::DefaultCoordinateSystemTag>(((const double&)((const double*)(&0.0))), ((const double&)((const double*)(&0.0))), ((const double&)((const double*)(&0.0)))))
+           math::XYZTLorentzVector  detectorP4(math::XYZPoint vertex, reco::Candidate inParticle)
+  std::vector<edm::Ptr<reco::Candidate> >  getJetConstituents()
+  std::vector<const reco::Candidate*>  getJetConstituentsQuick()
+                             float  constituentPtDistribution()
+                             float  constituentEtaPhiSpread()
+                             float  jetArea()
+                             float  pileup()
+                               int  nPasses()
+                              bool  isJet()
+
+AccessMethods: reco::CompositePtrCandidate
+   reco::candidate::const_iterator  begin()
+   reco::candidate::const_iterator  end()
+         reco::candidate::iterator  begin()
+         reco::candidate::iterator  end()
+                            size_t  numberOfDaughters()
+                            size_t  numberOfMothers()
+                  reco::Candidate*  daughter(size_t x0)
+                reco::CandidatePtr  daughterPtr(size_t i)
+  const std::vector<edm::Ptr<reco::Candidate> >  daughterPtrVector()
+                  reco::Candidate*  mother(size_t i=0)
+                            size_t  numberOfSourceCandidatePtrs()
+                reco::CandidatePtr  sourceCandidatePtr(size_t i)
+
+AccessMethods: reco::LeafCandidate
+                               int  charge()
+                               int  threeCharge()
+     const math::XYZTLorentzVector  p4()
+  const math::PtEtaPhiMLorentzVector  polarP4()
+                   math::XYZVector  momentum()
+                   math::XYZVector  boostToCM()
+                            double  p()
+                            double  energy()
+                            double  et()
+                            double  mass()
+                            double  massSqr()
+                            double  mt()
+                            double  mtSqr()
+                            double  px()
+                            double  py()
+                            double  pz()
+                            double  pt()
+                            double  phi()
+                            double  theta()
+                            double  eta()
+                            double  rapidity()
+                            double  y()
+              const math::XYZPoint  vertex()
+                            double  vx()
+                            double  vy()
+                            double  vz()
+                               int  pdgId()
+                               int  status()
+                              bool  longLived()
+                              bool  massConstraint()
+                            double  vertexChi2()
+                            double  vertexNdof()
+                            double  vertexNormalizedChi2()
+                            double  vertexCovariance(int i, int j)
+  ROOT::Math::SMatrix<double,3,3,ROOT::Math::MatRepSym<double,3> >  vertexCovariance()
+                              bool  hasMasterClone()
+      const reco::CandidateBaseRef  masterClone()
+                              bool  hasMasterClonePtr()
+          const reco::CandidatePtr  masterClonePtr()
+                              bool  isElectron()
+                              bool  isMuon()
+                              bool  isStandAloneMuon()
+                              bool  isGlobalMuon()
+                              bool  isTrackerMuon()
+                              bool  isCaloMuon()
+                              bool  isPhoton()
+                              bool  isConvertedPhoton()
+
+AccessMethods: reco::Candidate
+
+DataMembers:   reco::JPTJet
+
+DataMembers:   reco::Jet
+
+DataMembers:   reco::CompositePtrCandidate
+
+DataMembers:   reco::LeafCandidate
+                      unsigned int  longLivedTag
+                      unsigned int  massConstraintTag
+
+DataMembers:   reco::Candidate

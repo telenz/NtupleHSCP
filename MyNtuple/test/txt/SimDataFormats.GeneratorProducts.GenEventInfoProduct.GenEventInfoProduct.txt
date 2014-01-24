@@ -1,0 +1,20 @@
+Class:         GenEventInfoProduct
+
+Header:        SimDataFormats/GeneratorProducts/interface/GenEventInfoProduct.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:08 2013	mkvomit.py
+
+AccessMethods: GenEventInfoProduct
+         const std::vector<double>  weights()
+                            double  weight()
+                      unsigned int  signalProcessID()
+                            double  qScale()
+                            double  alphaQCD()
+                            double  alphaQED()
+                     gen::PdfInfo*  pdf()
+                              bool  hasPDF()
+         const std::vector<double>  binningValues()
+                              bool  hasBinningValues()
+
+DataMembers:   GenEventInfoProduct

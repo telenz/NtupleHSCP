@@ -1,0 +1,19 @@
+Class:         HcalSourcePositionData
+
+Header:        DataFormats/HcalRecHit/interface/HcalSourcePositionData.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:11 2013	mkvomit.py
+
+AccessMethods: HcalSourcePositionData
+                               int  messageCounter()
+                               int  status()
+                               int  indexCounter()
+                               int  reelCounter()
+                               int  motorCurrent()
+                               int  speed()
+                               int  tubeId()
+                               int  driverId()
+                               int  sourceId()
+
+DataMembers:   HcalSourcePositionData

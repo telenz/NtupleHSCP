@@ -1,0 +1,23 @@
+Class:         pat::TriggerAlgorithm
+
+Header:        DataFormats/PatCandidates/interface/TriggerAlgorithm.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:11 2013	mkvomit.py
+
+AccessMethods: pat::TriggerAlgorithm
+                       std::string  name()
+                       std::string  alias()
+                       std::string  logicalExpression()
+                              bool  techTrigger()
+                      unsigned int  bit()
+                              bool  gtlResult()
+                      unsigned int  prescale()
+                              bool  mask()
+                              bool  decisionBeforeMask()
+                              bool  decisionAfterMask()
+                              bool  decision()
+         std::vector<unsigned int>  conditionKeys()
+                              bool  hasConditionKey(unsigned int conditionKey)
+
+DataMembers:   pat::TriggerAlgorithm

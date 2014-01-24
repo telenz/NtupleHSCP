@@ -1,0 +1,11 @@
+Class:         StringMap
+
+Header:        DataFormats/PatCandidates/interface/StringMap.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:49 2013	mkvomit.py
+
+AccessMethods: StringMap
+                            size_t  size()
+
+DataMembers:   StringMap

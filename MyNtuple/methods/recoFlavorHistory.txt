@@ -1,0 +1,5 @@
+        bool  hasParton()
+        bool  hasSister()
+        bool  hasProgenitor()
+        bool  hasMatchedJet()
+        bool  hasSisterJet()

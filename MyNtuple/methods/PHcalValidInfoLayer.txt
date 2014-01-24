@@ -1,0 +1,8 @@
+         int  nHit()
+       float  eho()
+       float  ehbhe()
+       float  eebee()
+       float  elonghf()
+       float  eshorthf()
+       float  eecalhf()
+       float  ehcalhf()

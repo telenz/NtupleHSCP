@@ -1,0 +1,5 @@
+      double  GetGenericVariable(int variableLocation, int module)
+      double  GetGenericVariable(std::string variableName, int module)
+         int  GetUserContentSize()
+         int  GetVariableLocation(std::string var)
+         int  GetModuleLocation(int mod)

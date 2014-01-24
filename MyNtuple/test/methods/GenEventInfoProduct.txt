@@ -1,0 +1,7 @@
+      double  weight()
+unsigned int  signalProcessID()
+      double  qScale()
+      double  alphaQCD()
+      double  alphaQED()
+        bool  hasPDF()
+        bool  hasBinningValues()

@@ -1,0 +1,12 @@
+Class:         reco::PFConversion
+
+Header:        DataFormats/ParticleFlowReco/interface/PFConversion.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::PFConversion
+         const reco::ConversionRef  originalConversion()
+  std::vector<reco::PFRecTrackRef>  pfTracks()
+
+DataMembers:   reco::PFConversion

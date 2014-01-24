@@ -1,0 +1,27 @@
+Class:         L1GctInternHtMiss
+
+Header:        DataFormats/L1GlobalCaloTrigger/interface/L1GctInternHtMiss.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:12 2013	mkvomit.py
+
+AccessMethods: L1GctInternHtMiss
+                 L1GctInternHtMiss  unpackerMissHtx(uint16_t capBlock, uint16_t capIndex, int16_t bx, uint32_t data)
+                 L1GctInternHtMiss  unpackerMissHty(uint16_t capBlock, uint16_t capIndex, int16_t bx, uint32_t data)
+                 L1GctInternHtMiss  unpackerMissHtxHty(uint16_t capBlock, uint16_t capIndex, int16_t bx, uint32_t data)
+                 L1GctInternHtMiss  emulatorJetMissHt(int htx, int hty, bool overFlow, int16_t bx)
+                 L1GctInternHtMiss  emulatorMissHtxHty(int htx, int hty, bool overFlow, int16_t bx)
+                 L1GctInternHtMiss  emulatorMissHtx(int htx, bool overFlow, int16_t bx)
+                 L1GctInternHtMiss  emulatorMissHty(int hty, bool overFlow, int16_t bx)
+  L1GctInternHtMiss::L1GctInternHtMissType  type()
+                          uint16_t  capBlock()
+                          uint16_t  capIndex()
+                           int16_t  bx()
+                              bool  isThereHtx()
+                              bool  isThereHty()
+                          uint32_t  raw()
+                           int16_t  htx()
+                           int16_t  hty()
+                              bool  overflow()
+
+DataMembers:   L1GctInternHtMiss

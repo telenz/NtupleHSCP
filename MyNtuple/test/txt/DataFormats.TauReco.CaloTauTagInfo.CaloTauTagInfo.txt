@@ -1,0 +1,20 @@
+Class:         reco::CaloTauTagInfo
+
+Header:        DataFormats/TauReco/interface/CaloTauTagInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::CaloTauTagInfo
+             reco::CaloTauTagInfo*  clone()
+            const reco::CaloJetRef  calojetRef()
+            const reco::JetBaseRef  jetRef()
+  const std::vector<std::pair<ROOT::Math::PositionVector3D<ROOT::Math::Cartesian3D<double>,ROOT::Math::DefaultCoordinateSystemTag>,float> >  positionAndEnergyECALRecHits()
+  const std::vector<reco::CaloClusterRef>  neutralECALBasicClusters()
+
+AccessMethods: reco::BaseTauTagInfo
+        const reco::TrackRefVector  Tracks()
+
+DataMembers:   reco::CaloTauTagInfo
+
+DataMembers:   reco::BaseTauTagInfo

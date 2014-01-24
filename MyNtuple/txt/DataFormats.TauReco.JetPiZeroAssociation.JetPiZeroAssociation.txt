@@ -1,0 +1,20 @@
+Class:         reco::JetPiZeroAssociation
+
+Header:        DataFormats/TauReco/interface/JetPiZeroAssociation.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:41 2013	mkvomit.py
+
+AccessMethods: reco::JetPiZeroAssociation
+
+AccessMethods: edm::AssociationVector<edm::RefProd<std::vector<reco::PFJet> >,std::vector<std::vector<reco::RecoTauPiZero> >,edm::Ref<std::vector<reco::PFJet>,reco::PFJet,edm::refhelper::FindUsingAdvance<std::vector<reco::PFJet>,reco::PFJet> >,unsigned int,edm::helper::AssociationIdenticalKeyReference>
+                      unsigned int  size()
+                              bool  empty()
+  const edm::RefProd<std::vector<reco::PFJet> >  keyProduct()
+                    reco::PFJetRef  key(unsigned int i)
+  const std::vector<reco::RecoTauPiZero>  value(unsigned int i)
+                             short  Class_Version()
+
+DataMembers:   reco::JetPiZeroAssociation
+
+DataMembers:   edm::AssociationVector<edm::RefProd<std::vector<reco::PFJet> >,std::vector<std::vector<reco::RecoTauPiZero> >,edm::Ref<std::vector<reco::PFJet>,reco::PFJet,edm::refhelper::FindUsingAdvance<std::vector<reco::PFJet>,reco::PFJet> >,unsigned int,edm::helper::AssociationIdenticalKeyReference>

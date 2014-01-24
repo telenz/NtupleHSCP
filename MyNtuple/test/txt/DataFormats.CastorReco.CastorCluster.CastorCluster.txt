@@ -1,0 +1,28 @@
+Class:         reco::CastorCluster
+
+Header:        DataFormats/CastorReco/interface/CastorCluster.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:12 2013	mkvomit.py
+
+AccessMethods: reco::CastorCluster
+                            double  energy()
+              ROOT::Math::XYZPoint  position()
+                            double  emEnergy()
+                            double  hadEnergy()
+                            double  fem()
+                            double  width()
+                            double  depth()
+                            double  fhot()
+                            double  sigmaz()
+        reco::CastorTowerRefVector  getUsedTowers()
+        reco::CastorTower_iterator  towersBegin()
+        reco::CastorTower_iterator  towersEnd()
+                            size_t  towersSize()
+                            double  eta()
+                            double  phi()
+                            double  x()
+                            double  y()
+                            double  rho()
+
+DataMembers:   reco::CastorCluster

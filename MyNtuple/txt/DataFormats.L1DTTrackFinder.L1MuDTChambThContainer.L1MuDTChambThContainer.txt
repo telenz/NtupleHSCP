@@ -1,0 +1,14 @@
+Class:         L1MuDTChambThContainer
+
+Header:        DataFormats/L1DTTrackFinder/interface/L1MuDTChambThContainer.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:37 2013	mkvomit.py
+
+AccessMethods: L1MuDTChambThContainer
+   std::vector<L1MuDTChambThDigi>*  getContainer()
+                              bool  bxEmpty(int step)
+                               int  bxSize(int step1, int step2)
+                L1MuDTChambThDigi*  chThetaSegm(int wheel, int stat, int sect, int bx)
+
+DataMembers:   L1MuDTChambThContainer

@@ -1,0 +1,2 @@
+unsigned int  totalIntensityBeam1
+unsigned int  totalIntensityBeam2

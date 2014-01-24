@@ -1,0 +1,34 @@
+Class:         HcalTB02HistoClass
+
+Header:        SimDataFormats/HcalTestBeam/interface/HcalTB02HistoClass.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:08 2013	mkvomit.py
+
+AccessMethods: HcalTB02HistoClass
+                             float  nPrimaries()
+                             float  partID()
+                             float  eInit()
+                             float  eta()
+                             float  phi()
+                             float  eEntry()
+                             float  eHcalTot()
+                             float  eHcal7x7()
+                             float  eHcal5x5()
+                             float  eHcalTotN()
+                             float  eHcal7x7N()
+                             float  eHcal5x5N()
+                             float  nUnit()
+                             float  nTimeSli()
+                             float  xEntry()
+                             float  xEHcalTot()
+                             float  xEHcalTotN()
+                             float  xEHcal7x7()
+                             float  xEHcal5x5()
+                             float  xEHcal3x3()
+                             float  xEHcal7x7N()
+                             float  xEHcal5x5N()
+                             float  xEHcal3x3N()
+                             float  xNUnit()
+
+DataMembers:   HcalTB02HistoClass

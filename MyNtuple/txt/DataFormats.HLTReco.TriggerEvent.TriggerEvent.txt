@@ -1,0 +1,28 @@
+Class:         trigger::TriggerEvent
+
+Header:        DataFormats/HLTReco/interface/TriggerEvent.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:08:43 2013	mkvomit.py
+
+AccessMethods: trigger::TriggerEvent
+                 const std::string  usedProcessName()
+    const std::vector<std::string>  collectionTags()
+               const trigger::Keys  collectionKeys()
+  const trigger::TriggerObjectCollection  getObjects()
+               const edm::InputTag  collectionTag(trigger::size_type index)
+                trigger::size_type  collectionKey(trigger::size_type index)
+               const edm::InputTag  filterTag(trigger::size_type index)
+               const trigger::Vids  filterIds(trigger::size_type index)
+               const trigger::Keys  filterKeys(trigger::size_type index)
+                trigger::size_type  collectionIndex(edm::InputTag collectionTag)
+                trigger::size_type  filterIndex(edm::InputTag filterTag)
+                trigger::size_type  sizeCollections()
+                trigger::size_type  sizeObjects()
+                trigger::size_type  sizeFilters()
+
+AccessMethods: edm::DoNotRecordParents
+
+DataMembers:   trigger::TriggerEvent
+
+DataMembers:   edm::DoNotRecordParents

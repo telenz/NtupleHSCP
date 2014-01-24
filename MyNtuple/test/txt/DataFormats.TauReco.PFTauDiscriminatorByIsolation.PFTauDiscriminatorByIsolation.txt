@@ -1,0 +1,20 @@
+Class:         reco::PFTauDiscriminatorByIsolation
+
+Header:        DataFormats/TauReco/interface/PFTauDiscriminatorByIsolation.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Mon Sep 30 14:10:13 2013	mkvomit.py
+
+AccessMethods: reco::PFTauDiscriminatorByIsolation
+
+AccessMethods: edm::AssociationVector<edm::RefProd<std::vector<reco::PFTau> >,std::vector<int>,edm::Ref<std::vector<reco::PFTau>,reco::PFTau,edm::refhelper::FindUsingAdvance<std::vector<reco::PFTau>,reco::PFTau> >,unsigned int,edm::helper::AssociationIdenticalKeyReference>
+                      unsigned int  size()
+                              bool  empty()
+  const edm::RefProd<std::vector<reco::PFTau> >  keyProduct()
+                    reco::PFTauRef  key(unsigned int i)
+                         const int  value(unsigned int i)
+                             short  Class_Version()
+
+DataMembers:   reco::PFTauDiscriminatorByIsolation
+
+DataMembers:   edm::AssociationVector<edm::RefProd<std::vector<reco::PFTau> >,std::vector<int>,edm::Ref<std::vector<reco::PFTau>,reco::PFTau,edm::refhelper::FindUsingAdvance<std::vector<reco::PFTau>,reco::PFTau> >,unsigned int,edm::helper::AssociationIdenticalKeyReference>

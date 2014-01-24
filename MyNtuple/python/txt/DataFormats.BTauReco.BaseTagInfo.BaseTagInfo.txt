@@ -1,0 +1,15 @@
+Class:         reco::BaseTagInfo
+
+Header:        DataFormats/BTauReco/interface/BaseTagInfo.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:56 2013	mkvomit.py
+
+AccessMethods: reco::BaseTagInfo
+                reco::BaseTagInfo*  clone()
+         edm::RefToBase<reco::Jet>  jet()
+              reco::TrackRefVector  tracks()
+                              bool  hasTracks()
+         reco::TaggingVariableList  taggingVariables()
+
+DataMembers:   reco::BaseTagInfo

@@ -1,0 +1,55 @@
+Class:         PHcalTB04Info
+
+Header:        SimDataFormats/HcalTestBeam/interface/PHcalTB04Info.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:32 2013	mkvomit.py
+
+AccessMethods: PHcalTB04Info
+                               int  primary()
+                               int  partID()
+                             float  initE()
+                             float  eta()
+                             float  phi()
+                               int  crystal()
+                  std::vector<int>  idsEcal()
+                               int  tower()
+                  std::vector<int>  idsHcal()
+                             float  simEtotal()
+                             float  simEcE()
+                             float  simHcE()
+                             float  digEtotal()
+                             float  digEcE()
+                             float  digHcE()
+                std::vector<float>  simEEcal()
+                std::vector<float>  digEEcal()
+                std::vector<float>  simEHcal()
+                std::vector<float>  digEHcal()
+                               int  nHit()
+                  std::vector<int>  detectorHit()
+                  std::vector<int>  etaIndexHit()
+                  std::vector<int>  phiIndexHit()
+                  std::vector<int>  layerHit()
+                std::vector<float>  energyHit()
+                std::vector<float>  timeHit()
+                               int  evNum()
+                               int  vtxType()
+                               int  vtxSec()
+                  std::vector<int>  vtxTrkID()
+                  std::vector<int>  vtxPartID()
+                             float  vtxPrimX()
+                             float  vtxPrimY()
+                             float  vtxPrimZ()
+                             float  vtxPrimR()
+                             float  vtxPrimU()
+                             float  vtxPrimV()
+                             float  vtxPrimW()
+                             float  vtxPrimPx()
+                             float  vtxPrimPy()
+                             float  vtxPrimPz()
+                std::vector<float>  vtxSecPx()
+                std::vector<float>  vtxSecPy()
+                std::vector<float>  vtxSecPz()
+                std::vector<float>  vtxSecEk()
+
+DataMembers:   PHcalTB04Info

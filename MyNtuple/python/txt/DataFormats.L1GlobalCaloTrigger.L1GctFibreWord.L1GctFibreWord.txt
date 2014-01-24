@@ -1,0 +1,14 @@
+Class:         L1GctFibreWord
+
+Header:        DataFormats/L1GlobalCaloTrigger/interface/L1GctFibreWord.h
+
+Version:       CMSSW_5_3_2_patch4
+Created:       Tue Oct 15 16:06:12 2013	mkvomit.py
+
+AccessMethods: L1GctFibreWord
+                          uint32_t  data()
+                          uint16_t  block()
+                          uint16_t  index()
+                           int16_t  bx()
+
+DataMembers:   L1GctFibreWord
