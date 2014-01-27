@@ -1,4 +1,5 @@
 # Ignore everything in this directory
 Makefile
+analyzer.h
 # Except this file
 !.gitignore
