@@ -1,0 +1,9 @@
+# Ignore everything in this directory
+triggerNames.txt
+variables.txt
+TheNtupleMaker,log
+newFile.py
+sampleList.txt
+*~
+# Except this file
+!.gitignore
