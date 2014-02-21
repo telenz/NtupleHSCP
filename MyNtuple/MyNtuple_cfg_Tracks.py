@@ -12,10 +12,10 @@ process.load("FWCore.MessageService.MessageLogger_cfi")
 # This is required in order to configure HLTConfigProducer
 process.load("L1TriggerConfig.L1GtConfigProducers.L1GtConfig_cff")
 
-process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(100))
+process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(-1))
 
-process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring("file:/nfs/dust/cms/user/tlenz/HSCPrecoSECOND/workdir/edmMergeTTJets/results/job_1.root"))
-process.load("Ntuples.MyNtuple.ntuple_cfi_GEN-SIM-RECO-edm")
+process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring("file:/nfs/dust/cms/user/tlenz/mc/debug/test10/pMSSM12_MCMC1_30_549144_m400_width6_516.root"))
+process.load("Ntuples.MyNtuple.ntuple_cfi_Tracks")
 print str(process.maxEvents.input)
 print process.source.fileNames
 process.p = cms.Path(process.demo)

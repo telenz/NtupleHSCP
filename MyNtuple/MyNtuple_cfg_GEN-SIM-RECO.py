@@ -14,8 +14,8 @@ process.load("L1TriggerConfig.L1GtConfigProducers.L1GtConfig_cff")
 
 process.maxEvents = cms.untracked.PSet(input = cms.untracked.int32(100))
 
-process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring("file:/nfs/dust/cms/user/tlenz/HSCPrecoSECOND/workdir/edmMergeTTJets/results/job_1.root"))
-process.load("Ntuples.MyNtuple.ntuple_cfi_GEN-SIM-RECO-edm")
+process.source = cms.Source("PoolSource", fileNames = cms.untracked.vstring("file:/nfs/dust/cms/user/tlenz/mc/TTJets_GEN-SIM-RECO.root"))
+process.load("Ntuples.MyNtuple.ntuple_cfi_GEN-SIM-RECO")
 print str(process.maxEvents.input)
 print process.source.fileNames
 process.p = cms.Path(process.demo)
