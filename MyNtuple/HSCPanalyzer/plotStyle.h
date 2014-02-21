@@ -23,6 +23,7 @@ public:
 
     gStyle -> SetPadBottomMargin(0.15);
     gStyle -> SetPadLeftMargin(0.15);
+    gStyle -> SetPadRightMargin(0.15);
 
     // Pad   
     gStyle -> SetTitleSize(0.05,"X"); 

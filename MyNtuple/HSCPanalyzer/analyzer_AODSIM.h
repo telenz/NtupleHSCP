@@ -3,7 +3,7 @@
 //-----------------------------------------------------------------------------
 // File:        analyzer.h
 // Description: Analyzer header for ntuples created by TheNtupleMaker
-// Created:     Fri Feb 21 12:20:25 2014 by mkanalyzer.py
+// Created:     Fri Feb 21 12:39:41 2014 by mkanalyzer.py
 // Author:      Teresa Lenz
 //-----------------------------------------------------------------------------
 // -- System
@@ -53,6 +53,7 @@ std::vector<int>	GenParticle_status(1000,0);
 std::vector<double>	GenParticle_vx(1000,0);
 std::vector<double>	GenParticle_vy(1000,0);
 std::vector<double>	GenParticle_vz(1000,0);
+double	GenRunInfoProduct_crossSection;
 std::vector<float>	PFJet_chargedEmEnergyFraction(200,0);
 std::vector<float>	PFJet_chargedHadronEnergyFraction(200,0);
 std::vector<double>	PFJet_energy(200,0);
@@ -69,39 +70,6 @@ std::vector<double>	PFMET_eta(200,0);
 std::vector<double>	PFMET_p(200,0);
 std::vector<double>	PFMET_phi(200,0);
 std::vector<double>	PFMET_pt(200,0);
-std::vector<double>	Track_d0(2000000,0);
-std::vector<double>	Track_d0Error(2000000,0);
-std::vector<double>	Track_dEdxHitsNPHarm2_1(2000000,0);
-std::vector<double>	Track_dEdxHitsNPHarm2_1000(2000000,0);
-std::vector<double>	Track_dEdxHitsNPHarm2_2(2000000,0);
-std::vector<double>	Track_dEdxHitsNPHarm2_3(2000000,0);
-std::vector<double>	Track_dEdxHitsNPHarm2_5(2000000,0);
-std::vector<double>	Track_dEdxHitsNPHarm2_7(2000000,0);
-std::vector<double>	Track_dEdxHitsNPMedian_1(2000000,0);
-std::vector<double>	Track_dEdxHitsNPMedian_1000(2000000,0);
-std::vector<double>	Track_dEdxHitsNPMedian_2(2000000,0);
-std::vector<double>	Track_dEdxHitsNPMedian_3(2000000,0);
-std::vector<double>	Track_dEdxHitsNPMedian_5(2000000,0);
-std::vector<double>	Track_dEdxHitsNPMedian_7(2000000,0);
-std::vector<double>	Track_dEdxHitsNPTrun40_1(2000000,0);
-std::vector<double>	Track_dEdxHitsNPTrun40_1000(2000000,0);
-std::vector<double>	Track_dEdxHitsNPTrun40_2(2000000,0);
-std::vector<double>	Track_dEdxHitsNPTrun40_3(2000000,0);
-std::vector<double>	Track_dEdxHitsNPTrun40_5(2000000,0);
-std::vector<double>	Track_dEdxHitsNPTrun40_7(2000000,0);
-std::vector<double>	Track_dEdxNPHarm2(2000000,0);
-std::vector<unsigned int>	Track_dEdxNPNoM(2000000,0);
-std::vector<double>	Track_dEdxNPTru40(2000000,0);
-std::vector<double>	Track_dz(2000000,0);
-std::vector<double>	Track_dzError(2000000,0);
-std::vector<double>	Track_eta(2000000,0);
-std::vector<unsigned short>	Track_numberOfLostHits(2000000,0);
-std::vector<unsigned short>	Track_numberOfValidHits(2000000,0);
-std::vector<double>	Track_phi(2000000,0);
-std::vector<double>	Track_pt(2000000,0);
-std::vector<double>	Track_ptError(2000000,0);
-std::vector<unsigned short>	Track_trackerExpectedHitsInner_numberOfLostHits(2000000,0);
-std::vector<unsigned short>	Track_trackerExpectedHitsOuter_numberOfLostHits(2000000,0);
 std::vector<double>	Vertex_chi2(200,0);
 std::vector<int>	Vertex_isFake(200,0);
 std::vector<int>	Vertex_isValid(200,0);
@@ -119,7 +87,6 @@ int	edmTriggerResultsHelper_prescaleHLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_
 int	nGenParticle;
 int	nPFJet;
 int	nPFMET;
-int	nTrack;
 int	nVertex;
 
 //-----------------------------------------------------------------------------
@@ -256,84 +223,6 @@ std::ostream& operator<<(std::ostream& os, const PFMET_s& o)
   return os;
 }
 //-----------------------------------------------------------------------------
-struct Track_s
-{
-  double	pt;
-  double	eta;
-  double	phi;
-  unsigned short	numberOfValidHits;
-  unsigned short	numberOfLostHits;
-  double	d0;
-  double	dz;
-  double	d0Error;
-  double	dzError;
-  double	ptError;
-  double	dEdxNPHarm2;
-  double	dEdxNPTru40;
-  unsigned int	dEdxNPNoM;
-  double	dEdxHitsNPHarm2_1000;
-  double	dEdxHitsNPHarm2_7;
-  double	dEdxHitsNPHarm2_5;
-  double	dEdxHitsNPHarm2_3;
-  double	dEdxHitsNPHarm2_2;
-  double	dEdxHitsNPHarm2_1;
-  double	dEdxHitsNPTrun40_1000;
-  double	dEdxHitsNPTrun40_7;
-  double	dEdxHitsNPTrun40_5;
-  double	dEdxHitsNPTrun40_3;
-  double	dEdxHitsNPTrun40_2;
-  double	dEdxHitsNPTrun40_1;
-  double	dEdxHitsNPMedian_1000;
-  double	dEdxHitsNPMedian_7;
-  double	dEdxHitsNPMedian_5;
-  double	dEdxHitsNPMedian_3;
-  double	dEdxHitsNPMedian_2;
-  double	dEdxHitsNPMedian_1;
-  unsigned short	trackerExpectedHitsOuter_numberOfLostHits;
-  unsigned short	trackerExpectedHitsInner_numberOfLostHits;
-};
-std::vector<Track_s> Track(2000000);
-
-std::ostream& operator<<(std::ostream& os, const Track_s& o)
-{
-  char r[1024];
-  os << "Track" << std::endl;
-  sprintf(r, "  %-32s: %f\n", "pt", (double)o.pt); os << r;
-  sprintf(r, "  %-32s: %f\n", "eta", (double)o.eta); os << r;
-  sprintf(r, "  %-32s: %f\n", "phi", (double)o.phi); os << r;
-  sprintf(r, "  %-32s: %f\n", "numberOfValidHits", (double)o.numberOfValidHits); os << r;
-  sprintf(r, "  %-32s: %f\n", "numberOfLostHits", (double)o.numberOfLostHits); os << r;
-  sprintf(r, "  %-32s: %f\n", "d0", (double)o.d0); os << r;
-  sprintf(r, "  %-32s: %f\n", "dz", (double)o.dz); os << r;
-  sprintf(r, "  %-32s: %f\n", "d0Error", (double)o.d0Error); os << r;
-  sprintf(r, "  %-32s: %f\n", "dzError", (double)o.dzError); os << r;
-  sprintf(r, "  %-32s: %f\n", "ptError", (double)o.ptError); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxNPHarm2", (double)o.dEdxNPHarm2); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxNPTru40", (double)o.dEdxNPTru40); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxNPNoM", (double)o.dEdxNPNoM); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPHarm2_1000", (double)o.dEdxHitsNPHarm2_1000); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPHarm2_7", (double)o.dEdxHitsNPHarm2_7); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPHarm2_5", (double)o.dEdxHitsNPHarm2_5); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPHarm2_3", (double)o.dEdxHitsNPHarm2_3); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPHarm2_2", (double)o.dEdxHitsNPHarm2_2); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPHarm2_1", (double)o.dEdxHitsNPHarm2_1); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPTrun40_1000", (double)o.dEdxHitsNPTrun40_1000); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPTrun40_7", (double)o.dEdxHitsNPTrun40_7); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPTrun40_5", (double)o.dEdxHitsNPTrun40_5); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPTrun40_3", (double)o.dEdxHitsNPTrun40_3); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPTrun40_2", (double)o.dEdxHitsNPTrun40_2); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPTrun40_1", (double)o.dEdxHitsNPTrun40_1); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPMedian_1000", (double)o.dEdxHitsNPMedian_1000); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPMedian_7", (double)o.dEdxHitsNPMedian_7); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPMedian_5", (double)o.dEdxHitsNPMedian_5); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPMedian_3", (double)o.dEdxHitsNPMedian_3); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPMedian_2", (double)o.dEdxHitsNPMedian_2); os << r;
-  sprintf(r, "  %-32s: %f\n", "dEdxHitsNPMedian_1", (double)o.dEdxHitsNPMedian_1); os << r;
-  sprintf(r, "  %-32s: %f\n", "trackerExpectedHitsOuter_numberOfLostHits", (double)o.trackerExpectedHitsOuter_numberOfLostHits); os << r;
-  sprintf(r, "  %-32s: %f\n", "trackerExpectedHitsInner_numberOfLostHits", (double)o.trackerExpectedHitsInner_numberOfLostHits); os << r;
-  return os;
-}
-//-----------------------------------------------------------------------------
 struct Vertex_s
 {
   int	isValid;
@@ -426,47 +315,6 @@ inline void fillPFMET()
     }
 }
 
-inline void fillTrack()
-{
-  Track.resize(Track_pt.size());
-  for(unsigned int i=0; i < Track.size(); ++i)
-    {
-      Track[i].pt	= Track_pt[i];
-      Track[i].eta	= Track_eta[i];
-      Track[i].phi	= Track_phi[i];
-      Track[i].numberOfValidHits	= Track_numberOfValidHits[i];
-      Track[i].numberOfLostHits	= Track_numberOfLostHits[i];
-      Track[i].d0	= Track_d0[i];
-      Track[i].dz	= Track_dz[i];
-      Track[i].d0Error	= Track_d0Error[i];
-      Track[i].dzError	= Track_dzError[i];
-      Track[i].ptError	= Track_ptError[i];
-      Track[i].dEdxNPHarm2	= Track_dEdxNPHarm2[i];
-      Track[i].dEdxNPTru40	= Track_dEdxNPTru40[i];
-      Track[i].dEdxNPNoM	= Track_dEdxNPNoM[i];
-      Track[i].dEdxHitsNPHarm2_1000	= Track_dEdxHitsNPHarm2_1000[i];
-      Track[i].dEdxHitsNPHarm2_7	= Track_dEdxHitsNPHarm2_7[i];
-      Track[i].dEdxHitsNPHarm2_5	= Track_dEdxHitsNPHarm2_5[i];
-      Track[i].dEdxHitsNPHarm2_3	= Track_dEdxHitsNPHarm2_3[i];
-      Track[i].dEdxHitsNPHarm2_2	= Track_dEdxHitsNPHarm2_2[i];
-      Track[i].dEdxHitsNPHarm2_1	= Track_dEdxHitsNPHarm2_1[i];
-      Track[i].dEdxHitsNPTrun40_1000	= Track_dEdxHitsNPTrun40_1000[i];
-      Track[i].dEdxHitsNPTrun40_7	= Track_dEdxHitsNPTrun40_7[i];
-      Track[i].dEdxHitsNPTrun40_5	= Track_dEdxHitsNPTrun40_5[i];
-      Track[i].dEdxHitsNPTrun40_3	= Track_dEdxHitsNPTrun40_3[i];
-      Track[i].dEdxHitsNPTrun40_2	= Track_dEdxHitsNPTrun40_2[i];
-      Track[i].dEdxHitsNPTrun40_1	= Track_dEdxHitsNPTrun40_1[i];
-      Track[i].dEdxHitsNPMedian_1000	= Track_dEdxHitsNPMedian_1000[i];
-      Track[i].dEdxHitsNPMedian_7	= Track_dEdxHitsNPMedian_7[i];
-      Track[i].dEdxHitsNPMedian_5	= Track_dEdxHitsNPMedian_5[i];
-      Track[i].dEdxHitsNPMedian_3	= Track_dEdxHitsNPMedian_3[i];
-      Track[i].dEdxHitsNPMedian_2	= Track_dEdxHitsNPMedian_2[i];
-      Track[i].dEdxHitsNPMedian_1	= Track_dEdxHitsNPMedian_1[i];
-      Track[i].trackerExpectedHitsOuter_numberOfLostHits	= Track_trackerExpectedHitsOuter_numberOfLostHits[i];
-      Track[i].trackerExpectedHitsInner_numberOfLostHits	= Track_trackerExpectedHitsInner_numberOfLostHits[i];
-    }
-}
-
 inline void fillVertex()
 {
   Vertex.resize(Vertex_isValid.size());
@@ -493,7 +341,6 @@ void fillObjects()
   fillGenParticle();
   fillPFJet();
   fillPFMET();
-  fillTrack();
   fillVertex();
 }
 
@@ -591,56 +438,6 @@ void saveSelectedObjects()
   n = 0;
   try
     {
-       n = indexmap["Track"].size();
-    }
-  catch (...)
-    {}
-  if ( n > 0 )
-    {
-      std::vector<int>& index = indexmap["Track"];
-      for(int i=0; i < n; ++i)
-        {
-          int j = index[i];
-          Track_pt[i]	= Track_pt[j];
-          Track_eta[i]	= Track_eta[j];
-          Track_phi[i]	= Track_phi[j];
-          Track_numberOfValidHits[i]	= Track_numberOfValidHits[j];
-          Track_numberOfLostHits[i]	= Track_numberOfLostHits[j];
-          Track_d0[i]	= Track_d0[j];
-          Track_dz[i]	= Track_dz[j];
-          Track_d0Error[i]	= Track_d0Error[j];
-          Track_dzError[i]	= Track_dzError[j];
-          Track_ptError[i]	= Track_ptError[j];
-          Track_dEdxNPHarm2[i]	= Track_dEdxNPHarm2[j];
-          Track_dEdxNPTru40[i]	= Track_dEdxNPTru40[j];
-          Track_dEdxNPNoM[i]	= Track_dEdxNPNoM[j];
-          Track_dEdxHitsNPHarm2_1000[i]	= Track_dEdxHitsNPHarm2_1000[j];
-          Track_dEdxHitsNPHarm2_7[i]	= Track_dEdxHitsNPHarm2_7[j];
-          Track_dEdxHitsNPHarm2_5[i]	= Track_dEdxHitsNPHarm2_5[j];
-          Track_dEdxHitsNPHarm2_3[i]	= Track_dEdxHitsNPHarm2_3[j];
-          Track_dEdxHitsNPHarm2_2[i]	= Track_dEdxHitsNPHarm2_2[j];
-          Track_dEdxHitsNPHarm2_1[i]	= Track_dEdxHitsNPHarm2_1[j];
-          Track_dEdxHitsNPTrun40_1000[i]	= Track_dEdxHitsNPTrun40_1000[j];
-          Track_dEdxHitsNPTrun40_7[i]	= Track_dEdxHitsNPTrun40_7[j];
-          Track_dEdxHitsNPTrun40_5[i]	= Track_dEdxHitsNPTrun40_5[j];
-          Track_dEdxHitsNPTrun40_3[i]	= Track_dEdxHitsNPTrun40_3[j];
-          Track_dEdxHitsNPTrun40_2[i]	= Track_dEdxHitsNPTrun40_2[j];
-          Track_dEdxHitsNPTrun40_1[i]	= Track_dEdxHitsNPTrun40_1[j];
-          Track_dEdxHitsNPMedian_1000[i]	= Track_dEdxHitsNPMedian_1000[j];
-          Track_dEdxHitsNPMedian_7[i]	= Track_dEdxHitsNPMedian_7[j];
-          Track_dEdxHitsNPMedian_5[i]	= Track_dEdxHitsNPMedian_5[j];
-          Track_dEdxHitsNPMedian_3[i]	= Track_dEdxHitsNPMedian_3[j];
-          Track_dEdxHitsNPMedian_2[i]	= Track_dEdxHitsNPMedian_2[j];
-          Track_dEdxHitsNPMedian_1[i]	= Track_dEdxHitsNPMedian_1[j];
-          Track_trackerExpectedHitsOuter_numberOfLostHits[i]	= Track_trackerExpectedHitsOuter_numberOfLostHits[j];
-          Track_trackerExpectedHitsInner_numberOfLostHits[i]	= Track_trackerExpectedHitsInner_numberOfLostHits[j];
-        }
-      nTrack = n;
-    }
-
-  n = 0;
-  try
-    {
        n = indexmap["Vertex"].size();
     }
   catch (...)
@@ -688,55 +485,23 @@ void selectVariables(itreestream& stream)
   stream.select("recoGenParticle_genParticles.vx", GenParticle_vx);
   stream.select("recoGenParticle_genParticles.vy", GenParticle_vy);
   stream.select("recoGenParticle_genParticles.vz", GenParticle_vz);
-  stream.select("recoPFJet_ak5PFJetsPt15.chargedEmEnergyFraction", PFJet_chargedEmEnergyFraction);
-  stream.select("recoPFJet_ak5PFJetsPt15.chargedHadronEnergyFraction", PFJet_chargedHadronEnergyFraction);
-  stream.select("recoPFJet_ak5PFJetsPt15.energy", PFJet_energy);
-  stream.select("recoPFJet_ak5PFJetsPt15.et", PFJet_et);
-  stream.select("recoPFJet_ak5PFJetsPt15.eta", PFJet_eta);
-  stream.select("recoPFJet_ak5PFJetsPt15.neutralEmEnergyFraction", PFJet_neutralEmEnergyFraction);
-  stream.select("recoPFJet_ak5PFJetsPt15.neutralHadronEnergyFraction", PFJet_neutralHadronEnergyFraction);
-  stream.select("recoPFJet_ak5PFJetsPt15.p", PFJet_p);
-  stream.select("recoPFJet_ak5PFJetsPt15.phi", PFJet_phi);
-  stream.select("recoPFJet_ak5PFJetsPt15.pt", PFJet_pt);
+  stream.select("GenRunInfoProduct_generator.crossSection", GenRunInfoProduct_crossSection);
+  stream.select("recoPFJet_ak5PFJets.chargedEmEnergyFraction", PFJet_chargedEmEnergyFraction);
+  stream.select("recoPFJet_ak5PFJets.chargedHadronEnergyFraction", PFJet_chargedHadronEnergyFraction);
+  stream.select("recoPFJet_ak5PFJets.energy", PFJet_energy);
+  stream.select("recoPFJet_ak5PFJets.et", PFJet_et);
+  stream.select("recoPFJet_ak5PFJets.eta", PFJet_eta);
+  stream.select("recoPFJet_ak5PFJets.neutralEmEnergyFraction", PFJet_neutralEmEnergyFraction);
+  stream.select("recoPFJet_ak5PFJets.neutralHadronEnergyFraction", PFJet_neutralHadronEnergyFraction);
+  stream.select("recoPFJet_ak5PFJets.p", PFJet_p);
+  stream.select("recoPFJet_ak5PFJets.phi", PFJet_phi);
+  stream.select("recoPFJet_ak5PFJets.pt", PFJet_pt);
   stream.select("recoPFMET_pfMet.energy", PFMET_energy);
   stream.select("recoPFMET_pfMet.et", PFMET_et);
   stream.select("recoPFMET_pfMet.eta", PFMET_eta);
   stream.select("recoPFMET_pfMet.p", PFMET_p);
   stream.select("recoPFMET_pfMet.phi", PFMET_phi);
   stream.select("recoPFMET_pfMet.pt", PFMET_pt);
-  stream.select("recoTrackHelper_TrackRefitter.d0", Track_d0);
-  stream.select("recoTrackHelper_TrackRefitter.d0Error", Track_d0Error);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPHarm2_1", Track_dEdxHitsNPHarm2_1);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPHarm2_1000", Track_dEdxHitsNPHarm2_1000);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPHarm2_2", Track_dEdxHitsNPHarm2_2);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPHarm2_3", Track_dEdxHitsNPHarm2_3);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPHarm2_5", Track_dEdxHitsNPHarm2_5);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPHarm2_7", Track_dEdxHitsNPHarm2_7);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPMedian_1", Track_dEdxHitsNPMedian_1);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPMedian_1000", Track_dEdxHitsNPMedian_1000);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPMedian_2", Track_dEdxHitsNPMedian_2);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPMedian_3", Track_dEdxHitsNPMedian_3);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPMedian_5", Track_dEdxHitsNPMedian_5);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPMedian_7", Track_dEdxHitsNPMedian_7);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPTrun40_1", Track_dEdxHitsNPTrun40_1);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPTrun40_100000", Track_dEdxHitsNPTrun40_1000);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPTrun40_2", Track_dEdxHitsNPTrun40_2);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPTrun40_3", Track_dEdxHitsNPTrun40_3);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPTrun40_5", Track_dEdxHitsNPTrun40_5);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxHitsNPTrun40_7", Track_dEdxHitsNPTrun40_7);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxNPHarm2", Track_dEdxNPHarm2);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxNPNoM", Track_dEdxNPNoM);
-  stream.select("recoTrackHelper_TrackRefitter.dEdxNPTru40", Track_dEdxNPTru40);
-  stream.select("recoTrackHelper_TrackRefitter.dz", Track_dz);
-  stream.select("recoTrackHelper_TrackRefitter.dzError", Track_dzError);
-  stream.select("recoTrackHelper_TrackRefitter.eta", Track_eta);
-  stream.select("recoTrackHelper_TrackRefitter.numberOfLostHits", Track_numberOfLostHits);
-  stream.select("recoTrackHelper_TrackRefitter.numberOfValidHits", Track_numberOfValidHits);
-  stream.select("recoTrackHelper_TrackRefitter.phi", Track_phi);
-  stream.select("recoTrackHelper_TrackRefitter.pt", Track_pt);
-  stream.select("recoTrackHelper_TrackRefitter.ptError", Track_ptError);
-  stream.select("recoTrackHelper_TrackRefitter.trackerExpectedHitsInner_numberOfLostHits", Track_trackerExpectedHitsInner_numberOfLostHits);
-  stream.select("recoTrackHelper_TrackRefitter.trackerExpectedHitsOuter_numberOfLostHits", Track_trackerExpectedHitsOuter_numberOfLostHits);
   stream.select("recoVertex_offlinePrimaryVertices.chi2", Vertex_chi2);
   stream.select("recoVertex_offlinePrimaryVertices.isFake", Vertex_isFake);
   stream.select("recoVertex_offlinePrimaryVertices.isValid", Vertex_isValid);
@@ -752,9 +517,8 @@ void selectVariables(itreestream& stream)
   stream.select("edmTriggerResultsHelper_TriggerResults_HLT.HLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5", edmTriggerResultsHelper_HLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5);
   stream.select("edmTriggerResultsHelper_TriggerResults_HLT.prescaleHLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5", edmTriggerResultsHelper_prescaleHLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5);
   stream.select("nrecoGenParticle_genParticles", nGenParticle);
-  stream.select("nrecoPFJet_ak5PFJetsPt15", nPFJet);
+  stream.select("nrecoPFJet_ak5PFJets", nPFJet);
   stream.select("nrecoPFMET_pfMet", nPFMET);
-  stream.select("nrecoTrackHelper_TrackRefitter", nTrack);
   stream.select("nrecoVertex_offlinePrimaryVertices", nVertex);
 
 }
