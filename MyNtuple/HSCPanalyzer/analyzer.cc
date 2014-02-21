@@ -124,7 +124,7 @@ int main(int argc, char** argv)
     hgenEtaChipm[i] = new TH1D("hgenEta"+ChipmType[i],"hgenEta"+ChipmType[i],100,-5,5);
     hgenPhiChipm[i] = new TH1D("hgenPhi"+ChipmType[i],"hgenPhi"+ChipmType[i],50,0,TMath::Pi());
     hgenMChipm[i] = new TH1D("hgenM"+ChipmType[i],"hgenM"+ChipmType[i],1000,0,1000);
-    hTimeOfFlight[i] = new TH1D("hTimeOfFlight"+ChipmType[i],"hTimeOfFlight"+ChipmType[i],1000,pow(10,-19),pow(10,-15));
+    hTimeOfFlight[i] = new TH1D("hTimeOfFlight"+ChipmType[i],"hTimeOfFlight"+ChipmType[i],1000,pow(10.,-19.),pow(10.,-15.));
 
     //SimTrack Collextion
     htrkPtChipm[i] = new TH1D("htrkPt"+ChipmType[i],"htrkPt"+ChipmType[i],150,0,1500);
