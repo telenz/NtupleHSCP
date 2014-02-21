@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------
-# Created: Fri Jan 17 11:59:05 2014 by mkntuplecfi.py
+# Created: Tue Dec 10 15:30:30 2013 by mkntuplecfi.py
 #-------------------------------------------------------------------------
 import FWCore.ParameterSet.Config as cms
 demo =\
@@ -15,35 +15,45 @@ cms.EDAnalyzer("TheNtupleMaker",
                buffers =
                cms.untracked.
                vstring(
-    'Track',
+    'GenRunInfoProduct',
+    'SimTrack',
+    'SimVertex',
     'GenParticle'
     ),
 
-               Track =
+               GenRunInfoProduct =
                cms.untracked.
                vstring(
-    'recoTrackHelper                       TrackRefitter                   20000000',
+    'GenRunInfoProduct               generator                         1',
     #---------------------------------------------------------------------
-    'double  pt()',
-    'double  px()',
-    'double  py()',
-    'double  pz()',
-    'double eta()',
-    'double phi()',
-    'double  dEdxNPHarm2()',
-    'unsigned int     dEdxNPNoM()',
-    'double  dEdxHitsNPHarm2(1000)',
-    'double  dEdxHitsNPHarm2(7)',
-    'double  dEdxHitsNPHarm2(5)',
-    'double  dEdxHitsNPHarm2(3)',
-    'double  dEdxHitsNPHarm2(2)',
-    'double  dEdxHitsNPHarm2(1)',
+    'double  crossSection()'
     ),
-               
+               SimTrack =
+               cms.untracked.
+               vstring(
+    'SimTrack                        g4SimHits                       200',
+    #---------------------------------------------------------------------
+    'float  charge()',
+    'int  vertIndex()',
+    'bool  noVertex()',
+    'int  genpartIndex()',
+    'bool  noGenpart()',
+    'int  type()',
+    'unsigned int  trackId()'
+    ),
+               SimVertex =
+               cms.untracked.
+               vstring(
+    'SimVertex                       g4SimHits                       200',
+    #---------------------------------------------------------------------
+    'int  parentIndex()',
+    'bool  noParent()',
+    'unsigned int  vertexId()'
+    ),
                GenParticle =
                cms.untracked.
                vstring(
-    'recoGenParticle                 genParticles                    1000',
+    'recoGenParticle                 genParticles                    200',
     #---------------------------------------------------------------------
     'int  charge()',
     'double  p()',
