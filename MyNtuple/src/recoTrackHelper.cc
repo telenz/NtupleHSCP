@@ -34,6 +34,11 @@ edm::Handle<edm::ValueMap<reco::DeDxData> > dEdxNPHarm2TrackHandle;
 event->getByLabel("dedxNPHarm2", dEdxNPHarm2TrackHandle);
 dEdxTrackMap = *dEdxNPHarm2TrackHandle.product();
 
+// For DeDxNPTru40
+edm::Handle<edm::ValueMap<reco::DeDxData> > dEdxNPTru40TrackHandle;
+event->getByLabel("dedxNPTru40", dEdxNPTru40TrackHandle);
+dEdxTrackMapTru40 = *dEdxNPTru40TrackHandle.product();
+
 event->getByLabel(labelname,trackCollectionHandle);
 
 // For DeDxHitsNPHarm2
@@ -51,6 +56,9 @@ void TrackHelper::analyzeObject()
 // For DeDxNPHarm2 
 reco::TrackRef track  = reco::TrackRef( trackCollectionHandle, oindex);
 dEdxNPHarm2Track = dEdxTrackMap[track];
+
+// For DeDxNPTru40
+dEdxNPTru40Track = dEdxTrackMapTru40[track];
 
 // For DeDxHitsNPHarm2 
 dEdxHitsNPHarm2Track = dEdxHitsTrackMap[track];
