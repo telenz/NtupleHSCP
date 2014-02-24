@@ -5,8 +5,11 @@
 // Author:      Teresa Lenz
 //-----------------------------------------------------------------------------
 #include "analyzerdEdx.h"
+#include "analyzerAODSIMFunctions.h"
 #include "analyzerRecoTracks.h"
-#include "analyzerStructs.h"
+#include "analyzerRECOClasses.h"
+#include "analyzerAODSIMClasses.h"
+#include "histograms.h"
 #include "TLorentzVector.h"
 #include "TVector3.h"
 #include <time.h>
@@ -107,11 +110,13 @@ int main(int argc, char** argv)
   //---------------------------------------------------------------------------
 
 
-  class SetOfHistogramsChipm NoChipm("NoChipm");
-  class SetOfHistogramsChipm Chipm("Chipm");
-  class SetOfHistogramsChipm All("All");
+  class SetOfHistogramsChipmTracks NoChipm("NoChipm");
+  class SetOfHistogramsChipmTracks Chipm("Chipm");
+  class SetOfHistogramsChipmTracks All("All");
 
   class SetOfVertexHistograms vertices;
+
+  class SetOfIsolationTrackHistograms isoTrack;
 
   TH1D *hnPFMet    = new TH1D("hnPFMet","hnPFMet",200,0,200);
   TH1D *hnVertex   = new TH1D("hnVertex","hnVertex",200,0,200);
@@ -121,7 +126,7 @@ int main(int argc, char** argv)
   TH1D *h1stjetpt  = new TH1D("h1stjetpt","h1stjetpt",150,0,1500);
   TH1D *hDeltaPhi  = new TH1D("hDeltaPhi","hDeltaPhi",32,0,3.2);
   
-
+  
   //---------------------------------------------------------------------------
   // Declaration of Variables
   //---------------------------------------------------------------------------
@@ -148,10 +153,10 @@ int main(int argc, char** argv)
   int before1stJetCut = 0;
   int after1stJetCut  = 0;
   //---------------------------------------------------------------------------
-  bool vertexCut     = true;
-  bool metCut        = true;
-  bool leadingJetCut = true;
-  bool candidateCut  = true;
+  bool vertexCut     = false;
+  bool metCut        = false;
+  bool leadingJetCut = false;
+  bool candidateCut  = false;
 
   //---------------------------------------------------------------------------
   // Loop over events
@@ -188,8 +193,8 @@ int main(int argc, char** argv)
       //-------------- Vertex Cut ------------------
       ofile.count("vertexCuts", 1);
 
-
-
+      for(int i=0; i<nTrack; i++) isoTrack.FillIsolationTrackHistograms(i);
+ 
       reco::getCandidateTrackCollection();
       //-------------- Candidate cut ------------------
       if(candidateCut){
@@ -203,7 +208,7 @@ int main(int argc, char** argv)
       for(int i=0; i<nVertex; i++){
 	vertices.FillVertexHistograms(i);
       }
-	  
+
       //----------------- MET Cut ------------------
       beforeMETCut += 1;
       hMet->Fill(PFMET[0].et);
@@ -256,7 +261,6 @@ int main(int argc, char** argv)
       Nchim=0;
       for(int i=0; i<reco::trackCollection.size(); i++){
 
-	All.FillTrackHistograms(i);
 	All.FillDeDxHistograms(i);
 	    
 	dPhi    = std::abs(reco::chipGenParticle.phi - reco::trackCollection[i].phi);
@@ -275,13 +279,11 @@ int main(int argc, char** argv)
 	  if(!reco::zeroChip && dRchip<0.1 && dPtchip<0.3) Nchip += 1;
 	  if(!reco::zeroChim && dRchim<0.1 && dPtchim<0.3) Nchim += 1;
 
-	  Chipm.FillTrackHistograms(i);
 	  Chipm.FillDeDxHistograms(i);
 	  //Chipm.hsumPtDeltaR0p3->Fill(sumPtDeltaR0p3);
 	}
 	else{
 
-	  NoChipm.FillTrackHistograms(i);
 	  NoChipm.FillDeDxHistograms(i);
 	  //NoChipm.hsumPtDeltaR0p3->Fill(sumPtDeltaR0p3);
 	      
