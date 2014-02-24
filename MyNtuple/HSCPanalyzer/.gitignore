@@ -7,6 +7,7 @@
 !*.py
 !*.C
 !*.sh
+!*.txt
 !Makefile
 !include
 !lib
