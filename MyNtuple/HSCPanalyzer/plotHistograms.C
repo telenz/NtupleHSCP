@@ -52,13 +52,13 @@ int plotAllHistogram(){
   double ctau[15] = {0.5, 0.75, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.5, 6.0, 8.0, 10., 15., 20., 30.};
   
   std::vector<int> mass;
-  mass.push_back(100);
+  mass.push_back(200);
   //mass.push_back(800);
   std::vector<int> width;
   //width.push_back(0);
-  width.push_back(14);
+  width.push_back(5);
 
-
+  /*
   if((TString) targetName == "plotsHSCPTest/"){
 
     sourceFile = "analyzerTest_histograms" + sample + ".root";
@@ -68,6 +68,7 @@ int plotAllHistogram(){
 
     return 0;
   }
+  */
 
   for(unsigned int m=0; m<mass.size(); m++){
     for(unsigned int i=0; i<width.size(); i++){
@@ -104,42 +105,48 @@ int plotAllHistogram(){
 
       }
 
-      /*
+      
       if(gensim){
 
+	title="";
+	sample = (TString) "_m" + (long) mass[m] + (TString) "_width" + (long) width[i];
+	sourceFile = "analyzer_histograms.root";
 
-	if(i==0) title = "#Gamma = 9 * 10^{-14}";
-	//if(i==0) title = "#Gamma = 6.0 * 10^{-16}";
-	else if(i==1) title = "#Gamma = 5 * 10^{-15}";
-	else if(i==2) title = "#Gamma = 1 * 10^{-15}";
-	else if(i==3) title = "#Gamma = 5 * 10^{-16}";
-	else if(i==4) title = "#Gamma = 7 * 10^{-20}";
+	/*
+	  if(i==0) title = "#Gamma = 9 * 10^{-14}";
+	  //if(i==0) title = "#Gamma = 6.0 * 10^{-16}";
+	  else if(i==1) title = "#Gamma = 5 * 10^{-15}";
+	  else if(i==2) title = "#Gamma = 1 * 10^{-15}";
+	  else if(i==3) title = "#Gamma = 5 * 10^{-16}";
+	  else if(i==4) title = "#Gamma = 7 * 10^{-20}";
 
-	title = Form("c#tau = %2.2f m, mass = %i GeV",ctau[width[i]],mass[m]);
-	//plotHistograms1D("trkLengthChargino",Form("analyzer_histograms_Width%i.root",i),Form("plots/ChipmTrkLength_Width%i.pdf",i),title,"s_{Track}");
-	//plotHistograms1D("ptSimTrackChipm",Form("analyzer_histograms_Width%i.root",i),Form("plots/ChipmPtSimTrack_Width%i.pdf",i),title,"p_{T}^{#Chi^{#pm}}");
-	//plotHistograms2D("ptVsDecayedChipm",Form("analyzer_histograms_Width%i.root",i),Form("plots/ChipmPtVsDecayed_Width%i.pdf",i),title,"p_{T}^{#Chi^{#pm}}","decayed");
+	  title = Form("c#tau = %2.2f m, mass = %i GeV",ctau[width[i]],mass[m]);
+	  //plotHistograms1D("trkLengthChargino",Form("analyzer_histograms_Width%i.root",i),Form("plots/ChipmTrkLength_Width%i.pdf",i),title,"s_{Track}");
+	  //plotHistograms1D("ptSimTrackChipm",Form("analyzer_histograms_Width%i.root",i),Form("plots/ChipmPtSimTrack_Width%i.pdf",i),title,"p_{T}^{#Chi^{#pm}}");
+	  //plotHistograms2D("ptVsDecayedChipm",Form("analyzer_histograms_Width%i.root",i),Form("plots/ChipmPtVsDecayed_Width%i.pdf",i),title,"p_{T}^{#Chi^{#pm}}","decayed");
 
-	//GenParticles plots
-	plotHistograms1D("hgenPtChipm",sourceFile, targetName+"hgenPtChipm_" + sample + ".pdf",title,"p_{T}^{#Chi^{#pm}} [GeV]",-1,1);
-	plotHistograms1D("hgenEtaChipm",sourceFile,targetName+"hgenEtaChipm_" + sample + ".pdf",title,"#eta^{#Chi^{#pm}}",-1,0);
-	plotHistograms1D("hgenPhiChipm",sourceFile,targetName+"hgenPhiChipm_" + sample + ".pdf",title,"#Phi^{#Chi^{#pm}}",-1,0);
-	plotHistograms1D("hZChipm",sourceFile,targetName+"hZChipm_" + sample + ".pdf",title,"z",-1,0);
-	plotHistograms1D("htrkLengthDeltaRayChipm",sourceFile, targetName+"htrkLengthDeltaRayChipm_" + sample + ".pdf",title,"s^{Delta ray}_{Track} [cm]",-1,1);
-	plotHistograms1D("hDeltaRayPDGIdChipm",sourceFile, targetName+"hDeltaRayPDGIdChipm_" + sample + ".pdf",title,"pdg Id",-1,0);
-	plotHistograms1D("hgenEtaNotDecayedChipm",sourceFile, targetName+"hgenEtaNotDecayedChipm_" + sample + ".pdf",title,"#eta^{#Chi^{#pm}}_{not decayed}",-1,0);
-	plotHistograms1D("hTimeOfFlightChipm",sourceFile, targetName+"hTimeOfFlightChipm_" + sample + ".pdf",title,"TOF^{#Chi^{#pm}} [s]",-1,1);
+	  //GenParticles plots
+	  plotHistograms1D("hgenPtChipm",sourceFile, targetName+"hgenPtChipm_" + sample + ".pdf",title,"p_{T}^{#Chi^{#pm}} [GeV]",-1,1);
+	  plotHistograms1D("hgenEtaChipm",sourceFile,targetName+"hgenEtaChipm_" + sample + ".pdf",title,"#eta^{#Chi^{#pm}}",-1,0);
+	  plotHistograms1D("hgenPhiChipm",sourceFile,targetName+"hgenPhiChipm_" + sample + ".pdf",title,"#Phi^{#Chi^{#pm}}",-1,0);
+	  plotHistograms1D("hZChipm",sourceFile,targetName+"hZChipm_" + sample + ".pdf",title,"z",-1,0);
+	  plotHistograms1D("htrkLengthDeltaRayChipm",sourceFile, targetName+"htrkLengthDeltaRayChipm_" + sample + ".pdf",title,"s^{Delta ray}_{Track} [cm]",-1,1);
+	  plotHistograms1D("hDeltaRayPDGIdChipm",sourceFile, targetName+"hDeltaRayPDGIdChipm_" + sample + ".pdf",title,"pdg Id",-1,0);
+	  plotHistograms1D("hgenEtaNotDecayedChipm",sourceFile, targetName+"hgenEtaNotDecayedChipm_" + sample + ".pdf",title,"#eta^{#Chi^{#pm}}_{not decayed}",-1,0);
+	  plotHistograms1D("hTimeOfFlightChipm",sourceFile, targetName+"hTimeOfFlightChipm_" + sample + ".pdf",title,"TOF^{#Chi^{#pm}} [s]",-1,1);
 
 
-	plotHistograms1D("htrkLengthChipm",sourceFile,targetName+"hChipmTrkLength_" + sample + ".pdf",title,"s_{Track} [cm]",900,1);
-	plotHistograms1D("htrkLengthChip",sourceFile,targetName+"hChipTrkLength_" + sample + ".pdf",title,"s_{Track}^{#Chi^{+}} [cm]",120,1);
-	plotHistograms1D("htrkLengthChim",sourceFile,targetName+"hChimTrkLength_" + sample + ".pdf",title,"s_{Track}^{#Chi^{-}} [cm]",120,1);
-	//plotHistograms1D("ptSimTrackChipm",Form("analyzer_histograms.root"),Form("plots/ChipmPtSimTrack.pdf"),title,"p_{T}^{#Chi^{#pm}}");
-	//plotHistograms2D("ptVsDecayedChipm",Form("analyzer_histograms.root"),Form("plots/ChipmPtVsDecayed.pdf"),title,"p_{T}^{#Chi^{#pm}}","decayed");
-	plotHistograms2D("hRhoVsZChipm",sourceFile,targetName+"hRhoVsZChipm_" + sample + ".pdf",title,"#rho","z");
-	plotHistograms2D("hZVsRhoChipm",sourceFile,targetName+"hZVsRhoChipm_" + sample + ".pdf",title,"z","#rho");
+	  
+	  plotHistograms1D("htrkLengthChip",sourceFile,targetName+"hChipTrkLength_" + sample + ".pdf",title,"s_{Track}^{#Chi^{+}} [cm]",120,1);
+	  plotHistograms1D("htrkLengthChim",sourceFile,targetName+"hChimTrkLength_" + sample + ".pdf",title,"s_{Track}^{#Chi^{-}} [cm]",120,1);
+	  //plotHistograms1D("ptSimTrackChipm",Form("analyzer_histograms.root"),Form("plots/ChipmPtSimTrack.pdf"),title,"p_{T}^{#Chi^{#pm}}");
+	  //plotHistograms2D("ptVsDecayedChipm",Form("analyzer_histograms.root"),Form("plots/ChipmPtVsDecayed.pdf"),title,"p_{T}^{#Chi^{#pm}}","decayed");
+	  plotHistograms2D("hRhoVsZChipm",sourceFile,targetName+"hRhoVsZChipm_" + sample + ".pdf",title,"#rho","z");
+	*/
+	//plotHistograms2D("hZVsRhoChipm",sourceFile,targetName+"hZVsRhoChipm" + sample + "_logz.pdf",title,"z","#rho",-1);
+	plotHistograms1D("htrkLengthChipm",sourceFile,targetName+"hChipmTrkLength" + sample + ".pdf",title,"s_{Track} [cm]",900,1);
       }
-      */
+      
     }
   }
 
@@ -193,7 +200,7 @@ int plotHistograms2D(TString histoName,TString fileName, TString saveName, TStri
   canvas1 ->cd();
   //canvas1 -> SetLogy();
   //canvas1 -> SetLogx();
-  //canvas1 -> SetLogy();
+  // canvas1 -> SetLogz();
 
   histo = GetTH2D(fileName,histoName);
   histo->SetTitle(titleName);
@@ -202,7 +209,7 @@ int plotHistograms2D(TString histoName,TString fileName, TString saveName, TStri
   histo ->Draw("COLZ");
   histo->GetXaxis()->SetTitle(xTitle);
   histo->GetYaxis()->SetTitle(yTitle);
-
+  gStyle -> SetPadRightMargin(0.15);
   canvas1->SaveAs(saveName);
 
   return 0;
@@ -236,4 +243,56 @@ TH2D* GetTH2D(TString filename, TString objectName){
   delete file;
 
   return object;
+}
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+int plotOneHistogram(TString fileName, TString histoName){
+
+  TeresaPlottingStyle::init();
+  gStyle->SetOptStat(0000);
+  gStyle -> SetTitleOffset(1.4,"Y");
+  gStyle -> SetTitleSize(0.06,"X"); 
+  gStyle -> SetTitleSize(0.06,"Y"); 
+  gStyle -> SetTitleOffset(1.2,"X");
+  gStyle -> SetTitleOffset(1.2,"Y");
+  gStyle -> SetPadBottomMargin(0.17);
+  
+
+
+  TH1D *histo;
+  TCanvas* canvas1;
+  TString titleName = "" ;
+  TString xTitle = "p_{T} [GeV]";
+  TString yTitle = "a.u.";
+  TString saveName = "ptOfPions.pdf";
+
+  canvas1 = new TCanvas("canvas1","canvas",0,0,500,500);
+  canvas1 ->cd();
+   
+  histo = GetTH1D(fileName,histoName);
+  histo->SetTitle(titleName);
+  histo->GetXaxis()->SetTitle(xTitle);
+  histo->GetYaxis()->SetTitle(yTitle);
+
+  histo->GetXaxis()->SetRangeUser(0,2);
+
+  histo ->Draw();
+
+
+  TLatex* info = new TLatex();
+  info->SetTextFont(132);
+  info-> SetNDC();
+  info->SetTextSize(0.050);
+  TString AuxString = "m_{#chi^{#pm}} = 200 GeV";
+  info->DrawLatex(0.4,0.7,AuxString);
+  AuxString = "#Delta m(#chi^{#pm}, #chi^{0}) #approx 150 MeV";
+  info->DrawLatex(0.4,0.6,AuxString);
+
+  canvas1->SaveAs(saveName);
+
+
+
+  return 0;
+
 }

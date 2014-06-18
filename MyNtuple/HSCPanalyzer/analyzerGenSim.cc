@@ -5,8 +5,8 @@
 // Created:     Tue Sep 24 14:30:05 2013 by mkanalyzer.py
 // Author:      Teresa Lenz
 //-----------------------------------------------------------------------------
-#include "analyzerGen.h"
-#include "analyzer.h"
+#include "analyzerFunctionsGenSim.h"
+#include "analyzerGenSim.h"
 #include "TLorentzVector.h"
 using namespace std;
 using namespace evt;
@@ -103,20 +103,26 @@ int main(int argc, char** argv)
   // Declare histograms
   //---------------------------------------------------------------------------
   //SimTrack Collextion
-  TH2D *hZVsRhoChipm;
 
-  hZVsRhoChipm  = new TH2D("hZVsRho","hZVsRho",140,0,1400,8000,0,800);
-
+  TH2D *hZVsRhoChipm  = new TH2D("hZVsRho","hZVsRho",140,0,1400,8000,0,800);
+  TH1D *htrackpt      = new TH1D("htrackpt","htrackpt",150,0,1500);
+  TH1D *ptOfPions     = new TH1D("ptOfPions","ptOfPions",100,0,1.5);
+  TH1D *pOfPions      = new TH1D("pOfPions","pOfPions",100,0,4);
+  TH1D *ptOfChi0      = new TH1D("ptOfChi0","ptOfChi0",100,0,1000);
+  TH1D *pOfChi0       = new TH1D("pOfChi0","pOfChi0",100,0,1000);
+  TH1D *ptOfChipm     = new TH1D("ptOfChipm","ptOfChipm",100,0,1000);
+  TH1D *pOfChipm      = new TH1D("pOfChipm","pOfChipm",100,0,1000);
+  TH1D *ptOfAllPions  = new TH1D("ptOfAllPions","ptOfAllPions",100,0,1000);
+  TH1D *pOfAllPions   = new TH1D("pOfAllPions","pOfAllPions",100,0,1000);
   
   //---------------------------------------------------------------------------
   // Loop over events
   //---------------------------------------------------------------------------
 
-  for(int entry=0; entry < nevents; ++entry)
+  for(int entry=0; entry <nevents; ++entry)
 	{
 
-	  decayedChip = false;
-	  decayedChim = false;
+	  
 	  /*
 	  for(int i=0; i<nSimTrack; i++){
 	    if(abs(SimTrack[i].type)==1000024){   
@@ -138,11 +144,23 @@ int main(int argc, char** argv)
 	  // structs. See the header file analyzer.h to find out what structs
 	  // are available. Alternatively, you can call individual fill functions.
 	  fillObjects();
-	  
+
+
+	  decayedChip = false;
+	  decayedChim = false;
+	  AllPions.clear();
+	  PionsFromDecay.clear();
+	  Chi0FromDecay.clear();
+
+	  for(int i=0; i<SimTrack.size(); i++)
+	    {
+	    htrackpt->Fill(SimTrack[i].momentum_pt);
+	    }
 
 	  //-----------------------------------------------------------------------------------------
 	  //-------- Find Charginos and Neutralinos in collection  ----------------------------------
 	  //-----------------------------------------------------------------------------------------
+	  findChipmInGenParticleCollection();
 	  findChipmInSimTrackCollection();
 	  findChi0InSimTrackCollection();
 	  findChipmDecayInSimVertexCollection();
@@ -155,15 +173,57 @@ int main(int argc, char** argv)
 	  if(decayedChip){
 	    Rho = sqrt(pow(chipDecaySimVertex.position_x,2)+pow(chipDecaySimVertex.position_y,2));
 	    hZVsRhoChipm -> Fill(abs(chipDecaySimVertex.position_z),Rho);
+	    decayVertexFound3+=1;
 	  }
 
 	  if(decayedChim){
 	    Rho = sqrt(pow(chimDecaySimVertex.position_x,2)+pow(chimDecaySimVertex.position_y,2));
 	    hZVsRhoChipm -> Fill(abs(chimDecaySimVertex.position_z),Rho);
+	    decayVertexFound3+=1;
 	  }
-	  	   	    	
+
+	  //----------------------------------------------------------------------------------------
+	  //--------- Find the pions in the SIMTrack Collection ------------------------------------
+	  //----------------------------------------------------------------------------------------
+	  findPiInSimTrackCollection();
+	  findDecayParticles();
+	  if(PionsFromDecay.size() > 2) cout<<"PionsFromDecay.size() = "<<PionsFromDecay.size()<<endl;
+	  for(unsigned int i=0; i<PionsFromDecay.size(); i++) 
+	    {
+
+	      TLorentzVector pi;
+	      pi.SetPtEtaPhiE(PionsFromDecay[i].momentum_pt,PionsFromDecay[i].momentum_eta,PionsFromDecay[i].momentum_phi,PionsFromDecay[i].momentum_energy);
+	      ptOfPions->Fill(PionsFromDecay[i].momentum_pt);
+	      pOfPions->Fill(pi.P());
+	    }
+
+	  for(unsigned int i=0; i<Chi0FromDecay.size(); i++) 
+	    {
+
+	      TLorentzVector chi0;
+	      chi0.SetPtEtaPhiE(Chi0FromDecay[i].momentum_pt,Chi0FromDecay[i].momentum_eta,Chi0FromDecay[i].momentum_phi,Chi0FromDecay[i].momentum_energy);
+	      ptOfChi0->Fill(Chi0FromDecay[i].momentum_pt);
+	      pOfChi0->Fill(chi0.P());
+	    }
+
+
+	  for(unsigned int i=0; i<AllPions.size(); i++) 
+	    {
+
+	      TLorentzVector pi;
+	      pi.SetPtEtaPhiE(AllPions[i].momentum_pt,AllPions[i].momentum_eta,AllPions[i].momentum_phi,AllPions[i].momentum_energy);
+	      ptOfAllPions->Fill(AllPions[i].momentum_pt);
+	      pOfAllPions->Fill(pi.P());
+	    }
+
+  	   	    	
 	}//end of loop over events
   
+  cout<<"decayVertexFound  = "<<decayVertexFound<<endl;
+  cout<<"decayVertexFound2 = "<<decayVertexFound2<<endl;
+  cout<<"decayVertexFound3 = "<<decayVertexFound3<<endl;
+  cout<<"decayVertexFound4 = "<<decayVertexFound4<<endl;
+
   stream.close();
   ofile.close();
   

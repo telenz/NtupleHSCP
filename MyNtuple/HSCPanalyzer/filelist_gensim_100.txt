@@ -1,0 +1,10 @@
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/signalGENSIM/results/pMSSM12_MCMC1_30_549144_m100_width0_0.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/signalGENSIM/results/pMSSM12_MCMC1_30_549144_m100_width0_1.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/signalGENSIM/results/pMSSM12_MCMC1_30_549144_m100_width0_2.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/signalGENSIM/results/pMSSM12_MCMC1_30_549144_m100_width0_3.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/signalGENSIM/results/pMSSM12_MCMC1_30_549144_m100_width0_4.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/signalGENSIM/results/pMSSM12_MCMC1_30_549144_m100_width0_5.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/signalGENSIM/results/pMSSM12_MCMC1_30_549144_m100_width0_6.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/signalGENSIM/results/pMSSM12_MCMC1_30_549144_m100_width0_7.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/signalGENSIM/results/pMSSM12_MCMC1_30_549144_m100_width0_8.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/signalGENSIM/results/pMSSM12_MCMC1_30_549144_m100_width0_9.root

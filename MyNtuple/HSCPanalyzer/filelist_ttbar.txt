@@ -1,0 +1,3 @@
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/TTJets2/results/job_0.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/TTJets2/results/job_1.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuples/workdir/TTJets2/results/job_2.root

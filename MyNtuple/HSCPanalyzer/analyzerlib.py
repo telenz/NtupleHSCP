@@ -56,7 +56,7 @@ class outputFile:
 
 	def count(self, cond, w=1.0):
 		self.hist.Fill(cond, w)
-
+	
 	def close(self):
 		print "soemthing is recognized"
 		print "==> histograms saved to file", self.filename

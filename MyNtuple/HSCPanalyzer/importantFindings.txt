@@ -1,0 +1,4 @@
+Matching of Chipm in GenParticles and in track Collection: 
+Mismatched Chipm (when abs(trackPt/genPt-1)>0.8)=0
+Matched Chipm (when deltaR<0.5) = 26572
+

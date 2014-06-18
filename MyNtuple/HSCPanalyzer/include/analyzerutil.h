@@ -153,6 +153,7 @@ struct outputFile
 	hist_->Fill(cond.c_str(), w);
   }
 
+
 ///
   void close()
   {
@@ -173,6 +174,7 @@ struct outputFile
   TFile* file_;
   TTree* tree_;
   TH1F*  hist_;
+  TH1F*  histTracks_;
   TBranch* b_weight_;
   double     weight_;
   int    entry_;

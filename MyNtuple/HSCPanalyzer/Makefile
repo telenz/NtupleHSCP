@@ -141,7 +141,7 @@ $(appobjs)	: $(tmpdir)/%.o	: %.cc
 	$(AT)rm -rf $*.FAILED
 # 	Define clean up rules
 clean   :
-	rm -rf $(tmpdir)/*.o
+	rm -rf $(tmpdir)/*Wells*.o
 
 veryclean   :
 	rm -rf $(tmpdir)/*.o $(applications) $(libdir)/*.so

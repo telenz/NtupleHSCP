@@ -1,5 +1,5 @@
-#ifndef ANALYZERAODSIMCLASSES_H
-#define ANALYZERAODSIMCLASSES_H
+#ifndef ANALYZERCLASSESAODSIMWELLS_H
+#define ANALYZERCLASSESAODSIMWELLS_H
 
 class SetOfVertexHistograms
 {
@@ -19,9 +19,9 @@ class SetOfVertexHistograms
     };
   void FillVertexHistograms(int i)
   {
-    hVertexNdof -> Fill(Vertex[i].ndof);
-    hVertexZ    -> Fill(Vertex[i].z);
-    hVertexRho  -> Fill(std::sqrt(std::pow(Vertex[i].x,2) + std::pow(Vertex[i].y,2)));
+    hVertexNdof -> Fill(evt::Vertex[i].ndof);
+    hVertexZ    -> Fill(evt::Vertex[i].z);
+    hVertexRho  -> Fill(std::sqrt(std::pow(evt::Vertex[i].x,2) + std::pow(evt::Vertex[i].y,2)));
   }
 
 

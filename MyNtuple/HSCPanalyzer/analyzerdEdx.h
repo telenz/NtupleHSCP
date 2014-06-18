@@ -291,6 +291,8 @@ struct Track_s
   double	dEdxHitsNPMedian_1;
   unsigned short	trackerExpectedHitsOuter_numberOfLostHits;
   unsigned short	trackerExpectedHitsInner_numberOfLostHits;
+  int pdgId;
+  double beta;
 };
 std::vector<Track_s> Track(2000000);
 

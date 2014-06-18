@@ -1,0 +1,10 @@
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuplesWells/workdir/signalWells/results/./pMSSM12_MCMC1_30_549144_m400_width3_480.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuplesWells/workdir/signalWells/results/./pMSSM12_MCMC1_30_549144_m400_width3_481.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuplesWells/workdir/signalWells/results/./pMSSM12_MCMC1_30_549144_m400_width3_482.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuplesWells/workdir/signalWells/results/./pMSSM12_MCMC1_30_549144_m400_width3_483.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuplesWells/workdir/signalWells/results/./pMSSM12_MCMC1_30_549144_m400_width3_484.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuplesWells/workdir/signalWells/results/./pMSSM12_MCMC1_30_549144_m400_width3_485.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuplesWells/workdir/signalWells/results/./pMSSM12_MCMC1_30_549144_m400_width3_486.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuplesWells/workdir/signalWells/results/./pMSSM12_MCMC1_30_549144_m400_width3_487.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuplesWells/workdir/signalWells/results/./pMSSM12_MCMC1_30_549144_m400_width3_488.root
+/afs/desy.de/user/t/tlenz/xxl-af-cms/NTUPLES/LLntuplesWells/workdir/signalWells/results/./pMSSM12_MCMC1_30_549144_m400_width3_489.root

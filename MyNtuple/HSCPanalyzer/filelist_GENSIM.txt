@@ -1,0 +1,11 @@
+../SamplesFULL/ntuple_m800_width0_0.root
+../SamplesFULL/ntuple_m800_width0_1.root	
+../SamplesFULL/ntuple_m800_width0_2.root
+../SamplesFULL/ntuple_m800_width0_3.root
+../SamplesFULL/ntuple_m800_width0_4.root	
+../SamplesFULL/ntuple_m800_width0_5.root
+../SamplesFULL/ntuple_m800_width0_6.root
+../SamplesFULL/ntuple_m800_width0_7.root	
+../SamplesFULL/ntuple_m800_width0_8.root
+../SamplesFULL/ntuple_m800_width0_9.root
+

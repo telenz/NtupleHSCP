@@ -1,7 +1,7 @@
-#ifndef ANALYZERGEN_H
-#define ANALYZERGEN_H
+#ifndef ANALYZERFUNCTIONSGENSIM_H
+#define ANALYZERFUNCTIONSGENSIM_H
 //-----------------------------------------------------------------------------
-#include "analyzer.h"
+#include "analyzerGenSim.h"
 #include <iostream>
 using namespace std;
 using namespace evt;
@@ -22,11 +22,21 @@ struct SimVertex_s chimOriginSimVertex;
 struct SimVertex_s chipDecaySimVertex;
 struct SimVertex_s chimDecaySimVertex;
 
+std::vector<SimTrack_s> AllPions;
+std::vector<SimTrack_s> PionsFromDecay;
+std::vector<SimTrack_s> Chi0FromDecay;
+
 bool decayedChip = false;
 bool decayedChim = false;
 
 int nChi0 = 0;
 int nPi   = 0;
+
+int decayed = 0;
+int decayVertexFound=0;
+int decayVertexFound2=0;
+int decayVertexFound3=0;
+int decayVertexFound4=0;
 
 /*****************************************
  Find chargino in GenParticle collection 
@@ -54,7 +64,11 @@ void findChipmInGenParticleCollection(){
     if(!zeroChip && !zeroChim) break;
   }
 
-  if(zeroChip || zeroChim) cout<<"To few charginos in GenParticle collection!"<<endl;
+  if(zeroChip || zeroChim){
+    cout<<"To few charginos in GenParticle collection!"<<endl;
+    cout<<"zeroChip = "<<zeroChip<<endl;
+    cout<<"zeroChim = "<<zeroChim<<endl;
+  }
 }
 
 /*****************************************
@@ -84,7 +98,11 @@ void findChipmInSimTrackCollection(){
     }
     if(!zeroChip && !zeroChim) break;
   }
-  if(zeroChip || zeroChim) cout<<"Not all chargino tracks were found!"<<endl;
+  if(zeroChip || zeroChim){
+    cout<<"Not all chargino tracks were found!"<<endl;
+    cout<<"zeroChip = "<<zeroChip<<endl;
+    cout<<"zeroChim = "<<zeroChim<<endl;
+  }
 }
 
 
@@ -98,19 +116,21 @@ void findChi0InSimTrackCollection(){
     if(abs(SimTrack[i].type)==1000022){
       chi0SimTrack[nChi0] = SimTrack[i];
       nChi0 += 1;
+      Chi0FromDecay.push_back(SimTrack[i]);
     }
   }
 }
 
 /*****************************************
- Find neutralino in SimTrack collection 
+ Find all pions in SimTrack collection 
 *****************************************/
 void findPiInSimTrackCollection(){
 
   nPi = 0;
   for(int i=0; i<nSimTrack; i++){
     if(abs(SimTrack[i].type)==211){
-      piSimTrack[nChi0] = SimTrack[i];
+      piSimTrack[nPi] = SimTrack[i];
+      AllPions.push_back(SimTrack[i]);
       nPi += 1;
     }
   }
@@ -155,8 +175,8 @@ void findChipmDecayInSimVertexCollection(){
   bool decayed   = false;
   bool decayedPi = false;
 
-  decayedChip = false;
-  decayedChim = false;
+  //decayedChip = false;
+  //decayedChim = false;
 
   for(int i=0; i<nSimVertex; i++){
 
@@ -164,10 +184,12 @@ void findChipmDecayInSimVertexCollection(){
 
     if(SimVertex[i].parentIndex==chipSimTrack.trackId || SimVertex[i].parentIndex==chimSimTrack.trackId){
 
-      for(int j=0; j<nChi0; j++){
+      decayVertexFound += 1;
+
+      for(unsigned int j=0; j<nChi0; j++){
 	if(SimVertex[i].vertexId == chi0SimTrack[j].vertIndex) decayed = true;
       }
-      for(int j=0; j<nPi; j++){
+      for(unsigned int j=0; j<nPi; j++){
 	if(SimVertex[i].vertexId == piSimTrack[j].vertIndex) decayedPi = true;
       }
       if(!decayed) continue;
@@ -181,12 +203,14 @@ void findChipmDecayInSimVertexCollection(){
 	chipDecaySimVertex = SimVertex[i];
 	zeroChip    = false;
 	decayedChip = true;
+	decayVertexFound2 += 1;
       }
-      else if(SimVertex[i].parentIndex==chimSimTrack.trackId){
+      if(SimVertex[i].parentIndex==chimSimTrack.trackId){
 	
 	chimDecaySimVertex = SimVertex[i];
 	zeroChim    = false;
 	decayedChim = true;
+	decayVertexFound2 += 1;
       }
     }
     if(!zeroChip && !zeroChim) break;
@@ -199,18 +223,42 @@ void findChipmDecayInSimVertexCollection(){
 void findDecayParticles(){
 
 
-  for(int i=0; i<nSimTrack; i++){
+  for(unsigned int i=0; i<nSimTrack; i++){
 
     if(decayedChip){
       if(SimTrack[i].vertIndex == chipDecaySimVertex.vertexId){
-	//cout<<"Chip decay particle: "<<SimTrack[i].type<<endl;
+
+	cout<<"chipSimTrack.momentum_pt = "<<chipSimTrack.momentum_pt<<endl;
+	cout<<"SimTrack[i].type = "<<SimTrack[i].type<<endl;
+	cout<<"SimTrack[i].pt = "<<SimTrack[i].momentum_pt<<endl;
+
+	if(abs(SimTrack[i].type)==211) PionsFromDecay.push_back(SimTrack[i]);
+	else decayVertexFound4 += 1;
+	if(abs(SimTrack[i].type) !=211 && abs(SimTrack[i].type) !=1000022)
+	  {
+	    cout<<"Chip decay particle: "<<SimTrack[i].type<<endl;
+	    cout<<"Chip decay particle: "<<SimTrack[i].momentum_pt<<endl;
+	  }
       }
     }
 
     if(decayedChim){
+
+     
       
       if(SimTrack[i].vertIndex == chimDecaySimVertex.vertexId){
-	//cout<<"Chim decay particle: "<<SimTrack[i].type<<endl;
+
+	cout<<"chimSimTrack.momentum_pt = "<<chimSimTrack.momentum_pt<<endl;
+	cout<<"SimTrack[i].type = "<<SimTrack[i].type<<endl;
+	cout<<"SimTrack[i].pt = "<<SimTrack[i].momentum_pt<<endl;
+	
+	if(abs(SimTrack[i].type)==211) PionsFromDecay.push_back(SimTrack[i]);
+	else decayVertexFound4 += 1;
+	if(abs(SimTrack[i].type) !=211 && abs(SimTrack[i].type) !=1000022)
+	  {
+	    cout<<"Chim decay particle: "<<SimTrack[i].type<<endl;
+	    cout<<"Chim decay particle: "<<SimTrack[i].momentum_pt<<endl;
+	  }
       }
     }
   }

@@ -1,0 +1,3 @@
+dcap://dcache-cms-dcap.desy.de:22125//pnfs/desy.de/cms/tier2/store/user/telenz/mc/AODSIM_bkg/ttjets/TTJets_MassiveBinDECAY_madgraph_0.root
+dcap://dcache-cms-dcap.desy.de:22125//pnfs/desy.de/cms/tier2/store/user/telenz/mc/AODSIM_bkg/ttjets/TTJets_MassiveBinDECAY_madgraph_1.root
+
