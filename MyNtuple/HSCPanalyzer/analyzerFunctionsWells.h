@@ -3,6 +3,7 @@
 //-----------------------------------------------------------------------------
 #include <iostream>
 #include "TVector2.h"
+#include "analyzerWells.h"
 using namespace std;
 //-----------------------------------------------------------------------------
 
@@ -85,10 +86,31 @@ std::vector<evt::Jet_s>  getSelectedJetCollection(){
 
     //bool isCharginoCandidate = false;
 
-    if(evt::Jet[i].pt<30.)                          continue;
-    if(std::abs(evt::Jet[i].eta)>4.5)               continue;
+    //if(evt::Jet[i].pt<30.)                          continue;
+    //if(std::abs(evt::Jet[i].eta)>4.5)               continue;
     //if(Jet[i].neutralHadronEnergyFraction>0.7) continue;
     //if(Jet[i].chargedEmEnergyFraction>0.5)     continue;
+
+    jetCollection.push_back(evt::Jet[i]);
+  }
+
+  return jetCollection;
+}
+
+//--------------------------------------------------------------------------------------------------
+
+std::vector<evt::Jet_s>  getSubleadingJetCollection(){
+
+  std::vector<evt::Jet_s> jetCollection;
+  jetCollection.clear();
+  for(unsigned int i=0; i<evt::Jet.size(); i++){
+
+    //bool isCharginoCandidate = false;
+
+    if(evt::Jet[i].pt<=30.)                          continue;
+    if(std::abs(evt::Jet[i].eta)>=4.5)               continue;
+    if(evt::Jet[i].neutralHadronEnergyFraction>=0.7) continue;
+    if(evt::Jet[i].chargedEmEnergyFraction>=0.5)     continue;
 
     jetCollection.push_back(evt::Jet[i]);
   }
@@ -104,7 +126,8 @@ bool areTwoJetsBackToBack(std::vector<evt::Jet_s>& jetColl){
     for(unsigned int j=i+1; j<jetColl.size(); j++){
 
       double dPhi = std::abs(TVector2::Phi_mpi_pi(jetColl[i].phi-jetColl[j].phi));
-      if(dPhi>=2.5) return true;     
+ 
+      if(abs(dPhi)>=2.5) return true;     
       
     }
   }
@@ -122,7 +145,7 @@ bool isMetInJetDirection(std::vector<evt::Jet_s> jetColl, struct evt::MET_s *met
     if(i>1) break;
     
     double dPhi = std::abs(TVector2::Phi_mpi_pi(jetColl[i].phi-met->phi));
-    if(dPhi<0.5) return true;     
+    if(dPhi<=0.5) return true;     
     
   }
 
@@ -136,19 +159,19 @@ bool isMetInJetDirection(std::vector<evt::Jet_s> jetColl, struct evt::MET_s *met
 bool leadingJetRequirementsFullfilled(struct evt::Jet_s* leadingJet, TH1D* countsEventCuts){
 
   if(leadingJet==0)                               return false;
-  countsEventCuts->Fill("nonEmptyJetColl", 1);
-  if(leadingJet->pt<110.)                         return false;
-  countsEventCuts->Fill("leadingJetPtGt110GeV", 1);
-  if(std::abs(leadingJet->eta)>2.4)               return false;
-  countsEventCuts->Fill("absLeadJetEtaLt2p4", 1);
-  if(leadingJet->chargedHadronEnergyFraction<0.2) return false;
-  countsEventCuts->Fill("CHEFgt0p2", 1);
-  if(leadingJet->chargedEmEnergyFraction>0.5)     return false;
-  countsEventCuts->Fill("CHEmEFle0p5", 1);
-  if(leadingJet->neutralHadronEnergyFraction>0.7) return false;
-  countsEventCuts->Fill("NHEFle0p7", 1);
-  if(leadingJet->neutralEmEnergyFraction>0.7)     return false;
-  countsEventCuts->Fill("NEmEFle0p7", 1);
+  //countsEventCuts->Fill("nonEmptyJetColl", evt::weight);
+  if(leadingJet->pt<=110.)                         return false;
+  countsEventCuts->Fill("leadingJetPtGt110GeV", evt::weight);
+  if(std::abs(leadingJet->eta)>=2.4)               return false;
+  countsEventCuts->Fill("absLeadJetEtaLt2p4", evt::weight);
+  if(leadingJet->chargedHadronEnergyFraction<=0.2) return false;
+  countsEventCuts->Fill("CHEFgt0p2", evt::weight);
+  if(leadingJet->chargedEmEnergyFraction>=0.5)     return false;
+  countsEventCuts->Fill("CHEmEFle0p5", evt::weight);
+  if(leadingJet->neutralHadronEnergyFraction>=0.7) return false;
+  countsEventCuts->Fill("NHEFle0p7", evt::weight);
+  if(leadingJet->neutralEmEnergyFraction>=0.7)     return false;
+  countsEventCuts->Fill("NEmEFle0p7", evt::weight);
 
   return true;
 }
@@ -198,25 +221,15 @@ double trackEnergyIn0p3Cone(struct evt::Track_s *track, std::vector<evt::Track_s
   double dPhi  = 0;
   double dEta  = 0;
   double dR    = 0;
-  int matchedTracks = 0;
-  
+ 
   for(unsigned int j=0; j<trkColl.size(); j++){
         
     dPhi = std::abs(TVector2::Phi_mpi_pi(trkColl[j].phi - track->phi));
     dEta = std::abs(trkColl[j].eta - track->eta);
     dR   = std::sqrt(dPhi*dPhi + dEta*dEta);
-
-    if(dR<0.0000001){
-      matchedTracks += 1;
-      continue;
-
-    }
-
+    
     if(dR<0.3)  sumPt += trkColl[j].pt;
   }
-
-  if(matchedTracks>1) cout<<"More than one match!!!!!!!!!!!!!!"<<endl;
-  else if(matchedTracks==0) cout<<"No matched track!!!!!!!!!!!!!"<<endl;
 
   return sumPt;
 }
@@ -263,6 +276,35 @@ bool getTrkIsMatchedBadCSC(struct evt::Track_s *track){
   return false;
 }
 //--------------------------------------------------------------------------------------------------
+bool isWithinIntermoduleGapsOfECAL(struct evt::Track_s *track){
+
+  if(track->eta<-1.14018   && track->eta>-1.1439)     return true;
+  if(track->eta<-0.791884  && track->eta>-0.796051)   return true;
+  if(track->eta<-0.44356   && track->eta>-0.447911)   return true;
+  if(track->eta<0.00238527 && track->eta>-0.00330793) return true;
+  if(track->eta<0.446183   && track->eta>0.441949)    return true;
+  if(track->eta<0.793955   && track->eta>0.789963)    return true;
+  if(track->eta<1.14164    && track->eta>1.13812)     return true;
+  
+  return false;
+}
+//--------------------------------------------------------------------------------------------------
+std::vector<evt::Track_s> trackCuts(std::vector<evt::Track_s> inputColl, bool keepCriteria)
+{
+
+  std::vector<evt::Track_s> outputColl;
+
+  for(unsigned int i=0; i<inputColl.size(); i++){
+    if(!keepCriteria) continue;
+    outputColl.push_back(inputColl[i]);
+  }
+
+  return outputColl;
+
+}
+//--------------------------------------------------------------------------------------------------
+
+
 
 #endif
 
