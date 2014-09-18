@@ -128,7 +128,9 @@ int main(int argc, char** argv)
   TH2D *h1stGenJetPtGt30RecoJetPt  = new TH2D("h1stGenJetPtGt30RecoJetPt","h1stGenJetPtGt30RecoJetPt",150,0,1500,150,0,1500);
   */
 
-  
+  TH1D *nVertices_0  = new TH1D("nVertices_0","nVertices_0",100,0,100);
+  TH1D *hPU_NumInteractions_0 = new TH1D("hPU_NumInteractions_0","hPU_NumInteractions_0",100,0,100);
+  TH1D *hTrueNumInteractions_0 = new TH1D("hTrueNumInteractions_0","hTrueNumInteractions_0",100,0,100);
   //---------------------------------------------------------------------------
   // Declaration of Variables
   //---------------------------------------------------------------------------
@@ -208,8 +210,28 @@ int main(int argc, char** argv)
 
   assert((start = clock())!=-1);
 
+  // Stuff for PU reweighing ---------------------------------------------------------------------------------------------
+  TFile file_PUdata("/nfs/dust/cms/user/rathjd/VBF-LS-tau/PU/DataPUFile_22Jan2013ReReco_Run2012.root", "read");
+  //TFile file_PUmc("/nfs/dust/cms/user/rathjd/VBF-LS-tau/PU/S10MC_PUFile.root", "read");
+  TFile file_PUmc("/afs/desy.de/user/t/tlenz/HSCPworkdir/PUhistos/TrueNumInteractions_0.root", "read");
+ 
+  //TH1F *PUweights = (TH1F*)file_PU.Get("ratio");
+  TH1F *PUweights = (TH1F*)file_PUdata.Get("analyzeHiMassTau/NVertices_0");
+  PUweights->Scale(1/PUweights->Integral());
+  cout<<"PUweights = "<<PUweights->Integral()<<endl;
+  //  TH1F *PUmc = (TH1F*)file_PUmc.Get("analyzeHiMassTau/NVertices_0");
+  TH1F *PUmc = (TH1F*)file_PUmc.Get("hTrueNumInteractions_0");
+  PUmc->Scale(1/PUmc->Integral());
+  cout<<"PUmc = "<<PUmc->Integral()<<endl;
+  
+  PUweights->Divide(PUmc);
 
-
+  cout<<"PUweights = "<<PUweights->Integral()<<endl;
+ 
+  weight = 1.;
+  // -----------------------------------------------------------------------------------------------------------------------
+ 
+ 
   for(int entry=0; entry <nevents; ++entry)
     {
 	  
@@ -229,23 +251,31 @@ int main(int argc, char** argv)
        ******************************************************************************************************************************
        *****************************************************************************************************************************/
       
-      ofile.count("NoCuts", 1);
+
+      if(!edmEventHelper_isRealData){
+	weight=PUweights->GetBinContent(PUweights->FindBin(PileupSummaryInfo_getTrueNumInteractions[0]));
+	if(weight<0.0001) cout<<"weight = "<<weight<<endl;
+      }
+      weight =1.;
+      ofile.count("NoCuts", weight);
+ 
       //-------------------------------------------------------------- Cuts ---------------------------------------------------------
 
       findChipmInGenParticleCollection();
-
-     
+      nVertices_0->Fill(nVertex);
+      hTrueNumInteractions_0->Fill(PileupSummaryInfo[0].getTrueNumInteractions);
+      hPU_NumInteractions_0->Fill(PileupSummaryInfo[0].getPU_NumInteractions);
       std::vector<Jet_s> jetCollection      = getSelectedJetCollection();
       
-      all.Selection();
+      //all.Selection();
       allSelectedTracks.Selection();
-      onlyChi.Selection();
-      noChi.Selection();
-      onlyChiSelectedTracks.Selection();
-      allSelectedTracksMET1stJET.Selection();
-      onlyChiSelectedTracksMET1stJET.Selection();
-      onlyChiSoftSelectedTracks.Selection();
-      allSoftSelectedTracks.Selection();
+      //onlyChi.Selection();
+      //noChi.Selection();
+      //onlyChiSelectedTracks.Selection();
+      //allSelectedTracksMET1stJET.Selection();
+      //onlyChiSelectedTracksMET1stJET.Selection();
+      //onlyChiSoftSelectedTracks.Selection();
+      //allSoftSelectedTracks.Selection();
       /*
       //-------------- Vertex Cut ------------------
       beforeVertexCut +=1;
