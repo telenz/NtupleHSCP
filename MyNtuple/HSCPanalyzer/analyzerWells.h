@@ -3,7 +3,7 @@
 //-----------------------------------------------------------------------------
 // File:        analyzer.h
 // Description: Analyzer header for ntuples created by TheNtupleMaker
-// Created:     Thu Jun  5 15:36:51 2014 by mkanalyzer.py
+// Created:     Thu Jul 17 10:30:40 2014 by mkanalyzer.py
 // Author:      Teresa Lenz
 //-----------------------------------------------------------------------------
 // -- System
@@ -45,16 +45,16 @@ std::vector<float>	Electron_mvaNonTrigV0(200,0);
 std::vector<double>	Electron_phi(200,0);
 std::vector<double>	Electron_pt(200,0);
 std::vector<double>	Electron_pz(200,0);
-std::vector<int>	GenParticle_charge(200,0);
-std::vector<double>	GenParticle_energy(200,0);
-std::vector<double>	GenParticle_et(200,0);
-std::vector<double>	GenParticle_eta(200,0);
-std::vector<double>	GenParticle_mass(200,0);
-std::vector<double>	GenParticle_p(200,0);
-std::vector<int>	GenParticle_pdgId(200,0);
-std::vector<double>	GenParticle_phi(200,0);
-std::vector<double>	GenParticle_pt(200,0);
-std::vector<double>	GenParticle_pz(200,0);
+std::vector<int>	GenParticle_charge(2000,0);
+std::vector<double>	GenParticle_energy(2000,0);
+std::vector<double>	GenParticle_et(2000,0);
+std::vector<double>	GenParticle_eta(2000,0);
+std::vector<double>	GenParticle_mass(2000,0);
+std::vector<double>	GenParticle_p(2000,0);
+std::vector<int>	GenParticle_pdgId(2000,0);
+std::vector<double>	GenParticle_phi(2000,0);
+std::vector<double>	GenParticle_pt(2000,0);
+std::vector<double>	GenParticle_pz(2000,0);
 std::vector<float>	Jet_chargedEmEnergyFraction(200,0);
 std::vector<float>	Jet_chargedHadronEnergyFraction(200,0);
 std::vector<double>	Jet_energy(200,0);
@@ -77,6 +77,9 @@ std::vector<double>	Muon_eta(200,0);
 std::vector<double>	Muon_phi(200,0);
 std::vector<double>	Muon_pt(200,0);
 std::vector<double>	Muon_pz(200,0);
+std::vector<int>	PileupSummaryInfo_getBunchCrossing(10,0);
+std::vector<int>	PileupSummaryInfo_getPU_NumInteractions(10,0);
+std::vector<float>	PileupSummaryInfo_getTrueNumInteractions(10,0);
 std::vector<float>	Tau_againstElectronLoose(200,0);
 std::vector<float>	Tau_againstMuonTight(200,0);
 std::vector<float>	Tau_byLooseCombinedIsolationDeltaBetaCorr(200,0);
@@ -87,45 +90,53 @@ std::vector<double>	Tau_eta(200,0);
 std::vector<double>	Tau_phi(200,0);
 std::vector<double>	Tau_pt(200,0);
 std::vector<double>	Tau_pz(200,0);
-std::vector<double>	Track_caloEMDeltaRp3(1000,0);
-std::vector<double>	Track_caloEMDeltaRp4(1000,0);
-std::vector<double>	Track_caloEMDeltaRp5(1000,0);
-std::vector<double>	Track_caloHadDeltaRp3(1000,0);
-std::vector<double>	Track_caloHadDeltaRp4(1000,0);
-std::vector<double>	Track_caloHadDeltaRp5(1000,0);
-std::vector<double>	Track_eta(1000,0);
-std::vector<unsigned short>	Track_hitPattern_trackerLayersWithoutMeasurement(1000,0);
-std::vector<unsigned short>	Track_numberOfValidHits(1000,0);
-std::vector<double>	Track_phi(1000,0);
-std::vector<double>	Track_pt(1000,0);
-std::vector<double>	Track_px(1000,0);
-std::vector<double>	Track_py(1000,0);
-std::vector<double>	Track_pz(1000,0);
-std::vector<int>	Track_trackHighPurity(1000,0);
-std::vector<double>	Track_trackRelIso03(1000,0);
-std::vector<unsigned short>	Track_trackerExpectedHitsInner_numberOfLostHits(1000,0);
-std::vector<unsigned short>	Track_trackerExpectedHitsOuter_numberOfHits(1000,0);
-std::vector<double>	Track_vx(1000,0);
-std::vector<double>	Track_vy(1000,0);
-std::vector<double>	Track_vz(1000,0);
+std::vector<double>	Track_caloEMDeltaRp3(2000,0);
+std::vector<double>	Track_caloEMDeltaRp4(2000,0);
+std::vector<double>	Track_caloEMDeltaRp5(2000,0);
+std::vector<double>	Track_caloHadDeltaRp3(2000,0);
+std::vector<double>	Track_caloHadDeltaRp4(2000,0);
+std::vector<double>	Track_caloHadDeltaRp5(2000,0);
+std::vector<double>	Track_eta(2000,0);
+std::vector<unsigned short>	Track_hitPattern_trackerLayersWithoutMeasurement(2000,0);
+std::vector<unsigned short>	Track_numberOfValidHits(2000,0);
+std::vector<double>	Track_phi(2000,0);
+std::vector<double>	Track_pt(2000,0);
+std::vector<double>	Track_px(2000,0);
+std::vector<double>	Track_py(2000,0);
+std::vector<double>	Track_pz(2000,0);
+std::vector<int>	Track_trackHighPurity(2000,0);
+std::vector<double>	Track_trackRelIso03(2000,0);
+std::vector<unsigned short>	Track_trackerExpectedHitsInner_numberOfLostHits(2000,0);
+std::vector<unsigned short>	Track_trackerExpectedHitsOuter_numberOfHits(2000,0);
+std::vector<double>	Track_vx(2000,0);
+std::vector<double>	Track_vy(2000,0);
+std::vector<double>	Track_vz(2000,0);
 std::vector<double>	Vertex_ndof(200,0);
 std::vector<double>	Vertex_position_rho(200,0);
 std::vector<double>	Vertex_x(200,0);
 std::vector<double>	Vertex_y(200,0);
 std::vector<double>	Vertex_z(200,0);
-int	edmTriggerResultsHelper_HLT_MonoCentralPFJet80_PFMETnoMu105_NHEF0p95_v5;
+int	edmEventHelper_bunchCrossing;
+int	edmEventHelper_event;
+int	edmEventHelper_isRealData;
+int	edmEventHelper_luminosityBlock;
+int	edmEventHelper_orbitNumber;
+int	edmEventHelper_run;
+int	edmTriggerResultsHelper_HLT_MET120_HBHENoiseCleaned_v3;
 int	edmTriggerResultsHelper_HLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5;
-int	edmTriggerResultsHelper_prescaleHLT_MonoCentralPFJet80_PFMETnoMu105_NHEF0p95_v5;
+int	edmTriggerResultsHelper_prescaleHLT_MET120_HBHENoiseCleaned_v3;
 int	edmTriggerResultsHelper_prescaleHLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5;
 int	nElectron;
 int	nGenParticle;
 int	nJet;
 int	nMET;
 int	nMuon;
+int	nPileupSummaryInfo;
 int	nTau;
 int	nTrack;
 int	nVertex;
 double	sdouble_value;
+double weight;
 
 //-----------------------------------------------------------------------------
 // --- indexmap keeps track of which objects have been flagged for selection
@@ -202,7 +213,7 @@ struct GenParticle_s
   double	mass;
   int	pdgId;
 };
-std::vector<GenParticle_s> GenParticle(200);
+std::vector<GenParticle_s> GenParticle(2000);
 
 std::ostream& operator<<(std::ostream& os, const GenParticle_s& o)
 {
@@ -301,6 +312,24 @@ std::ostream& operator<<(std::ostream& os, const Muon_s& o)
   return os;
 }
 //-----------------------------------------------------------------------------
+struct PileupSummaryInfo_s
+{
+  int	getBunchCrossing;
+  int	getPU_NumInteractions;
+  float	getTrueNumInteractions;
+};
+std::vector<PileupSummaryInfo_s> PileupSummaryInfo(10);
+
+std::ostream& operator<<(std::ostream& os, const PileupSummaryInfo_s& o)
+{
+  char r[1024];
+  os << "PileupSummaryInfo" << std::endl;
+  sprintf(r, "  %-32s: %f\n", "getBunchCrossing", (double)o.getBunchCrossing); os << r;
+  sprintf(r, "  %-32s: %f\n", "getPU_NumInteractions", (double)o.getPU_NumInteractions); os << r;
+  sprintf(r, "  %-32s: %f\n", "getTrueNumInteractions", (double)o.getTrueNumInteractions); os << r;
+  return os;
+}
+//-----------------------------------------------------------------------------
 struct Tau_s
 {
   double	energy;
@@ -359,7 +388,7 @@ struct Track_s
   int pdgId;
   double beta;
 };
-std::vector<Track_s> Track(1000);
+std::vector<Track_s> Track(2000);
 
 std::ostream& operator<<(std::ostream& os, const Track_s& o)
 {
@@ -491,6 +520,17 @@ inline void fillMuon()
     }
 }
 
+inline void fillPileupSummaryInfo()
+{
+  PileupSummaryInfo.resize(PileupSummaryInfo_getBunchCrossing.size());
+  for(unsigned int i=0; i < PileupSummaryInfo.size(); ++i)
+    {
+      PileupSummaryInfo[i].getBunchCrossing	= PileupSummaryInfo_getBunchCrossing[i];
+      PileupSummaryInfo[i].getPU_NumInteractions	= PileupSummaryInfo_getPU_NumInteractions[i];
+      PileupSummaryInfo[i].getTrueNumInteractions	= PileupSummaryInfo_getTrueNumInteractions[i];
+    }
+}
+
 inline void fillTau()
 {
   Tau.resize(Tau_energy.size());
@@ -559,6 +599,7 @@ void fillObjects()
   fillJet();
   fillMET();
   fillMuon();
+  fillPileupSummaryInfo();
   fillTau();
   fillTrack();
   fillVertex();
@@ -700,6 +741,26 @@ void saveSelectedObjects()
   n = 0;
   try
     {
+       n = indexmap["PileupSummaryInfo"].size();
+    }
+  catch (...)
+    {}
+  if ( n > 0 )
+    {
+      std::vector<int>& index = indexmap["PileupSummaryInfo"];
+      for(int i=0; i < n; ++i)
+        {
+          int j = index[i];
+          PileupSummaryInfo_getBunchCrossing[i]	= PileupSummaryInfo_getBunchCrossing[j];
+          PileupSummaryInfo_getPU_NumInteractions[i]	= PileupSummaryInfo_getPU_NumInteractions[j];
+          PileupSummaryInfo_getTrueNumInteractions[i]	= PileupSummaryInfo_getTrueNumInteractions[j];
+        }
+      nPileupSummaryInfo = n;
+    }
+
+  n = 0;
+  try
+    {
        n = indexmap["Tau"].size();
     }
   catch (...)
@@ -829,6 +890,9 @@ void selectVariables(itreestream& stream)
   stream.select("patMuon_selectedPatMuonsLoosePFlow.phi", Muon_phi);
   stream.select("patMuon_selectedPatMuonsLoosePFlow.pt", Muon_pt);
   stream.select("patMuon_selectedPatMuonsLoosePFlow.pz", Muon_pz);
+  stream.select("PileupSummaryInfo_addPileupInfo.getBunchCrossing", PileupSummaryInfo_getBunchCrossing);
+  stream.select("PileupSummaryInfo_addPileupInfo.getPU_NumInteractions", PileupSummaryInfo_getPU_NumInteractions);
+  stream.select("PileupSummaryInfo_addPileupInfo.getTrueNumInteractions", PileupSummaryInfo_getTrueNumInteractions);
   stream.select("patTau_selectedPatTaus.againstElectronLoose", Tau_againstElectronLoose);
   stream.select("patTau_selectedPatTaus.againstMuonTight", Tau_againstMuonTight);
   stream.select("patTau_selectedPatTaus.byLooseCombinedIsolationDeltaBetaCorr", Tau_byLooseCombinedIsolationDeltaBetaCorr);
@@ -865,15 +929,22 @@ void selectVariables(itreestream& stream)
   stream.select("recoVertex_offlinePrimaryVertices.x", Vertex_x);
   stream.select("recoVertex_offlinePrimaryVertices.y", Vertex_y);
   stream.select("recoVertex_offlinePrimaryVertices.z", Vertex_z);
-  stream.select("edmTriggerResultsHelper_TriggerResults_HLT.HLT_MonoCentralPFJet80_PFMETnoMu105_NHEF0p95_v5", edmTriggerResultsHelper_HLT_MonoCentralPFJet80_PFMETnoMu105_NHEF0p95_v5);
+  stream.select("edmEventHelper_info.bunchCrossing", edmEventHelper_bunchCrossing);
+  stream.select("edmEventHelper_info.event", edmEventHelper_event);
+  stream.select("edmEventHelper_info.isRealData", edmEventHelper_isRealData);
+  stream.select("edmEventHelper_info.luminosityBlock", edmEventHelper_luminosityBlock);
+  stream.select("edmEventHelper_info.orbitNumber", edmEventHelper_orbitNumber);
+  stream.select("edmEventHelper_info.run", edmEventHelper_run);
+  stream.select("edmTriggerResultsHelper_TriggerResults_HLT.HLT_MET120_HBHENoiseCleaned_v3", edmTriggerResultsHelper_HLT_MET120_HBHENoiseCleaned_v3);
   stream.select("edmTriggerResultsHelper_TriggerResults_HLT.HLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5", edmTriggerResultsHelper_HLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5);
-  stream.select("edmTriggerResultsHelper_TriggerResults_HLT.prescaleHLT_MonoCentralPFJet80_PFMETnoMu105_NHEF0p95_v5", edmTriggerResultsHelper_prescaleHLT_MonoCentralPFJet80_PFMETnoMu105_NHEF0p95_v5);
+  stream.select("edmTriggerResultsHelper_TriggerResults_HLT.prescaleHLT_MET120_HBHENoiseCleaned_v3", edmTriggerResultsHelper_prescaleHLT_MET120_HBHENoiseCleaned_v3);
   stream.select("edmTriggerResultsHelper_TriggerResults_HLT.prescaleHLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5", edmTriggerResultsHelper_prescaleHLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5);
   stream.select("npatElectron_patElectronsLoosePFlow", nElectron);
   stream.select("nrecoGenParticle_genParticles", nGenParticle);
   stream.select("npatJet_selectedPatJetsPFlow", nJet);
   stream.select("npatMET_patMETsPFlow", nMET);
   stream.select("npatMuon_selectedPatMuonsLoosePFlow", nMuon);
+  stream.select("nPileupSummaryInfo_addPileupInfo", nPileupSummaryInfo);
   stream.select("npatTau_selectedPatTaus", nTau);
   stream.select("nrecoTrackHelper_generalTracks", nTrack);
   stream.select("nrecoVertex_offlinePrimaryVertices", nVertex);
