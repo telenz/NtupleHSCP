@@ -25,6 +25,7 @@ class Event
  public:
   std::vector<Track_s> TrackColl;
   std::vector<Jet_s> JetColl;
+  std::vector<Jet_s> subleadingJetColl;
     
   struct GenParticle_s leadJetGenParticle;
   TH1D *countsTrackCriteria;
@@ -89,7 +90,7 @@ class Event
   {
     
     
-    countsEventCuts->Fill("noCuts", 1);
+    countsEventCuts->Fill("noCuts", weight);
     TrackColl.clear();
     JetColl.clear();
     
@@ -100,9 +101,23 @@ class Event
     // Trigger Cut
     if(triggerCut)
       {
-	if(edmTriggerResultsHelper_HLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5 == 0) return 0;
+	/*
+	if(edmTriggerResultsHelper_HLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5  == 1 || 
+	   edmTriggerResultsHelper_HLT_MonoCentralPFJet80_PFMETnoMu105_NHEF0p95_v5 == 1 ){}
+	else{  return 0;}
+
+	if(edmTriggerResultsHelper_HLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5  == 0 &&
+	   edmTriggerResultsHelper_HLT_MonoCentralPFJet80_PFMETnoMu105_NHEF0p95_v5 ==1){
+
+	  cout<<"sollte was bringen"<<endl;
+	}
+	*/
+
+	if(edmTriggerResultsHelper_HLT_MonoCentralPFJet80_PFMETnoMu95_NHEF0p95_v5  == 1 || 
+	   edmTriggerResultsHelper_HLT_MET120_HBHENoiseCleaned_v3 == 1 ){}
+	else{  return 0;}
       }
-    countsEventCuts->Fill("triggerCut", 1);
+    countsEventCuts->Fill("triggerCut", weight);
 
     // Vertex cut
     hist.FillVertexHistograms(Vertex);
@@ -110,23 +125,16 @@ class Event
       {
 	if(!isGoodVertex()) return 0;
       }
-    countsEventCuts->Fill("vertexCuts", 1);
+    //countsEventCuts->Fill("vertexCuts", weight);
 
     // MET cut
     if(metCut)
       {
     	if(evt::MET.size()==0) return 0;
-	bool oneMetGt100 = false;
-	for(unsigned int i=0; i<evt::MET.size(); i++){
-	  if(evt::MET[i].pt>100){
-	    if(i!=0) cout<<"NOT first vector!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
-	    oneMetGt100=true;
-	  }
-	}
 	hist.hMet->Fill(evt::MET[0].pt);
-	if(!oneMetGt100) return 0;
+	if(MET[0].pt<=100.) return 0;
       }
-    countsEventCuts->Fill("metCut", 1);
+    countsEventCuts->Fill("metCut", weight);
 
     // Fill new jet collection
     if(preselectionJetCut)
@@ -142,7 +150,7 @@ class Event
 	if(JetColl.size()==0) return 0;
 	if(!leadingJetRequirementsFullfilled(&JetColl[0], countsEventCuts)) return 0;
       }
-    countsEventCuts->Fill("1stJetCuts", 1);
+    //countsEventCuts->Fill("1stJetCuts", weight);
 
     // DeltaPhi Cut
     if(deltaPhiCut)
@@ -156,17 +164,19 @@ class Event
 	  }
 	  
 	}
-	if(areTwoJetsBackToBack(JetColl)) return 0;
+	subleadingJetColl = getSubleadingJetCollection();
+	if(areTwoJetsBackToBack(subleadingJetColl)) return 0;
       }
-    countsEventCuts->Fill("DeltaPhiCut", 1);
+    
+    countsEventCuts->Fill("DeltaPhiCut", weight);
 
 
     // DeltaPhi(Jet,MET) cut
     if(deltaPhiCut)
       {
-    	if(isMetInJetDirection(JetColl,&MET[0])) return 0;
+    	if(isMetInJetDirection(subleadingJetColl,&MET[0])) return 0;
       }
-    countsEventCuts->Fill("1MetwithDeltaPhiMin2Jetsgt0p5", 1);
+    countsEventCuts->Fill("1MetwithDeltaPhiMin2Jetsgt0p5", weight);
 
     if(onlyChipm)
       {
@@ -182,7 +192,7 @@ class Event
     // Track Candidate Cut
     if(trackCandidateCut)
       {
-	TrackColl = getCandidateTrackCollection(Track,JetColl,countsTrackCriteria,countsEventCuts);
+	TrackColl = getCandidateTrackCollection(Track,subleadingJetColl,countsTrackCriteria,countsEventCuts);
 	if(TrackColl.size()==0) return 0;
       }
     
@@ -221,18 +231,18 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   trackCollectionAux.clear();
 
   if(Track.size()==0) return trackCollection;
-  countsEventCuts->Fill("beforeTrackCriteria", 1);
+  //  countsEventCuts->Fill("beforeTrackCriteria", weight);
 
   trackCollection = Track;
   //.................................................................................//
   for(unsigned int i=0; i<trackCollection.size(); i++){
-    countsTrackCriteria->Fill("beforeTrackCriteria", 1);
-    if(trackCollection[i].pt<50.)                                                             continue;
+    countsTrackCriteria->Fill("beforeTrackCriteria", weight);
+    if(trackCollection[i].pt<=50.)                                                             continue;
     trackCollectionAux.push_back(trackCollection[i]);
-    countsTrackCriteria->Fill("PtGreater50GeV", 1);
+    countsTrackCriteria->Fill("PtGreater50GeV", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("PtGreater50GeV", 1);
+  countsEventCuts->Fill("PtGreater50GeV", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -240,10 +250,10 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     if(std::abs(trackCollection[i].eta)>2.1)                                                  continue;
     trackCollectionAux.push_back(trackCollection[i]);                                  
-    countsTrackCriteria->Fill("EtaLess2p1", 1);
+    countsTrackCriteria->Fill("EtaLess2p1", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("EtaLess2p1", 1);
+  countsEventCuts->Fill("EtaLess2p1", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -251,10 +261,10 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     if(std::abs(trackCollection[i].eta)>1.42 && std::abs(trackCollection[i].eta)<1.65)        continue;
     trackCollectionAux.push_back(trackCollection[i]);                        
-    countsTrackCriteria->Fill("EtaLess1p42Gt1p65", 1);
+    countsTrackCriteria->Fill("EtaLess1p42Gt1p65", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("EtaLess1p42Gt1p65", 1);
+  countsEventCuts->Fill("EtaLess1p42Gt1p65", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -262,10 +272,10 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     if(std::abs(trackCollection[i].eta)>0.15 && std::abs(trackCollection[i].eta)<0.35)        continue;
     trackCollectionAux.push_back(trackCollection[i]);                        
-    countsTrackCriteria->Fill("EtaLess0p15Gt0p35", 1);
+    countsTrackCriteria->Fill("EtaLess0p15Gt0p35", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("EtaLess0p15Gt0p35", 1);
+  countsEventCuts->Fill("EtaLess0p15Gt0p35", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -273,10 +283,10 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     if(std::abs(trackCollection[i].eta)>1.55 && std::abs(trackCollection[i].eta)<1.85)        continue;
     trackCollectionAux.push_back(trackCollection[i]);               
-    countsTrackCriteria->Fill("EtaLess1p55Gt1p85", 1);
+    countsTrackCriteria->Fill("EtaLess1p55Gt1p85", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("EtaLess1p55Gt1p85", 1);
+  countsEventCuts->Fill("EtaLess1p55Gt1p85", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -284,10 +294,22 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     if(getTrkIsMatchedDeadEcal(&trackCollection[i]))                                          continue;
     trackCollectionAux.push_back(trackCollection[i]);               
-    countsTrackCriteria->Fill("isMatchedDeadEcal", 1);
+    countsTrackCriteria->Fill("isMatchedDeadEcal", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("isMatchedDeadEcal", 1);
+  countsEventCuts->Fill("isMatchedDeadEcal", weight);
+      
+  trackCollection.clear();
+  trackCollection=trackCollectionAux;
+  trackCollectionAux.clear();
+  //.................................................................................//
+  for(unsigned int i=0; i<trackCollection.size(); i++){
+    if(isWithinIntermoduleGapsOfECAL(&trackCollection[i]))                                     continue;
+    trackCollectionAux.push_back(trackCollection[i]);               
+    countsTrackCriteria->Fill("notWithinECALGap", weight);
+  }
+  if(trackCollectionAux.size()==0) return trackCollection;
+  countsEventCuts->Fill("notWithinECALGap", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -295,10 +317,10 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     if(getTrkIsMatchedBadCSC(&trackCollection[i]))                                            continue;
     trackCollectionAux.push_back(trackCollection[i]);               
-    countsTrackCriteria->Fill("isMatchedBadCSC", 1);
+    countsTrackCriteria->Fill("isMatchedBadCSC", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("isMatchedBadCSC", 1);
+  countsEventCuts->Fill("isMatchedBadCSC", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -306,14 +328,13 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     double _dvx = trackCollection[i].vx - Vertex[0].x;
     double _dvy = trackCollection[i].vy - Vertex[0].y;
-    double _dvz = trackCollection[i].vz - Vertex[0].z;
-    double d0 = ( _dvx*trackCollection[i].py + _dvy*trackCollection[i].px )/trackCollection[i].pt;
-    if(d0>0.2)                                                                                continue;
+    double d0 = ( - _dvx*trackCollection[i].py + _dvy*trackCollection[i].px )/trackCollection[i].pt;
+    if(abs(d0)>=0.02)                                                                         continue;
     trackCollectionAux.push_back(trackCollection[i]);       
-    countsTrackCriteria->Fill("d0Less0p2mm", 1);
+    countsTrackCriteria->Fill("d0Less0p2mm", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("d0Less0p2mm", 1);
+  countsEventCuts->Fill("d0Less0p2mm", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -322,14 +343,13 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
     double _dvx = trackCollection[i].vx - Vertex[0].x;
     double _dvy = trackCollection[i].vy - Vertex[0].y;
     double _dvz = trackCollection[i].vz - Vertex[0].z;
-    double d0 = ( _dvx*trackCollection[i].py + _dvy*trackCollection[i].px )/trackCollection[i].pt;
     double dZ = _dvz - ( _dvx*trackCollection[i].px + _dvy*trackCollection[i].py)/trackCollection[i].pt * (trackCollection[i].pz/trackCollection[i].pt);
-    if(dZ>5)                                                                                  continue;
+    if(abs(dZ)>0.5)                                                                            continue;
     trackCollectionAux.push_back(trackCollection[i]);       
-    countsTrackCriteria->Fill("dZLess5mm", 1);
+    countsTrackCriteria->Fill("dZLess5mm", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("dZLess5mm", 1);
+  countsEventCuts->Fill("dZLess5mm", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -337,10 +357,10 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){ 
     if(trackCollection[i].numberOfValidHits<7)                                                continue;
     trackCollectionAux.push_back(trackCollection[i]);       
-    countsTrackCriteria->Fill("NOfValidHitsGe7", 1);
+    countsTrackCriteria->Fill("NOfValidHitsGe7", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("NOfValidHitsGe7", 1);
+  countsEventCuts->Fill("NOfValidHitsGe7", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -348,10 +368,10 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     if(trackCollection[i].hitPattern_trackerLayersWithoutMeasurement>0)                       continue;
     trackCollectionAux.push_back(trackCollection[i]);       
-    countsTrackCriteria->Fill("NOfLostHitsMiddleEq0", 1);
+    countsTrackCriteria->Fill("NOfLostHitsMiddleEq0", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("NOfLostHitsMiddleEq0", 1);
+  countsEventCuts->Fill("NOfLostHitsMiddleEq0", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -359,22 +379,24 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     if(trackCollection[i].trackerExpectedHitsInner_numberOfLostHits>0)                        continue;
     trackCollectionAux.push_back(trackCollection[i]);  
-    countsTrackCriteria->Fill("NOfLostHitsInnerEq0", 1);
+    countsTrackCriteria->Fill("NOfLostHitsInnerEq0", weight);
   }     
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("NOfLostHitsInnerEq", 1);
+  countsEventCuts->Fill("NOfLostHitsInnerEq", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
   //.................................................................................//
   for(unsigned int i=0; i<trackCollection.size(); i++){
     double sumPt = trackEnergyIn0p3Cone(&trackCollection[i],evt::Track);
-    if(sumPt/trackCollection[i].pt>0.05)                                                      continue;
+    //    if((sumPt-trackCollection[i].pt)/trackCollection[i].pt>=0.05)                           continue;
+    if(trackCollection[i].trackRelIso03>=0.05)                           continue;
+    
     trackCollectionAux.push_back(trackCollection[i]);       
-    countsTrackCriteria->Fill("TrackIsolationDeltaRLess0p05", 1);
+    countsTrackCriteria->Fill("TrackIsolationDeltaRLess0p05", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("TrackIsolationDeltaRLess0p05", 1);
+  countsEventCuts->Fill("TrackIsolationDeltaRLess0p05", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -382,21 +404,43 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     if(isTrackReconstructedJet(trackCollection[i], jetColl))                                  continue;
     trackCollectionAux.push_back(trackCollection[i]);       
-    countsTrackCriteria->Fill("InJetCollectionR0p5", 1);
+    countsTrackCriteria->Fill("InJetCollectionR0p5", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("InJetCollectionR0p5", 1);
+  countsEventCuts->Fill("InJetCollectionR0p5", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
   //.................................................................................//
   for(unsigned int i=0; i<trackCollection.size(); i++){
-    if(isTrackReconstructedLepton(&trackCollection[i]))                                       continue;
+    if(isTrackReconstructedTau(&trackCollection[i]))                                       continue;
     trackCollectionAux.push_back(trackCollection[i]);       
-    countsTrackCriteria->Fill("InLeptonCollectionR0p15", 1);
+    countsTrackCriteria->Fill("InTauCollectionR0p15", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("InLeptonCollectionR0p15", 1);
+  countsEventCuts->Fill("InTauCollectionR0p15", weight);
+  trackCollection.clear();
+  trackCollection=trackCollectionAux;
+  trackCollectionAux.clear();
+  //.................................................................................//
+  for(unsigned int i=0; i<trackCollection.size(); i++){
+    if(isTrackReconstructedElectron(&trackCollection[i]))                                       continue;
+    trackCollectionAux.push_back(trackCollection[i]);       
+    countsTrackCriteria->Fill("InElectronCollectionR0p15", weight);
+  }
+  if(trackCollectionAux.size()==0) return trackCollection;
+  countsEventCuts->Fill("InElectronCollectionR0p15", weight);
+  trackCollection.clear();
+  trackCollection=trackCollectionAux;
+  trackCollectionAux.clear();
+//.................................................................................//
+  for(unsigned int i=0; i<trackCollection.size(); i++){
+    if(isTrackReconstructedMuon(&trackCollection[i]))                                       continue;
+    trackCollectionAux.push_back(trackCollection[i]);       
+    countsTrackCriteria->Fill("InMuonCollectionR0p15", weight);
+  }
+  if(trackCollectionAux.size()==0) return trackCollection;
+  countsEventCuts->Fill("InMuonCollectionR0p15", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -404,10 +448,10 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     if(!isTrackCaloIsolated(&trackCollection[i]))                                             continue;
     trackCollectionAux.push_back(trackCollection[i]);       
-    countsTrackCriteria->Fill("CaloIsolation0p5", 1);
+    countsTrackCriteria->Fill("CaloIsolation0p5", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("CaloIsolation0p5", 1);
+  countsEventCuts->Fill("CaloIsolation0p5", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -415,10 +459,10 @@ std::vector<Track_s> getCandidateTrackCollection(std::vector<Track_s>& Track, st
   for(unsigned int i=0; i<trackCollection.size(); i++){
     if(trackCollection[i].trackerExpectedHitsOuter_numberOfHits<3)                            continue;
     trackCollectionAux.push_back(trackCollection[i]);       
-    countsTrackCriteria->Fill("NOfLostHitsOuterGe3", 1);
+    countsTrackCriteria->Fill("NOfLostHitsOuterGe3", weight);
   }
   if(trackCollectionAux.size()==0) return trackCollection;
-  countsEventCuts->Fill("NOfLostHitsOuterGe3", 1);
+  countsEventCuts->Fill("NOfLostHitsOuterGe3", weight);
   trackCollection.clear();
   trackCollection=trackCollectionAux;
   trackCollectionAux.clear();
@@ -435,28 +479,28 @@ std::vector<Track_s> getCandidateTrackCollection_SoftCuts(std::vector<Track_s>& 
 
   for(unsigned int i=0; i<Track.size(); i++){
 
-    countsTrackCriteria->Fill("beforeTrackCriteria", 1);
+    countsTrackCriteria->Fill("beforeTrackCriteria", weight);
     if(Track[i].pt<10.)                                                      continue;
-    countsTrackCriteria->Fill("PtGreater10GeV", 1);
-    countsTrackCriteria->Fill("EtaLess2p1", 1);
+    countsTrackCriteria->Fill("PtGreater10GeV", weight);
+    countsTrackCriteria->Fill("EtaLess2p1", weight);
     //if(Track[i].d0>0.2)                                                      continue;
-    countsTrackCriteria->Fill("d0Less0p2mm", 1);
+    countsTrackCriteria->Fill("d0Less0p2mm", weight);
     //if(Track[i].dz>5)                                                        continue;
-    countsTrackCriteria->Fill("dZLess5mm", 1);
+    countsTrackCriteria->Fill("dZLess5mm", weight);
     //if(Track[i].numberOfValidHits<5)                                         continue;
-    countsTrackCriteria->Fill("NOfValidHitsGe5", 1);
+    countsTrackCriteria->Fill("NOfValidHitsGe5", weight);
     if(Track[i].hitPattern_trackerLayersWithoutMeasurement>0)                                          continue;
-    countsTrackCriteria->Fill("NOfLostHitsMiddleEq0", 1);
+    countsTrackCriteria->Fill("NOfLostHitsMiddleEq0", weight);
     if(Track[i].trackerExpectedHitsInner_numberOfLostHits>0)                 continue;
-    countsTrackCriteria->Fill("NOfLostHitsInnerEq0", 1);
+    countsTrackCriteria->Fill("NOfLostHitsInnerEq0", weight);
     //if(sumPt/Track[i].pt>0.05)                                     continue;
-    countsTrackCriteria->Fill("TrackIsolationDeltaRLess0p05", 1);
+    countsTrackCriteria->Fill("TrackIsolationDeltaRLess0p05", weight);
     //if(Track[i].dEdxHitsNPHarm2_1000<3)                            continue;
-    //countsTrackCriteria->Fill("dEdxHarm2Less3", 1);
+    //countsTrackCriteria->Fill("dEdxHarm2Less3", weight);
     //if(Track[i].ptError/Track[i].pt<0.25)                            continue;
-    countsTrackCriteria->Fill("deltaPtless0p25", 1);
+    countsTrackCriteria->Fill("deltaPtless0p25", weight);
     //if(Track[i].trackerExpectedHitsOuter_numberOfLostHits<3)                 continue;
-    countsTrackCriteria->Fill("NOfLostHitsOuterGe3", 1);
+    countsTrackCriteria->Fill("NOfLostHitsOuterGe3", weight);
 
     trackCollection.push_back(Track[i]);
   }
